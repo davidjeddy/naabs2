@@ -1,0 +1,14 @@
+{
+    "name": "davidjeddy/naabs2",
+    "description": "Network Access And Billing System version 2 (naabs2) is a web based interface for administering a FreeRADIUS authenticated network access service.",
+    "license": "Creative Commons 4.0",
+    "authors": [
+        {
+            "name": "David Eddy",
+            "email": "me@davidjeddy.com"
+        }
+    ],
+    "minimum-stability": "RC",
+    "repositories": {
+    }
+}
