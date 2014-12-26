@@ -1,3 +1,4 @@
 curl -s http://getcomposer.org/installer | php &&\
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta4" &&\
-php composer.phar create-project --prefer-dist yiisoft/yii2-app-basic webapp
+mv composer.phar /usr/local/bin/composer &&\
+composer global require "fxp/composer-asset-plugin:1.0.0-beta4" &&\
+composer create-project --prefer-dist yiisoft/yii2-app-basic webapp
