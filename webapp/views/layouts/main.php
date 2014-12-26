@@ -26,23 +26,29 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
+                'brandLabel' => 'Naabs 2',
+                'brandUrl'   => Yii::$app->homeUrl,
+                'options'    => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Home',             'url' => ['/site/index']],
+                    ['label' => 'About',            'url' => ['/site/about']],
+                    ['label' => 'Contact Us',       'url' => ['/site/contact']],
+
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
+                        ['label' => 'Contact',      'url' => ['/site/signup']] :
+                        ['label' => 'My Account',   'url' => ['/site/myaccount']],
+
+                    Yii::$app->user->isGuest ?
+                        ['label' => 'Login',        'url' => ['/site/login']] :
                         ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
+                            'url'           => ['/site/logout'],
+                            'linkOptions'   => ['data-method' => 'post']
+                        ],
                 ],
             ]);
             NavBar::end();
