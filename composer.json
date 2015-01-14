@@ -2,16 +2,53 @@
     "name": "davidjeddy/naabs2",
     "description": "Network Access And Billing System version 2 (naabs2) is a web based interface for administering a FreeRADIUS authenticated network access service.",
     "license": "Creative Commons 4.0",
+    "keywords": [],
+    "type": "web application",
     "authors": [
         {
             "name": "David Eddy",
             "email": "me@davidjeddy.com"
         }
     ],
-    "minimum-stability": "RC",
-    "repositories": {
+    "homepage": "http://www.yiiframework.com/",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*"
     },
-    "required": {
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*",
         "amnah/yii2-user": "dev-master"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
     }
 }
