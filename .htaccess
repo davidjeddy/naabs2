@@ -10,6 +10,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # otherwise forward it to index.php
-RewriteRule (.*) webapp/web/index.php/$1 [L]
+RewriteRule (.*) naabs2/web/index.php/$1 [L]
 
-DirectoryIndex webapp/web/index.php
+DirectoryIndex naabs2/web/index.php
