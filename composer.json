@@ -10,5 +10,8 @@
     ],
     "minimum-stability": "RC",
     "repositories": {
+    },
+    "required": {
+        "amnah/yii2-user": "dev-master"
     }
 }
