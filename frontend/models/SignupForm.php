@@ -13,6 +13,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $password_repeat;
 
     /**
      * @inheritdoc
@@ -21,7 +22,7 @@ class SignupForm extends Model
     {
         return [
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'required'],
+            //['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
@@ -32,6 +33,9 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['password_repeat','safe'],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password'],
         ];
     }
 
@@ -44,7 +48,8 @@ class SignupForm extends Model
     {
         if ($this->validate()) {
             $user = new User();
-            $user->username = $this->username;
+            //$user->username = $this->username;
+            $user->username = $this->email;
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->generateAuthKey();
