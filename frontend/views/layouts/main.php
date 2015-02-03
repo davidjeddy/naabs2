@@ -27,13 +27,10 @@ AppAsset::register($this);
         <?php
             NavBar::begin([
                 'brandLabel' => 'Naabs 2',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
+                'brandUrl'   => Yii::$app->homeUrl,
+                'options'    => ['class' => 'navbar-inverse navbar-fixed-top'],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
             ];
@@ -41,10 +38,11 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => 'Account', 'url' => ['/site/account']];
                 $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
+                    'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'linkOptions' => ['data-method' => 'post'],
+                    'url'         => ['/site/logout'],
                 ];
             }
             echo Nav::widget([

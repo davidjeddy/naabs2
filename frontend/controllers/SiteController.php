@@ -28,10 +28,15 @@ class SiteController extends Controller
        return [
            'access' => [
                'class' => AccessControl::className(),
-               'only' => ['logout', 'signup', 'about'],
+               'only' => ['logout', 'signup', 'about', 'account'],
                'rules' => [
                    [
                        'actions' => ['signup'],
+                       'allow' => true,
+                       'roles' => ['?'],
+                   ],
+                   [
+                       'actions' => ['about'],
                        'allow' => true,
                        'roles' => ['?'],
                    ],
@@ -41,12 +46,9 @@ class SiteController extends Controller
                        'roles' => ['@'],
                    ],
                    [
-                       'actions' => ['about'],
+                       'actions' => ['account'],
                        'allow' => true,
                        'roles' => ['@'],
-                       'matchCallback' => function ($rule, $action) {
-                           return User::isUserAdmin(Yii::$app->user->identity->username);
-                       }
                    ],
                ],
            ],
@@ -124,6 +126,11 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionAccount()
+    {
+        return $this->render('account');
     }
 
     public function actionSignup()
