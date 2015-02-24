@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\LoginForm;
+use common\models\UserDetails;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -38,7 +39,7 @@ class SiteController extends Controller
                    [
                        'actions' => ['about'],
                        'allow' => true,
-                       'roles' => ['?'],
+                       'roles' => ['@'],
                    ],
                    [
                        'actions' => ['logout'],
@@ -135,17 +136,29 @@ class SiteController extends Controller
 
     public function actionSignup()
     {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+        $signupform  = new SignupForm();
+        $userDetails = new UserDetails();
+
+        $data = Yii::$app->request->post();
+        if ($signupform->load($data)) {
+
+            if ($user = $signupform->signup()) {
+                // get the users ID fron the users TBO && add it to the users details TBO obj
+                $data['UserDetails']['user_id'] = $user->getAttribute('id');
+                $userDetails->load($data);
+
+                if ($userDetails->save()) {
+
+                    if (Yii::$app->getUser()->login($user)) {
+                        return $this->goHome();
+                    }
                 }
             }
         }
 
         return $this->render('signup', [
-            'model' => $model,
+            'model'   => $signupform,
+            'details' => $userDetails,
         ]);
     }
 

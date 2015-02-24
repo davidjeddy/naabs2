@@ -17,8 +17,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-                <?= $form->field($model, 'username')->label(false)->hiddenInput() ?>
-                <?= $form->field($model, 'email') ?>
+                <!-- user_details TBO -->
+                <?= $form->field($details, 'f_name') ?>
+                <?= $form->field($details, 'l_name') ?>
+                <?= $form->field($details, 'p_phone') ?>
+                <?= $form->field($details, 'p_email') ?>
+                <?= $form->field($details, 's_question') ?>
+                <?= $form->field($details, 's_answer') ?>
+
+                <!-- user TBO -->               
+                <?= $form->field($model, 'username') ?>                
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <?= $form->field($model, 'password_repeat')->passwordInput() ?>
                 <div class="form-group">

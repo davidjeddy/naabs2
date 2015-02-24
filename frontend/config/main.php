@@ -28,6 +28,12 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        /*'view' => [
+            'theme' => [
+                'pathMap' => ['@app/views' => '@webroot/themes/stargazers'],
+                'baseUrl' => '@web/themes/stargazers',
+            ]
+        ],*/
     ],
     'params' => $params,
 ];
