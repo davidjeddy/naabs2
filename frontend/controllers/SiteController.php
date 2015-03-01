@@ -134,6 +134,11 @@ class SiteController extends Controller
         return $this->render('account');
     }
 
+    public function actionBilling()
+    {
+        return $this->render('billing');
+    }
+
     public function actionSignup()
     {
         $signupform  = new SignupForm();
