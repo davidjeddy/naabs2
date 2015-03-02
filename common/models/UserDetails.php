@@ -106,7 +106,7 @@ class UserDetails extends ActiveRecord
      */
     public static function isUserAdmin($username)
     {
-        if (static::findOne(['username' => $username, 'role' => self::ROLE_ADMIN])){
+        if (static::findOne(['role' => self::ROLE_ADMIN])){
      
             return true;
         }
