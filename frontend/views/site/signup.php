@@ -19,7 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-account']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                <!-- user TBO -->               
+                <?= $form->field($model, 'username') ?>                
+                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password_repeat')->passwordInput() ?>
+
+                <hr />
+
                 <!-- user_details TBO -->
                 <?= $form->field($details, 'f_name') ?>
                 <?= $form->field($details, 'l_name') ?>
@@ -27,11 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($details, 'p_email') ?>
                 <?= $form->field($details, 's_question') ?>
                 <?= $form->field($details, 's_answer') ?>
-
-                <!-- user TBO -->               
-                <?= $form->field($model, 'username') ?>                
-                <?= $form->field($model, 'password')->passwordInput() ?>
-                <?= $form->field($model, 'password_repeat')->passwordInput() ?>
                 <div class="form-group">
                     <?= Html::submitButton('account', ['class' => 'btn btn-primary', 'name' => 'account-button']) ?>
                 </div>
