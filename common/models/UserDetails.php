@@ -96,7 +96,7 @@ class UserDetails extends ActiveRecord
      */
     public function getUserAccount()
     {
-        return $this->hasOne(User::className(), ['id' => 'id']);
+        return $this->hasOne(User::className(), ['user_id' => 'id']);
     }
 
     /**

@@ -4,19 +4,22 @@ use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\models\SignupForm */
+/* @var $model \frontend\models\accountForm */
 
-$this->title = 'Signup';
+$this->title = 'account';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="site-signup">
+<div class="site-account">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+    <p>Please fill out the following fields to account:</p>
+
+    <code><?= __FILE__ ?></code>
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'form-account']); ?>
                 <!-- user_details TBO -->
                 <?= $form->field($details, 'f_name') ?>
                 <?= $form->field($details, 'l_name') ?>
@@ -30,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <?= $form->field($model, 'password_repeat')->passwordInput() ?>
                 <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton('account', ['class' => 'btn btn-primary', 'name' => 'account-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>

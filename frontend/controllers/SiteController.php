@@ -29,7 +29,7 @@ class SiteController extends Controller
        return [
            'access' => [
                'class' => AccessControl::className(),
-               'only' => ['logout', 'signup', 'about', 'account'],
+               'only' => ['logout', 'signup', 'about', 'account', 'billing'],
                'rules' => [
                    [
                        'actions' => ['signup'],
@@ -48,6 +48,11 @@ class SiteController extends Controller
                    ],
                    [
                        'actions' => ['account'],
+                       'allow' => true,
+                       'roles' => ['@'],
+                   ],
+                   [
+                       'actions' => ['billing'],
                        'allow' => true,
                        'roles' => ['@'],
                    ],
@@ -131,7 +136,16 @@ class SiteController extends Controller
 
     public function actionAccount()
     {
-        return $this->render('account');
+        $details  = UserDetails::findOne(['user_id' => Yii::$app->user->identity->id]);
+
+        if (Yii::$app->request->post()) {
+            $details->setAttributes(Yii::$app->request->post()['UserDetails']);
+            $details->save();
+        }
+
+        return $this->render('account', [
+            'details' => $details,
+        ]);
     }
 
     public function actionBilling()
@@ -145,6 +159,7 @@ class SiteController extends Controller
         $userDetails = new UserDetails();
 
         $data = Yii::$app->request->post();
+
         if ($signupform->load($data)) {
 
             if ($user = $signupform->signup()) {
