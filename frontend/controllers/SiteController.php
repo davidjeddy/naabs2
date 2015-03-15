@@ -32,14 +32,9 @@ class SiteController extends Controller
                'only' => ['logout', 'signup', 'about', 'account', 'billing'],
                'rules' => [
                    [
-                       'actions' => ['signup'],
+                       'actions' => ['about', 'signup'],
                        'allow' => true,
                        'roles' => ['?'],
-                   ],
-                   [
-                       'actions' => ['about'],
-                       'allow' => true,
-                       'roles' => ['@'],
                    ],
                    [
                        'actions' => ['logout'],
@@ -153,6 +148,11 @@ class SiteController extends Controller
         return $this->render('billing');
     }
 
+    /**
+     *
+     * @todo  find how how to get the next inserted ID, reserve it, and save both User and UserDetails at the same time.
+     * @return [type] [description]
+     */
     public function actionSignup()
     {
         $signupform  = new SignupForm();
