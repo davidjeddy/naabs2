@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use Yii;
+use common\models\User;
 use common\models\UserDetails;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -76,17 +77,52 @@ class UserDetailsController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id, $type = null)
     {
-        $model = $this->findModel($id);
+        echo $type;exit;
+        $userDetails = $this->findModel($id);
+        $userAccount = User::findOne(['id', $userDetails->user_id]);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($userDetails->load(Yii::$app->request->post()) && $userDetails->save()) {
+            return $this->redirect(['view', 'id' => $userDetails->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'userAccount' => $userAccount,
+                'userDetails' => $userDetails,
             ]);
         }
+
+        return false;
+    }
+
+    /**
+     * On UserAccoutn update save changes and return to VW
+     *
+     * @todo  Maybe userAccountCNTL? - DJE : 2015-03-02
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionAccountUpdate($id)
+    {
+        $userAccount = User::findOne(['id', $id]);
+
+echo 'asdf';exit;
+
+        if ($userAccount) {
+            $userAccount->setAttributes();
+
+echo '<pre>';
+print_r( $userAccount );
+echo '</pre>';
+exit;
+
+            if ($userAccount->update('')) {
+                $this->actionUpdate($id);
+            }
+        }
+
+
+        return false;
     }
 
     /**
