@@ -34,7 +34,7 @@ class DeviceCountOptions extends \yii\db\ActiveRecord
             [['key', 'value'], 'required'],
             [['value', 'created', 'updated', 'deleted'], 'integer'],
             [['cost'], 'number'],
-            [['key'], 'string', 'max' => 16]
+            [['key'], 'string', 'max' => 32]
         ];
     }
 
