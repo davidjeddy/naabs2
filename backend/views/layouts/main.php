@@ -37,6 +37,7 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => 'Device Count', 'url' => ['/devicecount/index']];
                 $menuItems[] = ['label' => 'User Accounts', 'url' => ['/userdetails/index']];
                 $menuItems[] = ['label' => 'Frontend', 'url' => ['../../../frontend/web/index.php/site/index']];
                 $menuItems[] = [
