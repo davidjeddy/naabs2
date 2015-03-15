@@ -14,7 +14,7 @@ return [
     'components' => [
         'errorHandler' => [
             'errorAction' => 'site/error',
-        ]
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -31,13 +31,12 @@ return [
             'isProduction' => false,
              // This is config file for the PayPal system
              'config'       => [
-                 'http.ConnectionTimeOut' => 30,
-                 'http.Retry'             => 1,
-                 'log.FileName'           => '@runtime/logs/paypal.log',
-                 'log.LogEnabled'         => YII_DEBUG ? 1 : 0,
-                 'log.LogLevel'           => \marciocamello\Paypal::LOG_LEVEL_FINE,
-                 'mode'                   => \marciocamello\Paypal::MODE_SANDBOX,
-                 // development (sandbox) or production (live) mode
+                'http.ConnectionTimeOut' => 30,
+                'http.Retry'             => 1,
+                'mode'                   => 'sandbox', //\marciocamello\Paypal::MODE_SANDBOX, // development (sandbox) or production (live) mode
+                'log.LogEnabled'         => YII_DEBUG ? 1 : 0,
+                'log.FileName'           => '@runtime/logs/paypal.log',
+                'log.LogLevel'           => 'FINE', //\marciocamello\Paypal::LOG_LEVEL_FINE,
             ]
         ],
         'user' => [
