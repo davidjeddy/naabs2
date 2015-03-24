@@ -31,6 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'value',
+            'created',
+            'updated',
+            'deleted',
         ],
     ]) ?>
 
