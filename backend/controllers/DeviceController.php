@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\User;
-use common\models\UserDetails;
+use common\models\Device;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserDetailsController implements the CRUD actions for UserDetails model.
+ * DeviceController implements the CRUD actions for Device model.
  */
-class UserDetailsController extends Controller
+class DeviceController extends Controller
 {
     public function behaviors()
     {
@@ -28,13 +27,13 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Lists all UserDetails models.
+     * Lists all Device models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => UserDetails::find(),
+            'query' => Device::find(),
         ]);
 
         return $this->render('index', [
@@ -43,7 +42,7 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Displays a single UserDetails model.
+     * Displays a single Device model.
      * @param integer $id
      * @return mixed
      */
@@ -55,13 +54,13 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Creates a new UserDetails model.
+     * Creates a new Device model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new UserDetails();
+        $model = new Device();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -73,61 +72,26 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Updates an existing UserDetails model.
+     * Updates an existing Device model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id, $type = null)
+    public function actionUpdate($id)
     {
-        echo $type;exit;
-        $userDetails = $this->findModel($id);
-        $userAccount = User::findOne(['id', $userDetails->user_id]);
+        $model = $this->findModel($id);
 
-        if ($userDetails->load(Yii::$app->request->post()) && $userDetails->save()) {
-            return $this->redirect(['view', 'id' => $userDetails->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'userAccount' => $userAccount,
-                'userDetails' => $userDetails,
+                'model' => $model,
             ]);
         }
-
-        return false;
     }
 
     /**
-     * On UserAccoutn update save changes and return to VW
-     *
-     * @todo  Maybe userAccountCNTL? - DJE : 2015-03-02
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionAccountUpdate($id)
-    {
-        $userAccount = User::findOne(['id', $id]);
-
-echo 'asdf';exit;
-
-        if ($userAccount) {
-            $userAccount->setAttributes();
-
-echo '<pre>';
-print_r( $userAccount );
-echo '</pre>';
-exit;
-
-            if ($userAccount->update('')) {
-                $this->actionUpdate($id);
-            }
-        }
-
-
-        return false;
-    }
-
-    /**
-     * Deletes an existing UserDetails model.
+     * Deletes an existing Device model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -140,15 +104,15 @@ exit;
     }
 
     /**
-     * Finds the UserDetails model based on its primary key value.
+     * Finds the Device model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return UserDetails the loaded model
+     * @return Device the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = UserDetails::findOne($id)) !== null) {
+        if (($model = Device::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
