@@ -2,19 +2,20 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\grid\DataColumn;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'User Details';
+$this->title = 'Device Count Options';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-details-index">
+<div class="device-count-options-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create User Details', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Device Count Options', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -22,17 +23,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
             'id',
-            'user_id',
-            'f_name',
-            'l_name',
-            'p_phone',
-            // 's_phone',
-            // 't_phone',
-            // 's_question',
-            // 's_answer',
-            'p_email:email',
-            // 's_email:email',
-            // 'role',
+            [
+                'class'     => DataColumn::className(),
+                'attribute' => 'key',
+                'format'    => 'text',
+                'label'     => 'Count',
+            ],
+            'cost',
             'created',
             'updated',
             // 'deleted',

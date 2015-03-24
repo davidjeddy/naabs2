@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\User;
-use common\models\UserDetails;
+use common\models\TimeAmountOptions;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserDetailsController implements the CRUD actions for UserDetails model.
+ * TimeAmountController implements the CRUD actions for TimeAmountOptions model.
  */
-class UserDetailsController extends Controller
+class TimeAmountController extends Controller
 {
     public function behaviors()
     {
@@ -28,13 +27,13 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Lists all UserDetails models.
+     * Lists all TimeAmountOptions models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => UserDetails::find(),
+            'query' => TimeAmountOptions::find(),
         ]);
 
         return $this->render('index', [
@@ -43,7 +42,7 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Displays a single UserDetails model.
+     * Displays a single TimeAmountOptions model.
      * @param integer $id
      * @return mixed
      */
@@ -55,13 +54,13 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Creates a new UserDetails model.
+     * Creates a new TimeAmountOptions model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new UserDetails();
+        $model = new TimeAmountOptions();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -73,52 +72,26 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Updates an existing UserDetails model.
+     * Updates an existing TimeAmountOptions model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id, $type = null)
+    public function actionUpdate($id)
     {
-        $userDetails = $this->findModel($id);
-        $userAccount = User::findOne(['id', $userDetails->user_id]);
+        $model = $this->findModel($id);
 
-        if ($userDetails->load(Yii::$app->request->post()) && $userDetails->save()) {
-            return $this->redirect(['view', 'id' => $userDetails->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'userDetails' => $userDetails,
+                'model' => $model,
             ]);
         }
-
-        return false;
     }
 
     /**
-     * On UserAccoutn update save changes and return to VW
-     *
-     * @todo  Maybe userAccountCNTL? - DJE : 2015-03-02
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionAccountUpdate($id)
-    {
-        $userAccount = User::findOne(['id', $id]);
-
-        if ($userAccount) {
-            $userAccount->setAttributes();
-
-            if ($userAccount->update('')) {
-                $this->actionUpdate($id);
-            }
-        }
-
-
-        return false;
-    }
-
-    /**
-     * Deletes an existing UserDetails model.
+     * Deletes an existing TimeAmountOptions model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -131,15 +104,15 @@ class UserDetailsController extends Controller
     }
 
     /**
-     * Finds the UserDetails model based on its primary key value.
+     * Finds the TimeAmountOptions model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return UserDetails the loaded model
+     * @return TimeAmountOptions the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = UserDetails::findOne($id)) !== null) {
+        if (($model = TimeAmountOptions::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

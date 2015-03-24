@@ -21,9 +21,9 @@ use yii\db\ActiveRecord;
  * @property string $p_email
  * @property string $s_email
  * @property integer $role
- * @property string $created_at
- * @property string $updated_at
- * @property string $deleted_at
+ * @property string $created
+ * @property string $updated
+ * @property string $deleted
  *
  * @property User $id0
  */
@@ -58,7 +58,7 @@ class UserDetails extends ActiveRecord
         return [
             [['user_id', 'f_name', 'p_phone', 's_question', 's_answer', 'p_email'], 'required'],
             [['p_phone', 's_phone', 't_phone', 'role'], 'integer'],
-            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['created', 'updated', 'deleted'], 'safe'],
             [['f_name', 'l_name'], 'string', 'max' => 16],
             [['s_question', 's_answer'], 'string', 'max' => 128],
             [['p_email', 's_email'], 'string', 'max' => 64],
@@ -73,8 +73,8 @@ class UserDetails extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created_at' => 'Created',
-            'deleted_at' => 'Deleted',
+            'created'    => 'Created',
+            'deleted'    => 'Deleted',
             'f_name'     => 'First Name',
             'id'         => 'ID',
             'l_name'     => 'Last Name',
@@ -86,7 +86,7 @@ class UserDetails extends ActiveRecord
             's_phone'    => 'Secondary Phone',
             's_question' => 'Security Question',
             't_phone'    => 'Tertiary Phone',
-            'updated_at' => 'Updated',
+            'updated'    => 'Updated',
             'user_id'    => 'User ID',
         ];
     }

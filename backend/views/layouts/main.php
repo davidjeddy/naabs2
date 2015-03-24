@@ -37,7 +37,10 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
+                $menuItems[] = ['label' => 'Time Amount(s)', 'url' => ['/timeamount/index']];
                 $menuItems[] = ['label' => 'User Accounts', 'url' => ['/userdetails/index']];
+                $menuItems[] = ['label' => 'User Devices', 'url' => ['/device/index']];
                 $menuItems[] = ['label' => 'Frontend', 'url' => ['../../../frontend/web/index.php/site/index']];
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
