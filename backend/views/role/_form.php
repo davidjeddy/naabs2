@@ -12,15 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => 32]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => 32])->label('Name') ?>
 
-    <?= $form->field($model, 'value')->textInput() ?>
+    <?= $form->field($model, 'value')->textInput()->label('Role Number') ?>
 
-    <?= $form->field($model, 'created')->textInput() ?>
+    <?= $form->field($model, 'created')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'updated')->textInput() ?>
+    <?= $form->field($model, 'updated')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'deleted')->textInput() ?>
+    <?php //$form->field($model, 'deleted')->textInput(['disabled' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
