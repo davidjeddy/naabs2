@@ -12,17 +12,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'key')->textInput(['maxlength' => 16]) ?>
+    <?= $form->field($model, 'key')->label('Option') ?>
 
-    <?= $form->field($model, 'value')->textInput() ?>
+    <?= $form->field($model, 'value')->textInput()->label('Days') ?>
 
-    <?= $form->field($model, 'cost')->textInput(['maxlength' => 5]) ?>
+    <?= $form->field($model, 'cost')->textInput(['maxlength' => 5])->label('Price') ?>
 
-    <?= $form->field($model, 'created')->textInput() ?>
+    <?= $form->field($model, 'created')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'updated')->textInput() ?>
+    <?= $form->field($model, 'updated')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'deleted')->textInput() ?>
+    <?php //$form->field($model, 'deleted')->textInput(['disabled' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -80,7 +80,6 @@ class UserDetailsController extends Controller
      */
     public function actionUpdate($id, $type = null)
     {
-        echo $type;exit;
         $userDetails = $this->findModel($id);
         $userAccount = User::findOne(['id', $userDetails->user_id]);
 
@@ -88,7 +87,6 @@ class UserDetailsController extends Controller
             return $this->redirect(['view', 'id' => $userDetails->id]);
         } else {
             return $this->render('update', [
-                'userAccount' => $userAccount,
                 'userDetails' => $userDetails,
             ]);
         }
@@ -107,15 +105,8 @@ class UserDetailsController extends Controller
     {
         $userAccount = User::findOne(['id', $id]);
 
-echo 'asdf';exit;
-
         if ($userAccount) {
             $userAccount->setAttributes();
-
-echo '<pre>';
-print_r( $userAccount );
-echo '</pre>';
-exit;
 
             if ($userAccount->update('')) {
                 $this->actionUpdate($id);

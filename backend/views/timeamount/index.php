@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\grid\DataColumn;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -20,14 +21,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
+            //['class' => 'yii\grid\SerialColumn'],
             'id',
-            'key',
-            'value',
+            //'key',
+            [
+                'class'     => DataColumn::className(),
+                'attribute' => 'key',
+                'format'    => 'text',
+                'label'     => 'Name',
+            ],
+            //'value',
             'cost',
             'created',
-            // 'updated',
+            'updated',
             // 'deleted',
 
             ['class' => 'yii\grid\ActionColumn'],

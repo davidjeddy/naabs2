@@ -32,7 +32,8 @@ class TimeAmountOptions extends \yii\db\ActiveRecord
     {
         return [
             [['key', 'value', 'cost'], 'required'],
-            [['value', 'created', 'updated', 'deleted'], 'integer'],
+            [['created', 'updated', 'deleted'], 'integer'],
+            [['value'], 'string'],
             [['cost'], 'number'],
             [['key'], 'string', 'max' => 32]
         ];
@@ -44,10 +45,10 @@ class TimeAmountOptions extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'key' => 'Key',
-            'value' => 'Value',
-            'cost' => 'Cost',
+            'id'      => 'ID',
+            'key'     => 'Key',
+            'value'   => 'Value',
+            'cost'    => 'Cost',
             'created' => 'Created',
             'updated' => 'Updated',
             'deleted' => 'Deleted',
