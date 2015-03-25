@@ -25,7 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($details, 'l_name') ?>
                 <?= $form->field($details, 'p_phone') ?>
                 <?= $form->field($details, 's_phone') ?>
-                <?= $form->field($details, 't_phone') ?>
                 <?= $form->field($details, 'p_email') ?>
                 <?= $form->field($details, 's_email') ?>
                 <?= $form->field($details, 's_question') ?>

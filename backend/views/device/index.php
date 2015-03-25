@@ -21,8 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
-            'id',
-            //'dvice_mac',
+            //'id',
+            //'device_mac',
             'device_name',
             'user_id',
             'created',

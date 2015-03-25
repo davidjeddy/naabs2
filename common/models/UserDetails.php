@@ -15,7 +15,6 @@ use yii\db\ActiveRecord;
  * @property string $l_name
  * @property integer $p_phone
  * @property integer $s_phone
- * @property integer $t_phone
  * @property string $s_question
  * @property string $s_answer
  * @property string $p_email
@@ -57,7 +56,7 @@ class UserDetails extends ActiveRecord
     {
         return [
             [['user_id', 'f_name', 'p_phone', 's_question', 's_answer', 'p_email'], 'required'],
-            [['p_phone', 's_phone', 't_phone', 'role'], 'integer'],
+            [['p_phone', 's_phone', 'role'], 'integer'],
             [['created', 'updated', 'deleted'], 'safe'],
             [['f_name', 'l_name'], 'string', 'max' => 16],
             [['s_question', 's_answer'], 'string', 'max' => 128],
@@ -85,7 +84,6 @@ class UserDetails extends ActiveRecord
             's_email'    => 'Secondary Email',
             's_phone'    => 'Secondary Phone',
             's_question' => 'Security Question',
-            't_phone'    => 'Tertiary Phone',
             'updated'    => 'Updated',
             'user_id'    => 'User ID',
         ];

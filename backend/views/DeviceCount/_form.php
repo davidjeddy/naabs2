@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'key')->label('Option') ?>
+    <?= $form->field($model, 'key')->label('Count') ?>
 
-    <?= $form->field($model, 'value')->textInput()->label('Days') ?>
+    <?= $form->field($model, 'value')->textInput()->label('Value') ?>
 
     <?= $form->field($model, 'cost')->textInput(['maxlength' => 5])->label('Price') ?>
 

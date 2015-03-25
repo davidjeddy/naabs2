@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\DataColumn;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\DeviceCountOptions */
 
-$this->title = $model->id;
+$this->title = $model->key;
 $this->params['breadcrumbs'][] = ['label' => 'Device Count Options', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,13 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'key',
+            //'id',
+            [
+                'class'     => DataColumn::className(),
+                'attribute' => 'key',
+                'format'    => 'text',
+                'label'     => 'Count',
+            ],
             'value',
             'cost',
             'created',
             'updated',
-            'deleted',
+            //'deleted',
         ],
     ]) ?>
 
