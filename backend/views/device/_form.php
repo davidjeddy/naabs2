@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?php //$form->field($model, 'dvice_mac')->textInput(['maxlength' => 32]) ?>
+    <?= $form->field($model, 'device_mac')->textInput(['disabled' => true]) ?>
 
     <?= $form->field($model, 'device_name')->textInput(['maxlength' => 32]) ?>
 

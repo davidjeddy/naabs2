@@ -22,15 +22,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 's_phone')->textInput() ?>
 
-    <?= $form->field($model, 't_phone')->textInput() ?>
+    <?= $form->field($model, 'p_email')->textInput(['maxlength' => 64]) ?>
+
+    <?= $form->field($model, 's_email')->textInput(['maxlength' => 64]) ?>
 
     <?= $form->field($model, 's_question')->textInput(['maxlength' => 128]) ?>
 
     <?= $form->field($model, 's_answer')->textInput(['maxlength' => 128]) ?>
-
-    <?= $form->field($model, 'p_email')->textInput(['maxlength' => 64]) ?>
-
-    <?= $form->field($model, 's_email')->textInput(['maxlength' => 64]) ?>
 
     <?= $form->field($model, 'role')->textInput() ?>
 

@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "device".
  *
  * @property integer $id
- * @property string $dvice_mac
+ * @property string $device_mac
  * @property string $device_name
  * @property integer $user_id
  * @property string $created
@@ -31,10 +31,10 @@ class Device extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['dvice_mac', 'device_name', 'user_id'], 'required'],
+            [['device_mac', 'device_name', 'user_id'], 'required'],
             [['user_id'], 'integer'],
             [['created', 'updated', 'deleted'], 'safe'],
-            [['dvice_mac', 'device_name'], 'string', 'max' => 32]
+            [['device_mac', 'device_name'], 'string', 'max' => 32]
         ];
     }
 
@@ -44,13 +44,13 @@ class Device extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'dvice_mac' => 'Dvice Mac',
+            'created'     => 'Created',
+            'deleted'     => 'Deleted',
+            'device_mac'  => 'Device Mac',
             'device_name' => 'Device Name',
-            'user_id' => 'User ID',
-            'created' => 'Created',
-            'updated' => 'Updated',
-            'deleted' => 'Deleted',
+            'id'          => 'ID',
+            'updated'     => 'Updated',
+            'user_id'     => 'User ID',
         ];
     }
 }

@@ -39,7 +39,7 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
                 $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
-                $menuItems[] = ['label' => 'Accounts', 'url' => ['/userdetails/index']];
+                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
                 $menuItems[] = ['label' => 'Devices', 'url' => ['/device/index']];
                 $menuItems[] = ['label' => 'Roles', 'url' => ['/role/index']];
                 $menuItems[] = ['label' => 'Frontend', 'url' => ['../../../frontend/web/index.php/site/index']];

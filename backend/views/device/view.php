@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Device */
 
-$this->title = $model->id;
+$this->title = $model->device_name;
 $this->params['breadcrumbs'][] = ['label' => 'Devices', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,13 +28,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'dvice_mac',
+            //'id',
+            'device_mac',
             'device_name',
             'user_id',
             'created',
             'updated',
-            'deleted',
+            //'deleted',
         ],
     ]) ?>
 

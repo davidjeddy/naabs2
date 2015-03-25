@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
-            'id',
+            //'id',
             [
                 'class'     => DataColumn::className(),
                 'attribute' => 'key',

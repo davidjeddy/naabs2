@@ -87,7 +87,7 @@ class UserDetailsController extends Controller
             return $this->redirect(['view', 'id' => $userDetails->id]);
         } else {
             return $this->render('update', [
-                'userDetails' => $userDetails,
+                'model' => $userDetails,
             ]);
         }
 

@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $userDetails common\models\UserDetails */
+/* @var $model common\models\UserDetails */
 
-$this->title = 'Update User Details: ' . ' ' . $userDetails->id;
-$this->params['breadcrumbs'][] = ['label' => 'User Details', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $userDetails->id, 'url' => ['view', 'id' => $userDetails->id]];
+$this->title = 'Update User Details: ' . ' ' . $model->f_name;
+$this->params['breadcrumbs'][] = ['label' => 'Time Amount Options', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->f_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = 'Update';
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $userDetails,
+        'model' => $model,
     ]) ?>
 
 </div>

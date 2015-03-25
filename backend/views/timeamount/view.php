@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\TimeAmountOptions */
 
-$this->title = $model->id;
+$this->title = $model->key;
 $this->params['breadcrumbs'][] = ['label' => 'Time Amount Options', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
