@@ -24,16 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="red">
             <h1>Purchase</h1>
-		    <?php $form = ActiveForm::begin(['id' => 'user-billing']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'user-billing']); ?>
 				<?= Html::DropDownList(
 					'time-options',
 					null,
 					ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key'),
 					['class'  => 'form-control']
 				); ?>
-
 				<hr>
-
 				<div>
 					<?= Html::Input(
 						'input',
@@ -92,10 +90,8 @@ $this->params['breadcrumbs'][] = $this->title;
 						null,
 						['placeholder' => 'Country', 'class' => 'form-control']
 					); ?>
-
 				</div>
 				<hr>
-
 				<div>
 					<?php
 					$date_time_data = [];
@@ -137,22 +133,22 @@ $this->params['breadcrumbs'][] = $this->title;
 						['placeholder' => 'CVV2', 'class' => 'form-control']
 					); ?>
 				</div>
-
 				<hr>
-
 		        <div class="form-group">
-		            <?= Html::resetButton('Clear Form',       ['class' => 'btn btn-default', 'name' => 'billing-form-reset']) ?>
-		            <?= Html::submitButton('Submit Payment',  ['class' => 'btn btn-primary', 'name' => 'billing-form-submit']) ?>
+		            <?= Html::resetButton('Clear Form',
+		            	['class' => 'btn btn-default btn-sm', 'name' => 'billing-form-reset']) ?>
+		            <?= Html::submitButton('Submit Payment',
+		            	['class' => 'btn btn-primary btn-lg pull-right', 'name' => 'billing-form-submit']) ?>
 		        </div>
-		    <?php ActiveForm::end(); ?>
+            <?php ActiveForm::end(); ?>
         </div>
         <div class="tab-pane" id="orange">
             <h1>Active</h1>
-            <p>Currently active purchase</p>
+            <p>Currently active plan and time.</p>
         </div>
         <div class="tab-pane" id="yellow">
             <h1>History</h1>
-            <p>History of users purchases.</p>
+            <p>Your purchases.</p>
         </div>
     </div>
 </div>
