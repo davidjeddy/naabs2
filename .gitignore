@@ -31,3 +31,6 @@ phpunit.phar
 
 # ST3 terminal plugin
 *.glue
+
+# Yii2 theme dir
+/themes

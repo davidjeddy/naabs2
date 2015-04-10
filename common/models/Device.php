@@ -50,17 +50,7 @@ class Device extends \yii\db\ActiveRecord
             'device_name' => 'Device Name',
             'id'          => 'ID',
             'updated'     => 'Updated',
-            'user_id'     => $this->getUser(),
+            'user_id'     => 'User ID',
         ];
-    }
-
-    /**
-     * Get the user related to the device via the user details TBO
-     * 
-     * @return [type] [description]
-     */
-    public function getUser()
-    {
-        return $this->hasOne(UserDetails::className(), ['id' => 'user_id']);
     }
 }
