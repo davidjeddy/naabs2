@@ -155,7 +155,6 @@ class SiteController extends Controller
     {
         $time_options  = TimeAmountOptions::find()->where(['DELETED' => NULL])->all();
 
-
         return $this->render('billing', [
             'time_options' => $time_options,
         ]);

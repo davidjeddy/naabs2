@@ -15,8 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>Please fill out the following fields to account:</p>
 
-    <code><?= __FILE__ ?></code>
-
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
