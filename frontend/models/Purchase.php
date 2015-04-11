@@ -46,9 +46,10 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['device_count_id', 'time_id', 'user_id', 'f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'last_4', 'year', 'return_code', 'return_message'], 'required'],
-            [['device_count_id', 'time_id', 'user_id', 'last_4', 'year', 'return_code'], 'integer'],
-            [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message', 'created', 'updated', 'deleted'], 'string', 'max' => 45]
+            [['f_name', 'l_name', 'street_1', 'street_2', 'prov', 'postal'], 'string', 'length' => [3, 45]],
+            [['city', 'prov'], 'string', 'length' => [1, 45]],
+            [['device_count_id', 'time_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'year'], 'required'],
+            [['device_count_id', 'time_id', 'user_id', 'last_4', 'year'], 'integer'],
         ];
     }
 

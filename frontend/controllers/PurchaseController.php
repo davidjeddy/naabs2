@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use Yii;
+use common\models\CCFormat;
 use frontend\models\Purchase;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -55,17 +56,33 @@ class PurchaseController extends Controller
 
     /**
      * Creates a new Purchase model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
      * 
      * @return mixed
      */
     public function actionCreate()
     {
-        $purchase  = new Purchase();
-        $cc_format = new CCFormat();
+        $purchase_mdl  = new Purchase();
+        $cc_format_mdl = new CCFormat();
 
-        if ($purchase->load(Yii::$app->request->post()) && $purchase->save()) {
-            return $this->redirect(['view', 'id' => $purchase->id]);
+
+        // if CC data provided, process CC data
+        if ($cc_format_mdl->load(Yii::$app->request->post('CCFormat')) && $cc_format_mdl->save()) {
+
+echo '<pre>';
+print_r( Yii::$app->request->post('CCFormat') );
+echo '</pre>';
+exit;
+
+            $purchase_mdl->setAttribute('last_4', substr(Yii::$app->request->post('CCFormat')['number'], -4));
+            $purchase_mdl->setAttribute('year',   Yii::$app->request->post('CCFormat')['exp_year']);
+        }
+
+
+
+        // process CC request
+        if ($purchase_mdl->load(Yii::$app->request->post('Purchase')) && $cc_format_mdl->save()) {
+
+            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
         } else {
 
             return $this->render('create', [
