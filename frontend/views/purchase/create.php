@@ -4,9 +4,9 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Purchase */
+/* @var $purchase_mdl frontend\models\Purchase */
 
-$this->title = 'Create Purchase';
+$this->title = 'Billing';
 $this->params['breadcrumbs'][] = ['label' => 'Purchases', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -14,8 +14,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
+    <h1>Purchase</h1>
+    <?= $this->render('_purchase', [
+        'purchase_mdl' => $purchase_mdl,
     ]) ?>
 
 </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
+</script>

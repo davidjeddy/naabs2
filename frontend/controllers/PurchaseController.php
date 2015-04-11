@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Purchase;
@@ -56,66 +56,22 @@ class PurchaseController extends Controller
     /**
      * Creates a new Purchase model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * 
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Purchase();
+        $purchase  = new Purchase();
+        $cc_format = new CCFormat();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($purchase->load(Yii::$app->request->post()) && $purchase->save()) {
+            return $this->redirect(['view', 'id' => $purchase->id]);
         } else {
+
             return $this->render('create', [
-                'model' => $model,
+                'cc_format_mdl' => $cc_format_mdl,
+                'purchase_mdl'  => $purchase_mdl,
             ]);
-        }
-    }
-
-    /**
-     * Updates an existing Purchase model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Deletes an existing Purchase model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the Purchase model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Purchase the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Purchase::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 }

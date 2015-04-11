@@ -1,11 +1,11 @@
 <?php
+
 namespace frontend\controllers;
 
 use Yii;
 use common\models\LoginForm;
 use common\models\UserDetails;
 use common\models\TimeAmountOptions;
-use frontend\models\BillingPurchase;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -142,27 +142,6 @@ class SiteController extends Controller
 
         return $this->render('account', [
             'details' => $details,
-        ]);
-    }
-
-    /**
-     * Get all the data needed to populate the billing form
-     *
-     * @author  David Eddy <me@davidjeddy.com>
-     * @since  0.4.0
-     * @return [type] [description]
-     */
-    public function actionBilling()
-    {
-
-        // collect all the info needed to populate the form, exp: get user data if a prev. purchase was made
-        $purchas_mdl  = new BillingPurchase();
-        $time_options = TimeAmountOptions::find()->all();
-
-        // send data to VW
-        return $this->render('billing', [
-            'purchas_mdl'  => $purchas_mdl,
-            'time_options' => $time_options,
         ]);
     }
 
