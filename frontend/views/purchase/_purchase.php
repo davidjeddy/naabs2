@@ -100,6 +100,20 @@ use yii\bootstrap\ActiveForm;
 
 <?php if (YII_DEBUG) { //pre-populate form when testing ?>
 <script>
+// jQuery is loaded after the page completes, wait for Window.onload to be valid.   
+window.onload=function(){
+    $("#purchase-f_name").val('qwer');
+    $("#purchase-l_name").val('asdf');
+    $("#purchase-street_1").val('123 zxc');
+    $("#purchase-street_2").val();
+    $("#purchase-city").val('qwer');
+    $("#purchase-prov").val('asdf');
+    $("#purchase-postal").val('asd123');
 
+    $("#ccformat-number").val('1234 6789 09876 5432');
+    $("#ccformat-exp_month").val('01');
+    $("#ccformat-exp_year").val('2014');
+    $("#ccformat-cvv2").val('123');
+};
 </script>
 <?php } ?>
