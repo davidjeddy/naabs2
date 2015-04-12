@@ -9,6 +9,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use marciocamello\Paypal\Paypal;
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -55,7 +56,7 @@ class PurchaseController extends Controller
     }
 
     /**
-     * Creates a new Purchase model.
+     * Creates a new Purchase.
      * 
      * @return mixed
      */
@@ -64,31 +65,57 @@ class PurchaseController extends Controller
         $purchase_mdl  = new Purchase();
         $cc_format_mdl = new CCFormat();
 
+        if ($purchase_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->save()) {
 
-        // if CC data provided, process CC data
-        if ($cc_format_mdl->load(Yii::$app->request->post('CCFormat')) && $cc_format_mdl->save()) {
-
-echo '<pre>';
-print_r( Yii::$app->request->post('CCFormat') );
-echo '</pre>';
-exit;
-
-            $purchase_mdl->setAttribute('last_4', substr(Yii::$app->request->post('CCFormat')['number'], -4));
-            $purchase_mdl->setAttribute('year',   Yii::$app->request->post('CCFormat')['exp_year']);
+            // todo This iteration is Paypal only. - DJE : 2015-04-11
+            // Process the CC transaction
+            $this->processPaypal();
         }
 
-
-
-        // process CC request
-        if ($purchase_mdl->load(Yii::$app->request->post('Purchase')) && $cc_format_mdl->save()) {
+        // process purchase request if the CC transaction completed
+        if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->save()) {
 
             return $this->redirect(['view', 'id' => $purchase_mdl->id]);
-        } else {
+        } elseif ($purchase_mdl->errors) {
 
-            return $this->render('create', [
-                'cc_format_mdl' => $cc_format_mdl,
-                'purchase_mdl'  => $purchase_mdl,
-            ]);
+            Yii::$app->getSession()->addFlash('error', 'Unable to complete purchase.');
         }
+
+        return $this->render('create', [
+            'cc_format_mdl' => $cc_format_mdl,
+            'purchase_mdl'  => $purchase_mdl,
+        ]);
+    }
+
+    /* Private methods */
+
+    private function processPaypal()
+    {
+
+        $card = new marciocamello\Paypal;
+        $card->setType('visa')
+            ->setNumber('4111111111111111')
+            ->setExpireMonth('06')
+            ->setExpireYear('2018')
+            ->setCvv2('782')
+            ->setFirstName('Richie')
+            ->setLastName('Richardson');
+
+'asdf';exit;
+
+        try {
+            $card->create(Yii::$app->cm->getContext());
+            // ...and for debugging purposes
+            echo '<pre>';
+            var_dump('Success scenario');
+            echo $card;
+        } catch (Excpetion $e) {
+echo '<pre>';
+print_r( $e );
+echo '</pre>';
+exit;
+        }
+
+        echo 'asdf';exit;
     }
 }

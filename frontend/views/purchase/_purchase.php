@@ -17,6 +17,9 @@ use yii\bootstrap\ActiveForm;
     'validateOnChange'       => true,
 ]); ?>
 
+<?= $form->errorSummary($purchase_mdl);?>
+<?= $form->errorSummary($cc_format_mdl);?>
+
 <?php /*
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
 <?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
