@@ -2,12 +2,14 @@
 
 namespace backend\controllers;
 
-use Yii;
 use common\models\AppData;
+
+use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * AppDateController implements the CRUD actions for AppData model.
