@@ -126,9 +126,13 @@ class SiteController extends Controller
         }
     }
 
-    public function actionAbout()
+    public function actionTos()
     {
-        return $this->render('about');
+        $tos_data = AppData::find()->where(['key' => 'tos'])->one();
+
+        return $this->render('tos', [
+            'tos_data' => $tos_data->getAttribute('value'),
+        ]);
     }
 
     public function actionAccount()
