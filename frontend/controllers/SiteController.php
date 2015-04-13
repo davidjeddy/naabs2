@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use Yii;
@@ -141,22 +142,6 @@ class SiteController extends Controller
 
         return $this->render('account', [
             'details' => $details,
-        ]);
-    }
-
-    /**
-     * Get all the data needed to populate the billing form
-     *
-     * @author  David Eddy <me@davidjeddy.com>
-     * @since  0.4.0
-     * @return [type] [description]
-     */
-    public function actionBilling()
-    {
-        $time_options  = TimeAmountOptions::find()->where(['DELETED' => NULL])->all();
-
-        return $this->render('billing', [
-            'time_options' => $time_options,
         ]);
     }
 
