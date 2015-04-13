@@ -3,13 +3,15 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\CCFormat;
-use frontend\models\Purchase;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use marciocamello\Paypal\Paypal;
+
+use common\components\paypal;
+use common\models\CCFormat;
+
+use frontend\models\Purchase;
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -69,7 +71,20 @@ class PurchaseController extends Controller
 
             // todo This iteration is Paypal only. - DJE : 2015-04-11
             // Process the CC transaction
-            $this->processPaypal();
+            $paypal = new paypal();
+            $test_data = [
+                'cvv2'      => $purchase_mdl->getAttribute('number'),
+                'exp_month' => $purchase_mdl->getAttribute('number'),
+                'exp_year'  => $purchase_mdl->getAttribute('number'),
+                'f_name'    => $purchase_mdl->getAttribute('number'),
+                'l_name'    => $purchase_mdl->getAttribute('number'),
+                'number'    => $purchase_mdl->getAttribute('number'),
+            ];
+            
+echo '<pre>';
+print_r( $paypal->creditCardPayment()->getApprovalLink( $test_data ); );
+echo '</pre>';
+exit;
         }
 
         // process purchase request if the CC transaction completed
@@ -87,35 +102,13 @@ class PurchaseController extends Controller
         ]);
     }
 
-    /* Private methods */
-
-    private function processPaypal()
-    {
-
-        $card = new marciocamello\Paypal;
-        $card->setType('visa')
-            ->setNumber('4111111111111111')
-            ->setExpireMonth('06')
-            ->setExpireYear('2018')
-            ->setCvv2('782')
-            ->setFirstName('Richie')
-            ->setLastName('Richardson');
-
-'asdf';exit;
-
-        try {
-            $card->create(Yii::$app->cm->getContext());
-            // ...and for debugging purposes
-            echo '<pre>';
-            var_dump('Success scenario');
-            echo $card;
-        } catch (Excpetion $e) {
-echo '<pre>';
-print_r( $e );
-echo '</pre>';
-exit;
-        }
-
-        echo 'asdf';exit;
-    }
+/*
+setType($_param_data['type'])
+    ->setNumber($_param_data['number'])
+    ->setExpireMonth($_param_data['exp_month'])
+    ->setExpireYear($_param_data['exp_year'])
+    ->setCvv2($_param_data['cvv2'])
+    ->setFirstName($_param_data['f_name'])
+    ->setLastName($_param_data['l_name']);
+*/
 }
