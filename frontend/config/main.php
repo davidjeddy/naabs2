@@ -24,21 +24,6 @@ return [
                 ],
             ],
         ],
-        'paypal'=> [
-            'class'        => 'marciocamello\Paypal',
-            'clientId'     => 'you_client_id',
-            'clientSecret' => 'you_client_secret',
-            'isProduction' => false,
-             // This is config file for the PayPal system
-             'config'       => [
-                'http.ConnectionTimeOut' => 30,
-                'http.Retry'             => 1,
-                'mode'                   => 'sandbox', //\marciocamello\Paypal::MODE_SANDBOX, // development (sandbox) or production (live) mode
-                'log.LogEnabled'         => YII_DEBUG ? 1 : 0,
-                'log.FileName'           => '@runtime/logs/paypal.log',
-                'log.LogLevel'           => 'FINE', //\marciocamello\Paypal::LOG_LEVEL_FINE,
-            ]
-        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
