@@ -28,12 +28,10 @@ AppAsset::register($this);
             NavBar::begin([
                 'brandLabel' => 'Naabs 2',
                 'brandUrl'   => Yii::$app->homeUrl,
-                'options'    => ['class' => 'navbar-inverse navbar-fixed-top'],
+                'options'    => ['class' => 'navbar-inverse navbar-fixed-top']
             ]);
-            $menuItems = [
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-            ];
+            $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
+
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -46,6 +44,8 @@ AppAsset::register($this);
                     'url'         => ['/site/logout'],
                 ];
             }
+
+            $menuItems[] = ['label' => 'Terms', 'url' => ['/site/tos']];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
