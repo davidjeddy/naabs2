@@ -37,10 +37,13 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
-                $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
-                $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
-                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
+                $menuItems[] = ['label' => 'App Data', 'url' => ['/app-data/index']];
+
                 $menuItems[] = ['label' => 'Devices', 'url' => ['/device/index']];
+                $menuItems[] = ['label' => 'Devices Counts', 'url' => ['/devicecount/index']];
+                $menuItems[] = ['label' => 'Timeframes', 'url' => ['/timeamount/index']];
+
+                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
                 $menuItems[] = ['label' => 'Roles', 'url' => ['/role/index']];
                 $menuItems[] = ['label' => 'Frontend',
                     'url' => ['../../../frontend/web/index.php/site/index'],

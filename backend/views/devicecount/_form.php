@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'value')->textInput()->label('Value') ?>
 
-    <?= $form->field($model, 'cost')->textInput(['maxlength' => 5])->label('Price') ?>
+    <?= $form->field($model, 'cost')->textInput(['maxlength' => 5]) ?>
 
     <?= $form->field($model, 'created')->textInput(['disabled' => true]) ?>
 
