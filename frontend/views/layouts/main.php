@@ -31,6 +31,7 @@ AppAsset::register($this);
                 'options'    => ['class' => 'navbar-inverse navbar-fixed-top']
             ]);
             $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
+            $menuItems[] = ['label' => 'Terms', 'url' => ['/site/tos']];
 
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -44,8 +45,6 @@ AppAsset::register($this);
                     'url'         => ['/site/logout'],
                 ];
             }
-
-            $menuItems[] = ['label' => 'Terms', 'url' => ['/site/tos']];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
