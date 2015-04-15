@@ -39,20 +39,9 @@ class SiteController extends Controller
                    [
                        'actions' => ['tos', 'signup'],
                        'allow' => true,
-                       'roles' => ['?'],
                    ],
                    [
-                       'actions' => ['logout'],
-                       'allow' => true,
-                       'roles' => ['@'],
-                   ],
-                   [
-                       'actions' => ['account'],
-                       'allow' => true,
-                       'roles' => ['@'],
-                   ],
-                   [
-                       'actions' => ['billing'],
+                       'actions' => ['account', 'billing', 'logout'],
                        'allow' => true,
                        'roles' => ['@'],
                    ],
