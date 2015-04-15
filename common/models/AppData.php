@@ -12,7 +12,7 @@ use Yii;
  * @property string $value
  * @property string $created
  * @property string $updated
- * @property string $deleted
+ * @property string $delete
  */
 class AppData extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,7 @@ class AppData extends \yii\db\ActiveRecord
         return [
             [['key', 'value'], 'required'],
             [['value'], 'string'],
-            [['created', 'updated', 'deleted'], 'safe'],
+            [['key', 'value', 'created', 'updated', 'delete'], 'safe'],
             [['key'], 'string', 'max' => 8]
         ];
     }
@@ -44,7 +44,7 @@ class AppData extends \yii\db\ActiveRecord
     {
         return [
             'created' => 'Created',
-            'deleted' => 'Deleted',
+            'delete'  => 'Delete',
             'id'      => 'ID',
             'key'     => 'Key',
             'updated' => 'Updated',

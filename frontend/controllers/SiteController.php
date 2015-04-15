@@ -2,21 +2,24 @@
 
 namespace frontend\controllers;
 
-use Yii;
+use common\models\AppData;
 use common\models\LoginForm;
-use common\models\UserDetails;
 use common\models\TimeAmountOptions;
+use common\models\User;
+use common\models\UserDetails;
+
+use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+
+use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-
-use common\models\User;
 
 /**
  * Site controller
@@ -31,10 +34,10 @@ class SiteController extends Controller
        return [
            'access' => [
                'class' => AccessControl::className(),
-               'only' => ['logout', 'signup', 'about', 'account', 'billing'],
+               'only' => ['logout', 'signup', 'tos', 'account', 'billing'],
                'rules' => [
                    [
-                       'actions' => ['about', 'signup'],
+                       'actions' => ['tos', 'signup'],
                        'allow' => true,
                        'roles' => ['?'],
                    ],
@@ -126,9 +129,13 @@ class SiteController extends Controller
         }
     }
 
-    public function actionAbout()
+    public function actionTos()
     {
-        return $this->render('about');
+        $tos_data = AppData::find()->where(['key' => 'tos'])->one();
+
+        return $this->render('tos', [
+            'tos_data' => $tos_data->getAttribute('value'),
+        ]);
     }
 
     public function actionAccount()
