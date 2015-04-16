@@ -124,9 +124,9 @@ class PurchaseController extends Controller
 
         return $this->render('create', [
             'cc_format_mdl'            => $cc_format_mdl,
-            'device_count_options_mdl' => new DeviceCountOptions(),
+            'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted' => null]), 
             'purchase_mdl'             => $purchase_mdl,
-            'time_options_mdl'         => new TimeAmountOptions(),
+            'time_options_mdl'         => TimeAmountOptions::findAll(['deleted' => null]),
         ]);
     }
 }

@@ -23,13 +23,14 @@ use yii\helpers\ArrayHelper;
 <h1>Service Options:</h1>
 <div class="form-group field-purchase-type required">
     <div class="col-sm-6 col-sm-offset-3">
-        <?php //string activeDropDownList( $model, $attribute, $items, $options = [] ); ?>
-        <?= html::activeDropDownList(
+        <?php
+        //string activeDropDownList( $model, $attribute, $items, $options = [] );
+        echo html::activeDropDownList(
             $device_count_options_mdl,
-            'key',
-            //['qwer', 'asdf', 'zxcv'], //ArrayHelper the DCO items
-            ArrayHelper::getColumn($device_count_options_mdl, 'value'),
-            ['class' => 'form-control']
+            ['key', 'value'],
+            ['qwer', 'asdf', 'zxcv'], //ArrayHelper the DCO items
+            //ArrayHelper::getColumn($device_count_options_mdl, 'value'),
+            //['class' => 'form-control']
         ); ?>
     </div>
 </div>
