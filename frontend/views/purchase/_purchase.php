@@ -113,9 +113,9 @@ window.onload=function(){
     $("#purchase-prov").val('asdf');
     $("#purchase-postal").val('asd123');
 
-    $("#ccformat-number").val('1234 6789 09876 5432');
+    $("#ccformat-number").val('1234567887654321');
     $("#ccformat-exp_month").val('01');
-    $("#ccformat-exp_year").val('2014');
+    $("#ccformat-exp_year").val('14');
     $("#ccformat-cvv2").val('123');
 };
 </script>
