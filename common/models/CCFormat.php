@@ -14,7 +14,7 @@ use yii\base\Model;
  * @property integer $exp_year
  * @property integer $cvv2
  */
-class CCFormat extends Model
+class CCFormat extends \yii\db\ActiveRecord
 {
     public $cvv2;
     public $exp_month;
@@ -36,8 +36,9 @@ class CCFormat extends Model
     {
         return [
             [['number', 'exp_month', 'exp_year', 'cvv2'], 'required'],
-            [['exp_month', 'exp_year', 'cvv2'], 'integer'],
-            [['number'], 'string', 'max' => 24],
+            [['cvv2'], 'string',  'max'                  => 4],
+            [['exp_month', 'exp_year'], 'string',  'max' => 2],
+            [['number'], 'string', 'max'                 => 16],
         ];
     }
 
@@ -59,7 +60,7 @@ class CCFormat extends Model
      * Temp method till payment system is added
      * @return [type] [description]
      */
-    public function save()
+    public function save($runValidation = true, $attributeNames = NULL)
     {
         return true;
     }
