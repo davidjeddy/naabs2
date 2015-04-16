@@ -11,7 +11,6 @@ namespace common\components;
 
 use Yii;
 use yii\base\ErrorException;
-use yii\helpers\ArrayHelper;
 use yii\base\Component;
 
 use PayPal\Api\Address;
@@ -33,127 +32,118 @@ use PayPal\Rest\ApiContext;
 class paypal extends Component
 {
 
-    public function teszt($amount,$description)
+    public function ApiContext($clientID = null, $clientSecret = null)
     {
-        $apiContext = new \PayPal\Rest\ApiContext(
-            new \PayPal\Auth\OAuthTokenCredential(
-                'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS',     // ClientID
-                'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL'      // ClientSecret
-            )
-        );
+        return new \PayPal\Rest\ApiContext( new \PayPal\Auth\OAuthTokenCredential($clientID, $clientSecret) );
     }
 
     public function type1Payment()
     {
-        //SAMPLE 1
-        // $card = new CreditCard();
-        // $card->setType("visa")
-        //     ->setNumber("4148529247832259")
-        //     ->setExpireMonth("11")
-        //     ->setExpireYear("2019")
-        //     ->setCvv2("012")
-        //     ->setFirstName("Joe")
-        //     ->setLastName("Shopper");
+        $card = new CreditCard();
+        $card->setType("visa")
+            ->setNumber("4148529247832259")
+            ->setExpireMonth("11")
+            ->setExpireYear("2019")
+            ->setCvv2("012")
+            ->setFirstName("Joe")
+            ->setLastName("Shopper");
 
-        // // ### FundingInstrument
-        // // A resource representing a Payer's funding instrument.
-        // // For direct credit card payments, set the CreditCard
-        // // field on this object.
-        // $fi = new FundingInstrument();
-        // $fi->setCreditCard($card);
+        // ### FundingInstrument
+        // A resource representing a Payer's funding instrument.
+        // For direct credit card payments, set the CreditCard
+        // field on this object.
+        $fi = new FundingInstrument();
+        $fi->setCreditCard($card);
 
-        // // ### Payer
-        // // A resource representing a Payer that funds a payment
-        // // For direct credit card payments, set payment method
-        // // to 'credit_card' and add an array of funding instruments.
-        // $payer = new Payer();
-        // $payer->setPaymentMethod("credit_card")
-        //     ->setFundingInstruments(array($fi));
+        // ### Payer
+        // A resource representing a Payer that funds a payment
+        // For direct credit card payments, set payment method
+        // to 'credit_card' and add an array of funding instruments.
+        $payer = new Payer();
+        $payer->setPaymentMethod("credit_card")
+            ->setFundingInstruments(array($fi));
 
-        // // ### Itemized information
-        // // (Optional) Lets you specify item wise
-        // // information
-        // $item1 = new Item();
-        // $item1->setName('Ground Coffee 40 oz')
-        //     ->setDescription('Ground Coffee 40 oz')
-        //     ->setCurrency('USD')
-        //     ->setQuantity(1)
-        //     ->setTax(0.3)
-        //     ->setPrice(7.50);
-        // $item2 = new Item();
-        // $item2->setName('Granola bars')
-        //     ->setDescription('Granola Bars with Peanuts')
-        //     ->setCurrency('USD')
-        //     ->setQuantity(5)
-        //     ->setTax(0.2)
-        //     ->setPrice(2);
+        // ### Itemized information
+        // (Optional) Lets you specify item wise
+        // information
+        $item1 = new Item();
+        $item1->setName('Ground Coffee 40 oz')
+            ->setDescription('Ground Coffee 40 oz')
+            ->setCurrency('USD')
+            ->setQuantity(1)
+            ->setTax(0.3)
+            ->setPrice(7.50);
+        $item2 = new Item();
+        $item2->setName('Granola bars')
+            ->setDescription('Granola Bars with Peanuts')
+            ->setCurrency('USD')
+            ->setQuantity(5)
+            ->setTax(0.2)
+            ->setPrice(2);
 
-        // $itemList = new ItemList();
-        // $itemList->setItems(array($item1, $item2));
+        $itemList = new ItemList();
+        $itemList->setItems(array($item1, $item2));
 
-        // // ### Additional payment details
-        // // Use this optional field to set additional
-        // // payment information such as tax, shipping
-        // // charges etc.
-        // $details = new Details();
-        // $details->setShipping(1.2)
-        //     ->setTax(1.3)
-        //     ->setSubtotal(17.5);
+        // ### Additional payment details
+        // Use this optional field to set additional
+        // payment information such as tax, shipping
+        // charges etc.
+        $details = new Details();
+        $details->setShipping(1.2)
+            ->setTax(1.3)
+            ->setSubtotal(17.5);
 
-        // // ### Amount
-        // // Lets you specify a payment amount.
-        // // You can also specify additional details
-        // // such as shipping, tax.
-        // $amount = new Amount();
-        // $amount->setCurrency("USD")
-        //     ->setTotal(20)
-        //     ->setDetails($details);
+        // ### Amount
+        // Lets you specify a payment amount.
+        // You can also specify additional details
+        // such as shipping, tax.
+        $amount = new Amount();
+        $amount->setCurrency("USD")
+            ->setTotal(20)
+            ->setDetails($details);
 
-        // // ### Transaction
-        // // A transaction defines the contract of a
-        // // payment - what is the payment for and who
-        // // is fulfilling it. 
-        // $transaction = new Transaction();
-        // $transaction->setAmount($amount)
-        //     ->setItemList($itemList)
-        //     ->setDescription("Payment description")
-        //     ->setInvoiceNumber(uniqid());
+        // ### Transaction
+        // A transaction defines the contract of a
+        // payment - what is the payment for and who
+        // is fulfilling it. 
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+            ->setItemList($itemList)
+            ->setDescription("Payment description")
+            ->setInvoiceNumber(uniqid());
 
-        // // ### Payment
-        // // A Payment Resource; create one using
-        // // the above types and intent set to sale 'sale'
-        // $payment = new Payment();
-        // $payment->setIntent("sale")
-        //     ->setPayer($payer)
-        //     ->setTransactions(array($transaction));
+        // ### Payment
+        // A Payment Resource; create one using
+        // the above types and intent set to sale 'sale'
+        $payment = new Payment();
+        $payment->setIntent("sale")
+            ->setPayer($payer)
+            ->setTransactions(array($transaction));
 
-        // // For Sample Purposes Only.
-        // $request = clone $payment;
+        // For Sample Purposes Only.
+        $request = clone $payment;
 
-        // // ### Create Payment
-        // // Create a payment by calling the payment->create() method
-        // // with a valid ApiContext (See bootstrap.php for more on `ApiContext`)
-        // // The return object contains the state.
-        // try {
-        //     $payment->create($apiContext);
-        // } catch (Exception $ex) {
-        //    // ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://ppmts.custhelp.com/app/answers/detail/a_id/750">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
-        //     exit(1);
-        // }
+        // ### Create Payment
+        // Create a payment by calling the payment->create() method
+        // with a valid ApiContext (See bootstrap.php for more on `ApiContext`)
+        // The return object contains the state.
+        try {
+            $payment->create($apiContext);
+        } catch (Exception $ex) {
+            // ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://ppmts.custhelp.com/app/answers/detail/a_id/750">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
+            exit(1);
+        }
 
-        //ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
+        ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
 
-        //return $payment;
-
-        //END SAMPLE 1
+        return $payment;
     }
 
     public function creditCardPayment($_param_data)
     {
         $creditCard = new \PayPal\Api\CreditCard();
-        $return      = null;
 
-        $creditCard->setType($_param_data['typw'])
+        $creditCard->setType($_param_data['type'])
             ->setNumber($_param_data['number'])
             ->setExpireMonth($_param_data['exp_month'])
             ->setExpireYear($_param_data['exp_year'])
@@ -161,14 +151,22 @@ class paypal extends Component
             ->setFirstName($_param_data['f_name'])
             ->setLastName($_param_data['l_name']);
 
+        $apiContext = $this->ApiContext(
+            'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS',     // ClientID
+            'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL'      // ClientSecret
+        );
+
+
+
         try {
-            $return = $creditCard->create($apiContext);
-        }
-        catch (\PayPal\Exception\PayPalConnectionException $return) {
-            echo $return;
+            return true;
+            //return $creditCard->create($apiContext);
+        } catch (\PayPal\Exception\PayPalConnectionException $return) {
+
+            return false;
         }
 
-        return $this;
+        return 'ERROR processing payment via PayPal.';
     }
 
     public function type3Payment()
