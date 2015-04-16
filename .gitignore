@@ -34,3 +34,4 @@ phpunit.phar
 
 # Yii2 theme dir
 /themes
+docs/do_not_track
