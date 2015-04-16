@@ -19,7 +19,7 @@ use Yii;
  * @property string $prov
  * @property string $postal
  * @property integer $last_4
- * @property integer $year
+ * @property integer $timestamp
  * @property integer $return_code
  * @property string $return_message
  * @property string $created
@@ -48,8 +48,9 @@ class Purchase extends \yii\db\ActiveRecord
         return [
             [['f_name', 'l_name', 'street_1', 'street_2', 'prov', 'postal'], 'string', 'length' => [3, 45]],
             [['city', 'prov'], 'string', 'length' => [1, 45]],
-            [['device_count_id', 'time_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'year'], 'required'],
-            [['device_count_id', 'time_id', 'user_id', 'last_4', 'year'], 'integer'],
+            [['device_count_id', 'time_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
+            [['device_count_id', 'time_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'safe'],
+            [['device_count_id', 'time_id', 'user_id', 'last_4', 'timestamp'], 'integer'],
         ];
     }
 
@@ -74,9 +75,9 @@ class Purchase extends \yii\db\ActiveRecord
             'street_1'        => 'Street 1',
             'street_2'        => 'Street 2',
             'time_id'         => 'Time ID',
+            'timestamp'       => 'Timestamp',
             'updated'         => 'Updated',
             'user_id'         => 'User ID',
-            'year'            => 'Year',
         ];
     }
 

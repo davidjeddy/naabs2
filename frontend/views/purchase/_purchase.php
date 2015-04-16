@@ -1,14 +1,13 @@
 <?php
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $purchase_mdl frontend\purchase_mdls\Purchase */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
-<h1>Billing Information:</h1>
 <?php $form = ActiveForm::begin([
     'layout'                 => 'horizontal',
     'enableClientScript'     => true,
@@ -19,6 +18,24 @@ use yii\bootstrap\ActiveForm;
 
 <?= $form->errorSummary($purchase_mdl);?>
 <?= $form->errorSummary($cc_format_mdl);?>
+
+
+<h1>Service Options:</h1>
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?php //string activeDropDownList( $model, $attribute, $items, $options = [] ); ?>
+        <?= html::activeDropDownList(
+            $device_count_options_mdl,
+            'key',
+            //['qwer', 'asdf', 'zxcv'], //ArrayHelper the DCO items
+            ArrayHelper::getColumn($device_count_options_mdl, 'value'),
+            ['class' => 'form-control']
+        ); ?>
+    </div>
+</div>
+
+
+<h1>Billing Information:</h1>
 
 <?php /*
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
@@ -34,7 +51,6 @@ use yii\bootstrap\ActiveForm;
 <?= $form->field($purchase_mdl, 'l_name')->label(false)->textInput([
     'maxlength' => 45,
     'placeholder' => 'Last Name',
-    
 ]) ?>
 
 <?= $form->field($purchase_mdl, 'street_1')->label(false)->textInput([
@@ -65,8 +81,21 @@ use yii\bootstrap\ActiveForm;
 <hr>
 
 <h1>Payment Information:</h1>
+<?php // todo generate a proper DDL once we figure out how to in Yii - DJE : 2015-04-16 ?>
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <select class="form-control">
+            <option value="">Choose Type</option>
+            <option value="master">Master</option>
+            <option value="visa">Visa</option>
+            <option value="discover">Discover</option>
+        </select>
+        <div class="help-block help-block-error"></div>
+    </div>
+</div>
+
 <?= $form->field($cc_format_mdl, 'number')->label(false)->textInput([
-    'maxlength' => 24,
+    'maxlength' => 16,
     'placeholder' => 'Card Number',
 ]) ?>
 
@@ -76,7 +105,7 @@ use yii\bootstrap\ActiveForm;
 ]) ?>
 
 <?= $form->field($cc_format_mdl, 'exp_year')->label(false)->textInput([
-    'maxlength' => 4,
+    'maxlength' => 2,
     'placeholder' => 'Expiration Year',
 ]) ?>
 
