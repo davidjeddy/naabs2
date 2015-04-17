@@ -22,14 +22,17 @@ use common\models\TimeAmountOptions;
 ]); ?>
 <?= $form->errorSummary($purchase_mdl);?>
 <?= $form->errorSummary($cc_format_mdl);?>
- 
+
+
+
 <h1>Service Options:</h1>
 <div class="form-group field-purchase-type required">
     <div class="col-sm-6 col-sm-offset-3">
+
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'id',
-            ArrayHelper::map(DeviceCountOptions::find()->all(), 'value', 'key'),
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'value', 'cost', 'key'),
             [
                 'prompt'=>'--Select Number of Devices--',
                 'class' => 'form-control'
@@ -43,7 +46,7 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'id',
-            ArrayHelper::map(TimeAmountOptions::find()->all(), 'value', 'key'),
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'value', 'cost', 'key'),
             [
                 'prompt'=>'--Select Length of Time--',
                 'class' => 'form-control'
