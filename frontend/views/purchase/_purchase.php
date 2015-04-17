@@ -1,8 +1,13 @@
 <?php
 
 use yii\bootstrap\ActiveForm;
+use yii\bootstrap\activeDropDownList;
+
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
 
 /* @var $this yii\web\View */
 /* @var $purchase_mdl frontend\purchase_mdls\Purchase */
@@ -15,29 +20,42 @@ use yii\helpers\ArrayHelper;
     'enableClientValidation' => true,
     'validateOnChange'       => true,
 ]); ?>
-
 <?= $form->errorSummary($purchase_mdl);?>
 <?= $form->errorSummary($cc_format_mdl);?>
-
-
+ 
 <h1>Service Options:</h1>
 <div class="form-group field-purchase-type required">
     <div class="col-sm-6 col-sm-offset-3">
-        <?php
-        //string activeDropDownList( $model, $attribute, $items, $options = [] );
-        echo html::activeDropDownList(
-            $device_count_options_mdl,
-            ['key', 'value'],
-            ['qwer', 'asdf', 'zxcv'], //ArrayHelper the DCO items
-            //ArrayHelper::getColumn($device_count_options_mdl, 'value'),
-            //['class' => 'form-control']
-        ); ?>
+        <?= Html::activeDropDownList(
+            $purchase_mdl,
+            'id',
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'value', 'key'),
+            [
+                'prompt'=>'--Select Number of Devices--',
+                'class' => 'form-control'
+            ]
+        ) ?>
+    </div>
+</div>
+
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?= Html::activeDropDownList(
+            $purchase_mdl,
+            'id',
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'value', 'key'),
+            [
+                'prompt'=>'--Select Length of Time--',
+                'class' => 'form-control'
+            ]
+        ) ?>
     </div>
 </div>
 
 
-<h1>Billing Information:</h1>
 
+<hr>
+<h1>Billing Information:</h1>
 <?php /*
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
 <?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
@@ -79,8 +97,9 @@ use yii\helpers\ArrayHelper;
     'placeholder' => 'ZIP / Postal Code',
 ]) ?>
 
-<hr>
 
+
+<hr>
 <h1>Payment Information:</h1>
 <?php // todo generate a proper DDL once we figure out how to in Yii - DJE : 2015-04-16 ?>
 <div class="form-group field-purchase-type required">
@@ -146,7 +165,7 @@ window.onload=function(){
     $("#ccformat-number").val('1234567887654321');
     $("#ccformat-exp_month").val('01');
     $("#ccformat-exp_year").val('14');
-    $("#ccformat-cvv2").val('123');
+    $("#ccformat-cvv2").val('1234');
 };
 </script>
 <?php } ?>
