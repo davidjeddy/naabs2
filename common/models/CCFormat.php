@@ -58,15 +58,4 @@ class CCFormat extends \yii\db\ActiveRecord
             'type'      => 'Card Type',
         ];
     }
-
-    /**
-     * 
-     * Temp method till payment system is added
-     * @return [type] [description]
-     */
-    public function save($runValidation = true, $attributeNames = NULL)
-    {
-
-        return true;
-    }
 }
