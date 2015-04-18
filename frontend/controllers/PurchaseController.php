@@ -77,34 +77,36 @@ class PurchaseController extends Controller
                 // save attempt at payment for record keeping
                 if ($purchase_mdl->save()) {
 
+
                     // todo This iteration is Paypal only. - DJE : 2015-04-11
                     // Process the CC transaction
                     $payment_data = [
-                        'type'      => $cc_format_mdl->getAttribute('type'),
-                        'cvv2'      => $cc_format_mdl->getAttribute('cvv2'),
-                        'exp_month' => $cc_format_mdl->getAttribute('exp_month'),
-                        'exp_year'  => $cc_format_mdl->getAttribute('exp_year'),
+                        'type'      => $cc_format_mdl['type'],
+                        'cvv2'      => $cc_format_mdl['cvv2'],
+                        'exp_month' => $cc_format_mdl['exp_month'],
+                        'exp_year'  => $cc_format_mdl['exp_year'],
                         'f_name'    => $purchase_mdl->getAttribute('f_name'),
                         'l_name'    => $purchase_mdl->getAttribute('l_name'),
-                        'number'    => $cc_format_mdl->getAttribute('number'),
+                        'number'    => $cc_format_mdl['number'],
                     ];
+
+                    $_payment_result = $paypal_com->type1Payment();
+
+                    // update the purchase TBO with the processors resoponse
+                    $purchase_mdl->setAttribute('return_code', 001);
+                    $purchase_mdl->setAttribute('return_message', 'testing');
+                    $purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
+                    $purchase_mdl->save();
 
 
 
                     // attempt payment processing
-                    if ($paypal_com->creditCardPayment($payment_data) ) {
+                    if ($_payment_result->getState() == "approved") {
 
-                        // save the purchase request response
-                        $purchase_mdl->setAttribute('return_code', 001);
-                        $purchase_mdl->setAttribute('return_message', 'testing');
-                        $purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
-
-                        if ($purchase_mdl->save()) {
                             return $this->redirect(['view', 'id' => $purchase_mdl->id]);
-                        }
                     } else {
 
-                        Yii::$app->getSession()->addFlash('error', 'Could not process payment.');
+                        Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
                     }
                 }
             } else {
