@@ -54,6 +54,10 @@ class PurchaseController extends Controller
      */
     public function actionView($id)
     {
+echo '<pre>';
+print_r( get_class_methods( $this ) );
+echo '</pre>';
+exit;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -75,8 +79,8 @@ class PurchaseController extends Controller
 
         if (!empty(Yii::$app->request->post())) {
 
-            // todo Can we use setAttributes() here? - DJE : 2015-04-16
-            if ($cc_format_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->save() ) {
+            // the CCFormat does not actualy save anything to the DB.
+            if ($cc_format_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate() ) {
 
                 // for the sake of consistancty, empty success logic block
             } else {
@@ -84,11 +88,11 @@ class PurchaseController extends Controller
                 Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
             }
 
-            if ($purchase_mdl->load(Yii::$app->request->post())) {
 
-                $purchase_mdl->setAttribute('user_id',   Yii::$app->user->getIdentity()->getAttribute('id') );
-                $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
-                $purchase_mdl->setAttribute('timestamp', date('U') );
+
+            $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
+            $purchase_mdl->setAttribute('timestamp', date('U') );
+            if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
 
                 // save attempt at payment for record keeping
                 if ($purchase_mdl->save()) {
@@ -106,10 +110,18 @@ class PurchaseController extends Controller
                     ];
 
 
+
                     // attempt payment processing
                     if ($paypal_com->creditCardPayment($payment_data) ) {
 
-                        return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        // save the purchase request response
+                        $purchase_mdl->setAttribute('return_code', 001);
+                        $purchase_mdl->setAttribute('return_message', 'testing');
+                        $purchase_mdl->setAttribute('updated', date('Y-m-D H:i:s', time()));
+
+                        if ($purchase_mdl->save()) {
+                            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        }
                     } else {
 
                         Yii::$app->getSession()->addFlash('error', 'Could not process payment.');
