@@ -152,15 +152,15 @@ class paypal extends Component
             ->setLastName($_param_data['l_name']);
 
         $apiContext = $this->ApiContext(
-            'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS',     // ClientID
-            'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL'      // ClientSecret
+            Yii::$app->params['paypal']['client_id'],
+            Yii::$app->params['paypal']['client_secret']
         );
 
 
 
         try {
-            return true;
-            //return $creditCard->create($apiContext);
+
+            return $creditCard->create($apiContext);
         } catch (\PayPal\Exception\PayPalConnectionException $return) {
 
             return false;
