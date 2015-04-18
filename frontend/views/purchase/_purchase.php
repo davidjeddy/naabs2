@@ -20,19 +20,26 @@ use common\models\TimeAmountOptions;
     'enableClientValidation' => true,
     'validateOnChange'       => true,
 ]); ?>
-<?= $form->errorSummary($purchase_mdl);?>
-<?= $form->errorSummary($cc_format_mdl);?>
 
 
 
-<h1>Service Options:</h1>
+<hr>
+<h1>Billing Information:</h1>
+<?php /*
+<?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
+<?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
+*/ ?>
+<?= $form->field($purchase_mdl, 'user_id')->label(false)->textInput([
+    'value' => Yii::$app->user->getIdentity()->getAttribute('id')
+]) ?>
+
+
 <div class="form-group field-purchase-type required">
     <div class="col-sm-6 col-sm-offset-3">
-
         <?= Html::activeDropDownList(
             $purchase_mdl,
-            'id',
-            ArrayHelper::map(DeviceCountOptions::find()->all(), 'value', 'cost', 'key'),
+            'device_count_id',
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'cost', 'key'),
             [
                 'prompt'=>'--Select Number of Devices--',
                 'class' => 'form-control'
@@ -45,8 +52,8 @@ use common\models\TimeAmountOptions;
     <div class="col-sm-6 col-sm-offset-3">
         <?= Html::activeDropDownList(
             $purchase_mdl,
-            'id',
-            ArrayHelper::map(TimeAmountOptions::find()->all(), 'value', 'cost', 'key'),
+            'time_amount_id',
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'cost', 'key'),
             [
                 'prompt'=>'--Select Length of Time--',
                 'class' => 'form-control'
@@ -54,16 +61,6 @@ use common\models\TimeAmountOptions;
         ) ?>
     </div>
 </div>
-
-
-
-<hr>
-<h1>Billing Information:</h1>
-<?php /*
-<?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
-<?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
-<?= $form->field($purchase_mdl, 'user_id')->textInput() ?>
-*/ ?>
 
 <?= $form->field($purchase_mdl, 'f_name')->label(false)->textInput([
     'maxlength'  => 45,
@@ -104,16 +101,17 @@ use common\models\TimeAmountOptions;
 
 <hr>
 <h1>Payment Information:</h1>
-<?php // todo generate a proper DDL once we figure out how to in Yii - DJE : 2015-04-16 ?>
 <div class="form-group field-purchase-type required">
     <div class="col-sm-6 col-sm-offset-3">
-        <select class="form-control">
-            <option value="">Choose Type</option>
-            <option value="master">Master</option>
-            <option value="visa">Visa</option>
-            <option value="discover">Discover</option>
-        </select>
-        <div class="help-block help-block-error"></div>
+        <?= Html::activeDropDownList(
+            $cc_format_mdl,
+            'type',
+            [1 => 'discover', 2 => 'mastercard', 3 => 'visa'],
+            [
+                'prompt'=>'--Select Card Type--',
+                'class' => 'form-control'
+            ]
+        ) ?>
     </div>
 </div>
 
@@ -169,6 +167,10 @@ window.onload=function(){
     $("#ccformat-exp_month").val('01');
     $("#ccformat-exp_year").val('14');
     $("#ccformat-cvv2").val('1234');
+
+    $("#purchase-device_count_id optgroup   > option:eq(1)").prop('selected', true);
+    $("#purchase-time_amount_id  optgroup   > option:eq(2)").prop('selected', true);
+    $("#ccformat-type                       > option:eq(3)").prop('selected', true);
 };
 </script>
 <?php } ?>
