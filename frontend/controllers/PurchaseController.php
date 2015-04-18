@@ -3,17 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
+use frontend\models\Purchase;
 use yii\data\ActiveDataProvider;
-use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 use common\components\paypal;
 use common\models\CCFormat;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
-
-use frontend\models\Purchase;
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -33,39 +32,20 @@ class PurchaseController extends Controller
     }
 
     /**
-     * Lists all Purchase models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Purchase::find(),
-        ]);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
      * Displays a single Purchase model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
-echo '<pre>';
-print_r( get_class_methods( $this ) );
-echo '</pre>';
-exit;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new Purchase.
-     * 
+     * Creates a new Purchase model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
@@ -80,7 +60,7 @@ exit;
         if (!empty(Yii::$app->request->post())) {
 
             // the CCFormat does not actualy save anything to the DB.
-            if ($cc_format_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate() ) {
+            if ($cc_format_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->validate()) {
 
                 // for the sake of consistancty, empty success logic block
             } else {
@@ -117,7 +97,7 @@ exit;
                         // save the purchase request response
                         $purchase_mdl->setAttribute('return_code', 001);
                         $purchase_mdl->setAttribute('return_message', 'testing');
-                        $purchase_mdl->setAttribute('updated', date('Y-m-D H:i:s', time()));
+                        $purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
 
                         if ($purchase_mdl->save()) {
                             return $this->redirect(['view', 'id' => $purchase_mdl->id]);
@@ -140,5 +120,21 @@ exit;
             'purchase_mdl'             => $purchase_mdl,
             'time_options_mdl'         => TimeAmountOptions::findAll(['deleted' => null]),
         ]);
+    }
+
+    /**
+     * Finds the Purchase model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Purchase the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Purchase::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 }
