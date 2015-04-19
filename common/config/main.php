@@ -1,7 +1,6 @@
 <?php
 return [
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'components' => [
+    'components'    => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -10,6 +9,12 @@ return [
 			'showScriptName'  => 'false',
         ],
     ],
+   'modules' => [
+        'FreeRadius' => [
+            'class' => 'backend\modules\FreeRadius\Module',
+        ],
+    ],
+    'vendorPath'    => dirname(dirname(__DIR__)) . '/vendor',
 ];
 
 
