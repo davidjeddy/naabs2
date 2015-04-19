@@ -31,26 +31,26 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-            $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-            ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
                 $menuItems[] = [
-                    'label'       => 'Access Module',
+                    'label'       => 'Free Radius',
                     'linkOptions' => ['target' => 'new'],
                     'url'         => ['/FreeRadius/default/index'],
                 ];
+                $menuItems[] = ['label' => '|'];
+                $menuItems[] = ['label' => 'Devices', 'url' => ['/device/index']];
                 $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
                 $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
-                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
-                $menuItems[] = ['label' => 'Devices', 'url' => ['/device/index']];
+                $menuItems[] = ['label' => '|'];
                 $menuItems[] = ['label' => 'Roles', 'url' => ['/role/index']];
                 $menuItems[] = ['label' => 'Frontend',
                     'url' => ['../../../frontend/web/index.php/site/index'],
                     'linkOptions' => ['target' => 'new']
                 ];
+                $menuItems[] = ['label' => '|'];
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url'         => ['/site/logout'],
