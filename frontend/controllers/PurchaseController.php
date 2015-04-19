@@ -85,15 +85,17 @@ class PurchaseController extends Controller
                         'cvv2'      => $cc_format_mdl['cvv2'],
                         'exp_month' => $cc_format_mdl['exp_month'],
                         'exp_year'  => $cc_format_mdl['exp_year'],
+                        'number'    => $cc_format_mdl['number'],
                         'f_name'    => $purchase_mdl->getAttribute('f_name'),
                         'l_name'    => $purchase_mdl->getAttribute('l_name'),
-                        'number'    => $cc_format_mdl['number'],
                     ];
 
-                    $_payment_result = $paypal_com->type1Payment();
+                    // todo switch to valid payment processing method - DJE : 2015-04-19
+                    $_payment_result = $paypal_com->testingPayment();
 
                     // update the purchase TBO with the processors resoponse
                     $purchase_mdl->setAttribute('return_code', 001);
+                    //$purchase_mdl->setAttribute('return_message', $_payment_result->getState());
                     $purchase_mdl->setAttribute('return_message', 'testing');
                     $purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
                     $purchase_mdl->save();
@@ -101,9 +103,9 @@ class PurchaseController extends Controller
 
 
                     // attempt payment processing
-                    if ($_payment_result->getState() == "approved") {
+                    if ( 1==1 ) { //$_payment_result->getState() == "approved") {
 
-                            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        return $this->redirect(['view', 'id' => $purchase_mdl->id]);
                     } else {
 
                         Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
