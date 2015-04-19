@@ -37,6 +37,12 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = [
+                    'label'       => 'Access Module',
+                    'linkOptions' => ['target' => 'new']
+                    'url'         => ['/FreeRadius/index'],
+                ];
+
                 $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
                 $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
                 $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
