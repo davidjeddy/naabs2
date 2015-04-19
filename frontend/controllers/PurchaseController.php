@@ -3,16 +3,19 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Purchase;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+
+use frontend\models\Purchase;
+use frontend\models\RadCheck;
 
 use common\components\paypal;
 use common\models\CCFormat;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
+use common\models\User;
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -101,11 +104,21 @@ class PurchaseController extends Controller
                     $purchase_mdl->save();
 
 
-
                     // attempt payment processing
                     if ( 1==1 ) { //$_payment_result->getState() == "approved") {
 
-                        return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        // Update the FreeRadius TBO with new purchase information
+                        $_op       = ':=';
+                        $_username = User::find()->where( ['id' => $purchase_mdl->getAttribute('user_id')] )->one()->getAttribute('id');
+                        $_value    = TimeAmountOptions::find('value')->where( ['id' => $purchase_mdl->getAttribute('time_amount_id')] )->one()->getAttribute('value');
+
+                        if (RadCheck::addTime( $_op, $_username, $_value )) {
+
+                            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        } else {
+                            
+                            Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
+                        }
                     } else {
 
                         Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
