@@ -36,3 +36,4 @@ phpunit.phar
 /themes
 /docs/do_not_track
 /common/components
+/backend/modules/FreeRadius
