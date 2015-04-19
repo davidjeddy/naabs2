@@ -9,11 +9,6 @@ return [
 			'showScriptName'  => 'false',
         ],
     ],
-   'modules' => [
-        'FreeRadius' => [
-            'class' => 'backend\modules\FreeRadius\Module',
-        ],
-    ],
     'vendorPath'    => dirname(dirname(__DIR__)) . '/vendor',
 ];
 

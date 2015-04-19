@@ -39,10 +39,9 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = [
                     'label'       => 'Access Module',
-                    'linkOptions' => ['target' => 'new']
-                    'url'         => ['/FreeRadius/index'],
+                    'linkOptions' => ['target' => 'new'],
+                    'url'         => ['/FreeRadius/default/index'],
                 ];
-
                 $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
                 $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
                 $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
