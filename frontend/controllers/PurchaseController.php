@@ -9,13 +9,17 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 use frontend\models\Purchase;
-use frontend\models\RadCheck;
+
+use frontend\controllers\RadCheckController;
 
 use common\components\paypal;
 use common\models\CCFormat;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
+use common\models\UserDetails;
+
+
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -32,6 +36,18 @@ class PurchaseController extends Controller
                 ],
             ],
         ];
+    }
+
+
+    public function actionIndex()
+    {
+        $dataProvider = new ActiveDataProvider([
+          'query' => Purchase::find(),
+        ]);
+
+        return $this->render('index', [
+          'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
@@ -53,10 +69,10 @@ class PurchaseController extends Controller
      */
     public function actionCreate()
     {
-        $cc_format_mdl    = new CCFormat();
-        $purchase_mdl     = new Purchase();
+        $cc_format_mdl = new CCFormat();
+        $purchase_mdl  = new Purchase();
 
-        $paypal_com    = new paypal();
+
 
 
 
@@ -93,26 +109,41 @@ class PurchaseController extends Controller
                         'l_name'    => $purchase_mdl->getAttribute('l_name'),
                     ];
 
+                    // usually place this at the beginning of the method but I dont want to init to obj if we dont need to.
+                    $paypal_com = new paypal();
                     // todo switch to valid payment processing method - DJE : 2015-04-19
-                    $_payment_result = $paypal_com->testingPayment();
+                    $_payment_result = $paypal_com->setDate($payment_data)->processPayment();
 
                     // update the purchase TBO with the processors resoponse
-                    $purchase_mdl->setAttribute('return_code', 001);
-                    //$purchase_mdl->setAttribute('return_message', $_payment_result->getState());
-                    $purchase_mdl->setAttribute('return_message', 'testing');
-                    $purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
-                    $purchase_mdl->save();
-
+                    $_message = null;
+                    if ($_payment_result->getState() == 'approved') {
+                        $_message = $_payment_result->getState();
+                    } else {
+                        $_message = $_payment_result->getFailedTransactions();
+                    }
+                    $purchase_mdl->setAttribute('return_message', $_message);
+                    $purchase_mdl->setAttribute('return_code', http_response_code());
+                    //$purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
 
                     // attempt payment processing
-                    if ( 1==1 ) { //$_payment_result->getState() == "approved") {
+                    if ( $purchase_mdl->save() && $_payment_result->getState() == "approved") {
 
                         // Update the FreeRadius TBO with new purchase information
-                        $_op       = ':=';
-                        $_username = User::find()->where( ['id' => $purchase_mdl->getAttribute('user_id')] )->one()->getAttribute('id');
-                        $_value    = TimeAmountOptions::find('value')->where( ['id' => $purchase_mdl->getAttribute('time_amount_id')] )->one()->getAttribute('value');
+                        $_user_id = User::find()->where(
+                            ['id' => $purchase_mdl->getAttribute('user_id')]
+                        )->one()->getAttribute('id');
+                        $_value    = TimeAmountOptions::find('value')->where(
+                            ['id' => $purchase_mdl->getAttribute('time_amount_id')]
+                        )->one()->getAttribute('value');
 
-                        if (RadCheck::addTime( $_op, $_username, $_value )) {
+                        $_user_email = UserDetails::find()->where([
+                            'user_id' => $_user_id
+                        ])->one()->getAttribute('p_email');
+
+                        if (
+                            RadCheckController::actionCreateUserpass($_user_email) &&
+                            RadCheckController::actionCreateExpiration($_user_email, $_value )
+                        ) {
 
                             return $this->redirect(['view', 'id' => $purchase_mdl->id]);
                         } else {

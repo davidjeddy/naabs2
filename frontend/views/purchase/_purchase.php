@@ -29,7 +29,7 @@ use common\models\TimeAmountOptions;
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
 <?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
 */ ?>
-<?= $form->field($purchase_mdl, 'user_id')->label(false)->textInput([
+<?= $form->field($purchase_mdl, 'user_id')->label(false)->hiddenInput([
     'value' => Yii::$app->user->getIdentity()->getAttribute('id')
 ]) ?>
 
@@ -39,7 +39,7 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'device_count_id',
-            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'cost', 'key'),
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'key'),
             [
                 'prompt'=>'--Select Number of Devices--',
                 'class' => 'form-control'
@@ -53,7 +53,7 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'time_amount_id',
-            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'cost', 'key'),
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key'),
             [
                 'prompt'=>'--Select Length of Time--',
                 'class' => 'form-control'
@@ -168,9 +168,9 @@ window.onload=function(){
     $("#ccformat-exp_year").val('14');
     $("#ccformat-cvv2").val('1234');
 
-    $("#purchase-device_count_id optgroup   > option:eq(1)").prop('selected', true);
-    $("#purchase-time_amount_id  optgroup   > option:eq(2)").prop('selected', true);
-    $("#ccformat-type                       > option:eq(3)").prop('selected', true);
+    $("#purchase-device_count_id > option:nth-child(2)").prop('selected', true);
+    $("#purchase-time_amount_id  > option:nth-child(3)").prop('selected', true);
+    $("#ccformat-type            > option:nth-child(4)").prop('selected', true);
 };
 </script>
 <?php } ?>

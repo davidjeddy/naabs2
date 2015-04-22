@@ -1,0 +1,1323 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is_in",
+				"is_integer"
+			],
+			[
+				"me",
+				"media_url"
+			],
+			[
+				"get_cla",
+				"get_class_methods"
+			],
+			[
+				"json_",
+				"java_last_exception_get"
+			],
+			[
+				"json_e",
+				"json_last_error"
+			],
+			[
+				"ship",
+				"_shipMDL"
+			],
+			[
+				"cach",
+				"cacheMW360Cache"
+			],
+			[
+				"tab",
+				"tables_data"
+			],
+			[
+				"res_p",
+				"res_post_data_cancal"
+			],
+			[
+				"resp",
+				"response_body"
+			],
+			[
+				"excu",
+				"excursion_value"
+			],
+			[
+				"exc",
+				"excursions_data"
+			],
+			[
+				"return",
+				"_return_data"
+			],
+			[
+				"room",
+				"room_num"
+			],
+			[
+				"fol",
+				"folio_qs_data"
+			],
+			[
+				"vacanc",
+				"vacancy_id"
+			],
+			[
+				"vac",
+				"vacancy_id"
+			],
+			[
+				"reser",
+				"reservation_type"
+			],
+			[
+				"cat_",
+				"cat_get_data_return"
+			],
+			[
+				"ca",
+				"cat_uuid"
+			],
+			[
+				"res",
+				"res_types"
+			],
+			[
+				"qu",
+				"query_string"
+			],
+			[
+				"_re",
+				"_request_url"
+			],
+			[
+				"get_cl",
+				"get_class_vars"
+			],
+			[
+				"remo",
+				"remote_content"
+			],
+			[
+				"local_",
+				"local_content"
+			],
+			[
+				"_rcda_",
+				"_rcda_value"
+			],
+			[
+				"remote",
+				"remote_suffix"
+			],
+			[
+				"cl",
+				"arrayCleaner"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"_r",
+				"_r_value"
+			],
+			[
+				"uc",
+				"ucfirst"
+			],
+			[
+				"_m",
+				"_mc_data"
+			],
+			[
+				"synC",
+				"syncClass"
+			],
+			[
+				"sync",
+				"syncClass"
+			],
+			[
+				"file_",
+				"file_path"
+			],
+			[
+				"md5",
+				"md5FileChek"
+			],
+			[
+				"_pa",
+				"_prop_value"
+			],
+			[
+				"_head",
+				"_heading_value"
+			],
+			[
+				"_hea",
+				"_heading_data"
+			],
+			[
+				"_pro",
+				"_prop_key"
+			],
+			[
+				"_p",
+				"_prop_key"
+			],
+			[
+				"long",
+				"longitude"
+			],
+			[
+				"_prop_",
+				"_prop_value"
+			],
+			[
+				"media_",
+				"media_category"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"way",
+				"waypoints"
+			],
+			[
+				"uuid",
+				"uuid_Component"
+			],
+			[
+				"exec",
+				"execDBAction"
+			],
+			[
+				"talk",
+				"talker_data"
+			],
+			[
+				"roo",
+				"room"
+			],
+			[
+				"pos",
+				"post_create_array"
+			],
+			[
+				"seeRespo",
+				"seeResponseIsJson"
+			],
+			[
+				"datetim",
+				"date_timestamp_get"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"post",
+				"post_data_array"
+			],
+			[
+				"get",
+				"get_response_data"
+			],
+			[
+				"is_s",
+				"is_string"
+			],
+			[
+				"im",
+				"img_details"
+			],
+			[
+				"dataPro",
+				"dataProvider"
+			],
+			[
+				"media",
+				"media_url"
+			],
+			[
+				"for",
+				"forecast"
+			],
+			[
+				"http",
+				"http_verb"
+			],
+			[
+				"calling",
+				"_calling_class"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"_repso",
+				"_response_code"
+			],
+			[
+				"_response_",
+				"_response_code"
+			],
+			[
+				"_c",
+				"_cache_data"
+			],
+			[
+				"respon",
+				"response_code"
+			],
+			[
+				"_Res",
+				"_response_code"
+			],
+			[
+				"_res",
+				"_response_body"
+			],
+			[
+				"query",
+				"query_string"
+			],
+			[
+				"strt",
+				"strtolower"
+			],
+			[
+				"ship_co",
+				"ship_code_array"
+			],
+			[
+				"http_ur",
+				"http_build_url"
+			],
+			[
+				"defau",
+				"defaultCNTL"
+			],
+			[
+				"http_",
+				"http_verb"
+			],
+			[
+				"method",
+				"method_exists"
+			],
+			[
+				"meth",
+				"method_exists"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"http_build",
+				"http_build_query"
+			],
+			[
+				"http_bu",
+				"http_build_query"
+			],
+			[
+				"HTT",
+				"HTTP_RAW_POST_DATA"
+			],
+			[
+				"cr",
+				"crud_data"
+			],
+			[
+				"parta",
+				"param_data"
+			],
+			[
+				"conten",
+				"contentType"
+			],
+			[
+				"_wea",
+				"_weather_key"
+			],
+			[
+				"weather",
+				"weather_model"
+			],
+			[
+				"array",
+				"array_end"
+			],
+			[
+				"is_n",
+				"is_numeric"
+			],
+			[
+				"_me",
+				"_method_data"
+			],
+			[
+				"arr",
+				"array_end"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"http_re",
+				"http_response_code"
+			],
+			[
+				"crud",
+				"crud_data"
+			],
+			[
+				"raw",
+				"raw_uri"
+			],
+			[
+				"vali",
+				"validateURI"
+			],
+			[
+				"val",
+				"validateURI"
+			],
+			[
+				"stri",
+				"stristr"
+			],
+			[
+				"_",
+				"_weather_key"
+			],
+			[
+				"wea",
+				"weather_keys"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"para",
+				"_param_data"
+			],
+			[
+				"we",
+				"weather_model"
+			],
+			[
+				"strs",
+				"strstr"
+			],
+			[
+				"strip",
+				"stripos"
+			],
+			[
+				"pa",
+				"pathInfo"
+			],
+			[
+				"end",
+				"endpoint"
+			],
+			[
+				"implim",
+				"implimented"
+			],
+			[
+				"sel",
+				"selected_val"
+			],
+			[
+				"_ret",
+				"_return_data"
+			],
+			[
+				"getLo",
+				"getLossesStatus"
+			],
+			[
+				"quer",
+				"query"
+			],
+			[
+				"array_m",
+				"array_merge"
+			],
+			[
+				"order",
+				"order_item"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"str",
+				"strval"
+			],
+			[
+				"child",
+				"first-child"
+			],
+			[
+				"curr",
+				"currency"
+			],
+			[
+				"Item",
+				"Items"
+			],
+			[
+				"els",
+				"elsize"
+			],
+			[
+				"meht",
+				"method_data"
+			],
+			[
+				"extra",
+				"extra_size_id"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"clas",
+				"class_val"
+			],
+			[
+				"select",
+				"selectable_items_container"
+			],
+			[
+				"availa",
+				"available_items_container"
+			],
+			[
+				"ava",
+				"available_items_container"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"j",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"XDEB",
+				"Xdebug: Start Debugging"
+			],
+			[
+				"sublime",
+				"Sublimerge: Compare Revision to Revision..."
+			],
+			[
+				"subli",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: dbg",
+				"Snippet: Inline PHP debug."
+			],
+			[
+				"subl",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"Snippet: ",
+				"Snippet: Comment"
+			],
+			[
+				"jsom",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"sftp",
+				"SFTP: Show Panel"
+			],
+			[
+				"js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp:sy",
+				"SFTP: Sync Local -> Remote…"
+			],
+			[
+				"sftp: sh",
+				"SFTP: Show Panel"
+			],
+			[
+				"SFTP",
+				"SFTP: Setup Server…"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"sub",
+				"Sublimerge: Custom Comparison..."
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package c",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 119.0,
+		"history":
+		[
+			"cd /Users/",
+			"cd ~/Sites/",
+			"ls -la",
+			"file_diff_menu:",
+			"file_diff_menu",
+			"/git status",
+			"git status",
+			"/git",
+			"git",
+			"git status",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/david/Sites/demo_yii2",
+		"/Users/david/Sites/demo_yii2/models"
+	],
+	"file_history":
+	[
+		"/Users/david/Sites/demo_yii2/TODO.md",
+		"/Users/david/Sites/demo_yii2/config/web.php",
+		"/Users/david/Sites/demo_yii2/composer.json",
+		"/Users/david/Sites/demo_yii2/config/db.php",
+		"/Users/david/Sites/demo_yii2/models/User.php",
+		"/Users/david/Sites/naabs2/frontend/models/SignupForm.php",
+		"/Users/david/Sites/demo_yii2/web/.htaccess",
+		"/Users/david/Sites/demo_yii2/.gitignore",
+		"/Users/david/Sites/naabs2/frontend/config/main-local.php",
+		"/Users/david/Sites/naabs2/frontend/config/main.php",
+		"/Users/david/Sites/naabs2/frontend/config/params-local.php",
+		"/Users/david/Sites/naabs2/frontend/config/params.php",
+		"/Users/david/Sites/naabs2/common/config/bootstrap.php",
+		"/Users/david/Sites/naabs2/common/config/main.php",
+		"/Users/david/Sites/naabs2/common/config/main-local.php",
+		"/Users/david/Sites/naabs2/common/config/params-local.php",
+		"/Users/david/Sites/naabs2/common/config/params.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Dailyschedule.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/DailyscheduleController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/components/BaseController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Cdn.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/DailyScheduleController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/DailySchedule.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/MediaAsset.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Daily.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/models/_base/BaseDailySchedule.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/DailyController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Dailyevents.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/DailyCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/config/urlRules.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/DailyEvent.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/DailyEventsController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/DailyEvents.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/DailyScheduleCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Base.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/models/DailySchedule.php",
+		"/Users/david/Downloads/2015-02-24-1030-MW360-Ship-All.sql",
+		"/Users/david/Sites/viking/mw360ship/frontend/config/main.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/ExcursionCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/GuestCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/views/profile/profile.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/views/user/registration.php",
+		"/Users/david/Sites/phpPgAdmin/conf/config.inc.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/ItineraryCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/CdnCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/AvailabilityCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/FolioCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/TableCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/DefaultCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/ReservationCept.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance/AcceptanceTester.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/Guest.php",
+		"/Users/david/Sites/viking/mw360ship/common/config/params.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/MediaCategory.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/CdnController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/controllers/MediaCategoryController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/controllers/MediaAssetController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/controllers/DailyScheduleController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/_view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/layouts/_nav.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/view.php",
+		"/Users/david/Sites/viking/mw360ship/common/vendor/yiisoft/yii/build/commands/api/views/eventDetails.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/site/error.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/site/index.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/views/user/message.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/controllers/ProfileController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/controllers/RegistrationController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/_form.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/views/user/login.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/views/layouts/_nav.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/user/UserModule.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/_form.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/admin.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/_view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaCategory/_view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaCategory/view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/bootstrap-datetimepicker/README.md",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/flexSlider/jquery.flexslider-min.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/flexSlider/jquery.flexslider.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/jqGrid/js/jquery.jqGrid.min.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/jqGrid/js/jquery.jqGrid.src.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/jqGrid/src/grid.base.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/jQRangeSlider/demo/dateSliderDemo.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/jquery-validation/dist/additional-methods.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/moment/readme.md",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/moment/test/moment/create.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/nvd3/lib/d3.v3.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/www/themes/rapido/assets/plugins/x-editable/js/bootstrap-editable.min.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/index.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/extensions/YiiDateTimePicker/assets/jquery.datetimepicker.js",
+		"/Users/david/Sites/viking/mw360ship/frontend/extensions/YiiDateTimePicker/jqueryDateTime.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/update.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/create.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/models/_base/BaseMediaAsset.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/widgets/timepicker/timepicker.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/DailyScheduleController.html",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models/DailySchedule.html",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/_search.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/index.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/admin.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/update.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/daily_schedule/models/DailySchedule.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/daily_schedule/controllers/DefaultController.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/daily_schedule/DailyScheduleModule.php",
+		"/Users/david/Sites/viking/mw360ship/docs/db_dumps/2015-02-04-mw360-full-OEM.sql",
+		"/Users/david/Sites/viking/mw360ship/docs/db_dumps/2015-02-19-1540-MW360-All.sql",
+		"/Users/david/Sites/viking/mw360ship/docs/db_dumps/2015-01-23-MW360-data.sql",
+		"/Users/david/Sites/viking/mw360ship/common/components/MW360Sync.php",
+		"/Users/david/Sites/viking/mw360ship/common/components/MW360Cache.php",
+		"/Users/david/Downloads/mxp_restuarants.csv",
+		"/Users/david/Sites/viking/mw360ship/console/commands/ClearCacheCommand.php",
+		"/Users/david/Sites/viking/mw360ship/console/commands/NmeaCommand.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/create.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/_search.php",
+		"/Users/david/Sites/viking/mw360ship/docs/Postgres_install.sql",
+		"/Users/david/Downloads/tridion_ports.csv",
+		"/Users/david/Downloads/ports_from_tridion.csv",
+		"/Users/david/Sites/viking/mw360ship/common/config/db.php",
+		"/Users/david/Sites/viking/mw360ship/common/components/CommonFunctions.php",
+		"/Users/david/Sites/viking/mw360ship/console/runtime/application.log.3",
+		"/Users/david/Sites/viking/mw360ship/console/runtime/application.log",
+		"/Users/david/Downloads/dump (2).sql",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/controllers/Cache.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/migrations/m150119_163810_api_install.php",
+		"/Users/david/Sites/viking/mw360ship/common/components/NestedPDO.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/modules/api/components/BaseModel.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -*.js, -*.md, -/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/, -*.js, -*.md, -/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -*.js, -*.md, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -*.js, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -*.js-/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/models/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/common/components/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/api, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*",
+			"/Users/david/Sites/viking/mw360ship",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/acceptance/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/acceptance/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*, -/Users/david/Sites/viking/mw360ship/common/*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*, -/Users/david/Sites/viking/mw360ship/common/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*",
+			"/Users/david/Sites/viking/mw360ship",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/runtime/*, -/Users/david/Sites/naabs2/vendor/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*, -/Users/david/Sites/naabs2/naabs2/vendor/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -~/Sites/naabs2/naabs2/runtime",
+			"/Users/david/Sites/naabs2/, ,-*/runtime/*.*",
+			"/Users/david/Sites/naabs2/, ,-/runtime/*.*",
+			"/Users/david/Sites/naabs2/, -*/runtime",
+			"/Users/david/Sites/naabs2/, -*/runtime/*",
+			"/Users/david/Sites/naabs2/",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -/runtime/*, -/_output/* -/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -/runtime/*, -/_output/* -/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/* -assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -/runtime/*, -/_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/views/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/views/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/views/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*, -common/lib/*, -assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -/Users/david/Sites/viking/mw360ship/common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/tests/*",
+			"/Users/david/Sites/viking/, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api",
+			"/Users/david/Sites/viking/mw360ship/frontend/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship",
+			"-/Users/david/Documents/repos/joomla_based/joomla_3/teburu_3_component/component/com_teburu/libraries/*, -*/docs/*, -*.log, -*.css, -*.js, -*.md, -*markdown, -README*, -INSTALL*, -*/tests/*,/Users/david/Sites/viking/mw360/frontend/",
+			"-/Users/david/Documents/repos/joomla_based/joomla_3/teburu_3_component/component/com_teburu/libraries/*, -*/docs/*, -*.log, -*.css, -*.js, -*.md, -*markdown, -README*, -INSTALL*, -*/tests/*,/Users/david/Sites/viking/mw360/frontend/modules/api/",
+			"-/Users/david/Documents/repos/joomla_based/joomla_3/teburu_3_component/component/com_teburu/libraries/*, -*/docs/*, -*.log, -*.css, -*.js, -*.md, -*markdown, -README*, -INSTALL*, -*/tests/*,/Users/david/Sites/viking/mw360/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"users",
+			"httpResponse",
+			"dailyschedule",
+			"DailySchedule",
+			"DailyEvents",
+			"DailySchedule",
+			"access",
+			"toolbar row",
+			"auth",
+			"panel-body",
+			"daily_schedule",
+			"character varying(16)",
+			"sys_session_id_seq",
+			"OWNER TO postgres",
+			"role",
+			"412",
+			"10000129",
+			"404",
+			"guest_id",
+			"guest",
+			"guest_id",
+			"assert",
+			"true",
+			"false",
+			"Documentation",
+			"default_",
+			"daily_",
+			"cat_uuid",
+			"No data returned or POST failed.",
+			"error",
+			"dailyschedule_cat_uuid",
+			"cdn",
+			"event details",
+			"User",
+			"USer",
+			"Guest",
+			"authorized",
+			"rapid",
+			"error.php",
+			"error",
+			"logoutUrl",
+			"RDbAuthManager",
+			"AuthAssignment",
+			"row",
+			"layout",
+			"defaultRoles",
+			"registration",
+			"login",
+			"allowAutoLogin",
+			"RWebUser",
+			"auth",
+			"authMan",
+			"RWebUser",
+			"{{users}}",
+			"regist",
+			"install",
+			"tbl_",
+			"activeAfterRegister",
+			"login",
+			"Yii",
+			"Yii::app",
+			"Yii::qpp",
+			"UTC",
+			"gmgmdate",
+			"date",
+			"date(\"",
+			"\"M j, Y @ h:m a\"",
+			"get_timezone_offset",
+			"mouse",
+			"attribute",
+			"focus",
+			"validate",
+			"col-md-4",
+			"actionDelete",
+			"focus",
+			"id",
+			"exit",
+			"$_POST['DailySchedule']['start_time'] = strtotime($_POST['DailySchedule']['start_time']);",
+			"$_POST['DailySchedule']['start_time'] = strtotime($_POST['DailySchedule']['start_time']);\n16 ",
+			"M j, Y @ h:m a",
+			"crudFix",
+			"debug",
+			"giix",
+			"a",
+			"timepicker",
+			"YiiDateTimePicker",
+			"Cdn",
+			"'id'",
+			"id",
+			"delete",
+			"'id'",
+			"$id",
+			"uuid",
+			"row col-md-2\">",
+			"<br />",
+			"description",
+			"crudFix",
+			"row",
+			"',); ?>",
+			"media",
+			"Media",
+			"module",
+			"mediaManipulation",
+			"fileData->saveAs('../../'.$model->media_url);",
+			"sys_log_pkey",
+			"migration",
+			"insert",
+			"inser",
+			"processMediaAssets",
+			"media_url",
+			"Yii:app()['app']",
+			"['app']['cdn']",
+			"Yii",
+			"media_url",
+			"uri",
+			"url",
+			"media_url",
+			"uri",
+			"cdb",
+			"4561.png",
+			"mediaManipulation",
+			"are required. ",
+			"attr",
+			"mediaManipulation",
+			"mediaManipulation\nmediaManipulation",
+			"mediaManipulation",
+			"mediaManipulation\nmediaManipulation",
+			"mediaManipulation"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"daily",
+			"Daily",
+			"Dailyschedule",
+			"DailyEvent",
+			"DailyEvents",
+			"OWNER TO mw360_ship",
+			"10000127",
+			"ds_",
+			"de_item_uuid",
+			"dailyschedule_uuid",
+			"dailyschedule",
+			"row col-md-2",
+			"sys_",
+			"gmdate",
+			"gmdate(\"",
+			"\"M j, Y h:m a\"",
+			"M j, Y h:m a",
+			"DailySchedule",
+			"'uuid'",
+			"$uuid",
+			"row\">",
+			"</div><div class=\"row col-md-2\">",
+			"row col-md-2",
+			"'); ?>",
+			"mediaManipulation",
+			"['app']['remote_suffix']",
+			"['cdn']['uri_path']",
+			"['app']['",
+			"]",
+			"[",
+			"10.10.8.50",
+			"OWNER TO postgres",
+			"mw360_ship",
+			"itinerary/",
+			"iti",
+			"cdn_post_data",
+			"table",
+			"'.$res_qs_data",
+			"res_post_data_cancal",
+			"res_post_data_create",
+			"res_post_data",
+			"?'.$res_qs_data",
+			"excursion'",
+			"mxp_vacancy_id",
+			"return_data",
+			"actor",
+			"actorClass",
+			"ost",
+			"_static_vars.php",
+			"include(__DIR__.'/_static_vars.php');",
+			"default_post_data",
+			"default",
+			"?'.$default_qs_data",
+			"$default_post_data",
+			"$ava_post_data",
+			"/?'.$ava_qs_data.$ava_type",
+			"ava_type",
+			"?'.$ava_qs_data",
+			"ava_types",
+			"cat_post_data",
+			"?'.$cdn_qs_data",
+			"$cdn_post_data",
+			"?'.$cdn_qs_data",
+			"$cdn_cat_uuid",
+			"$cdn_post_data",
+			"_return_data",
+			"$actor",
+			"cdn_cat_id",
+			"_return_",
+			"['ship']['code']",
+			"?'.$weather_qs_data",
+			"$weather_post_data",
+			"?'.$room_qs_data",
+			"room_post_data",
+			"restaurant_qs_data",
+			"$restaurant_post_data",
+			"?'.$restaurant_qs_times",
+			"'.$meal_qs_data",
+			"$meal_post_data",
+			"$ship_post_data",
+			"$guest_post_data",
+			"$folio_post_data",
+			"$ship_post_data",
+			"'",
+			"$reservation_post_data_create[$reservation_type]",
+			"reservation_type",
+			"reservation_post_data",
+			"reservation_types",
+			"cat_post_data",
+			"availability_post_data",
+			"availability_type",
+			"availability_data_array",
+			"'.$cat_qs_data",
+			"\".$cat_qs_data",
+			"cat_post_data",
+			"mw360",
+			"availability",
+			"reservation_form_data",
+			"reservation_type",
+			"_param_data",
+			"['app']['data_type']",
+			"http://10.1.8.164/voc/",
+			"params['weather']['",
+			"params['nmea']['",
+			"Yii::app()->params['asset_mgr']['name']",
+			"MW360Sync",
+			"    ",
+			"Yii::log('",
+			"nmea_cache",
+			"echo",
+			"//echo",
+			"uuid",
+			"mxp_vacancy_id",
+			"table",
+			"room",
+			"?room_no=",
+			"room_num",
+			"room_post_json",
+			"room_no_post",
+			"108",
+			"room_no",
+			"Room",
+			"room",
+			"    ",
+			"application/json",
+			"CDN",
+			"cdn",
+			"Room"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 124.0
+	},
+	"output.sftp":
+	{
+		"height": 221.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"project": "demo_yii2.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"admin/sql/install.mysql.utf8.sql"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 27.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

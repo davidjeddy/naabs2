@@ -1,0 +1,1855 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"payment_data"
+			],
+			[
+				"pur",
+				"purchase_mdl"
+			],
+			[
+				"payme",
+				"payment_data"
+			],
+			[
+				"payp",
+				"paypal_com"
+			],
+			[
+				"class_m",
+				"get_class_methods"
+			],
+			[
+				"get_class",
+				"get_class"
+			],
+			[
+				"time",
+				"time_options_mdl"
+			],
+			[
+				"opt",
+				"option	Tag"
+			],
+			[
+				"tos",
+				"tos_data"
+			],
+			[
+				"process",
+				"processPaypal"
+			],
+			[
+				"dropdo",
+				"Dropdown"
+			],
+			[
+				"tim",
+				"time_options"
+			],
+			[
+				"USe",
+				"UserDetails"
+			],
+			[
+				"User",
+				"UserDetails"
+			],
+			[
+				"user",
+				"userDetails"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"lati",
+				"latitude"
+			],
+			[
+				"_ma",
+				"_marketing_data"
+			],
+			[
+				"_re",
+				"_return_data"
+			],
+			[
+				"_me",
+				"_method_data"
+			],
+			[
+				"gen",
+				"generateUUID"
+			],
+			[
+				"findBy",
+				"findByPk"
+			],
+			[
+				"find",
+				"findByPk"
+			],
+			[
+				"save",
+				"saveMedia"
+			],
+			[
+				"MW",
+				"MW360Cache"
+			],
+			[
+				"com",
+				"components"
+			],
+			[
+				"jsone_d",
+				"json_decode"
+			],
+			[
+				"MediaA",
+				"MediaAssetMDL"
+			],
+			[
+				"media",
+				"MediaAsset"
+			],
+			[
+				"cach",
+				"cacheMW360Cache"
+			],
+			[
+				"tab",
+				"tables_data"
+			],
+			[
+				"res_p",
+				"res_post_data_cancal"
+			],
+			[
+				"resp",
+				"response_body"
+			],
+			[
+				"excu",
+				"excursion_value"
+			],
+			[
+				"json_",
+				"json_decode"
+			],
+			[
+				"exc",
+				"excursions_data"
+			],
+			[
+				"return",
+				"_return_data"
+			],
+			[
+				"room",
+				"room_num"
+			],
+			[
+				"fol",
+				"folio_qs_data"
+			],
+			[
+				"vacanc",
+				"vacancy_id"
+			],
+			[
+				"vac",
+				"vacancy_id"
+			],
+			[
+				"reser",
+				"reservation_type"
+			],
+			[
+				"cat_",
+				"cat_get_data_return"
+			],
+			[
+				"ca",
+				"cat_uuid"
+			],
+			[
+				"res",
+				"res_types"
+			],
+			[
+				"get_cla",
+				"get_class_vars"
+			],
+			[
+				"qu",
+				"query_string"
+			],
+			[
+				"get_cl",
+				"get_class_vars"
+			],
+			[
+				"remo",
+				"remote_content"
+			],
+			[
+				"local_",
+				"local_content"
+			],
+			[
+				"_rcda_",
+				"_rcda_value"
+			],
+			[
+				"remote",
+				"remote_suffix"
+			],
+			[
+				"cl",
+				"arrayCleaner"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"_r",
+				"_r_value"
+			],
+			[
+				"uc",
+				"ucfirst"
+			],
+			[
+				"_m",
+				"_mc_data"
+			],
+			[
+				"synC",
+				"syncClass"
+			],
+			[
+				"sync",
+				"syncClass"
+			],
+			[
+				"file_",
+				"file_path"
+			],
+			[
+				"md5",
+				"md5FileChek"
+			],
+			[
+				"_pa",
+				"_prop_value"
+			],
+			[
+				"_head",
+				"_heading_value"
+			],
+			[
+				"_hea",
+				"_heading_data"
+			],
+			[
+				"_pro",
+				"_prop_key"
+			],
+			[
+				"_p",
+				"_prop_key"
+			],
+			[
+				"long",
+				"longitude"
+			],
+			[
+				"_prop_",
+				"_prop_value"
+			],
+			[
+				"media_",
+				"media_category"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"way",
+				"waypoints"
+			],
+			[
+				"uuid",
+				"uuid_Component"
+			],
+			[
+				"exec",
+				"execDBAction"
+			],
+			[
+				"talk",
+				"talker_data"
+			],
+			[
+				"roo",
+				"room"
+			],
+			[
+				"pos",
+				"post_create_array"
+			],
+			[
+				"seeRespo",
+				"seeResponseIsJson"
+			],
+			[
+				"datetim",
+				"date_timestamp_get"
+			],
+			[
+				"me",
+				"media_category_id"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"post",
+				"post_data_array"
+			],
+			[
+				"get",
+				"get_response_data"
+			],
+			[
+				"is_s",
+				"is_string"
+			],
+			[
+				"im",
+				"img_details"
+			],
+			[
+				"dataPro",
+				"dataProvider"
+			],
+			[
+				"for",
+				"forecast"
+			],
+			[
+				"http",
+				"http_verb"
+			],
+			[
+				"calling",
+				"_calling_class"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"_repso",
+				"_response_code"
+			],
+			[
+				"_response_",
+				"_response_code"
+			],
+			[
+				"_c",
+				"_cache_data"
+			],
+			[
+				"respon",
+				"response_code"
+			],
+			[
+				"_Res",
+				"_response_code"
+			],
+			[
+				"_res",
+				"_response_body"
+			],
+			[
+				"query",
+				"query_string"
+			],
+			[
+				"strt",
+				"strtolower"
+			],
+			[
+				"ship_co",
+				"ship_code_array"
+			],
+			[
+				"http_ur",
+				"http_build_url"
+			],
+			[
+				"defau",
+				"defaultCNTL"
+			],
+			[
+				"http_",
+				"http_verb"
+			],
+			[
+				"method",
+				"method_exists"
+			],
+			[
+				"meth",
+				"method_exists"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"http_build",
+				"http_build_query"
+			],
+			[
+				"http_bu",
+				"http_build_query"
+			],
+			[
+				"HTT",
+				"HTTP_RAW_POST_DATA"
+			],
+			[
+				"cr",
+				"crud_data"
+			],
+			[
+				"parta",
+				"param_data"
+			],
+			[
+				"conten",
+				"contentType"
+			],
+			[
+				"_wea",
+				"_weather_key"
+			],
+			[
+				"weather",
+				"weather_model"
+			],
+			[
+				"array",
+				"array_end"
+			],
+			[
+				"is_n",
+				"is_numeric"
+			],
+			[
+				"arr",
+				"array_end"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"http_re",
+				"http_response_code"
+			],
+			[
+				"crud",
+				"crud_data"
+			],
+			[
+				"raw",
+				"raw_uri"
+			],
+			[
+				"vali",
+				"validateURI"
+			],
+			[
+				"val",
+				"validateURI"
+			],
+			[
+				"stri",
+				"stristr"
+			],
+			[
+				"_",
+				"_weather_key"
+			],
+			[
+				"wea",
+				"weather_keys"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"para",
+				"_param_data"
+			],
+			[
+				"we",
+				"weather_model"
+			],
+			[
+				"strs",
+				"strstr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "frontend/controllers/PurchaseController.php",
+			"settings":
+			{
+				"buffer_size": 6054,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "frontend/controllers/RadCheckController.php",
+			"settings":
+			{
+				"buffer_size": 1132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "frontend/models/RadCheck.php",
+			"settings":
+			{
+				"buffer_size": 1033,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 288 files for \"d OK, however an error occured while processing the access request.\"\n\n/Users/david/Sites/naabs2/frontend/controllers/PurchaseController.php:\n  130                          } else {\n  131                              \n  132:                             Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');\n  133                          }\n  134                      } else {\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 496,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "frontend/controllers/SiteController.php",
+			"settings":
+			{
+				"buffer_size": 5718,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "j",
+		"selected_items":
+		[
+			[
+				"j",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pacak",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime",
+				"Sublimerge: Compare Revision to Revision..."
+			],
+			[
+				"subli",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"Snippet: dbg",
+				"Snippet: Inline PHP debug."
+			],
+			[
+				"subl",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"Snippet: ",
+				"Snippet: Comment"
+			],
+			[
+				"jsom",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"sftp",
+				"SFTP: Show Panel"
+			],
+			[
+				"js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp:sy",
+				"SFTP: Sync Local -> Remote…"
+			],
+			[
+				"sftp: sh",
+				"SFTP: Show Panel"
+			],
+			[
+				"SFTP",
+				"SFTP: Setup Server…"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"sub",
+				"Sublimerge: Custom Comparison..."
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package c",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 119.0,
+		"history":
+		[
+			"cd /Users/",
+			"cd ~/Sites/",
+			"ls -la",
+			"file_diff_menu:",
+			"file_diff_menu",
+			"/git status",
+			"git status",
+			"/git",
+			"git",
+			"git status",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/david/Sites/naabs2",
+		"/Users/david/Sites/naabs2/frontend",
+		"/Users/david/Sites/naabs2/frontend/controllers",
+		"/Users/david/Sites/naabs2/frontend/models"
+	],
+	"file_history":
+	[
+		"/Users/david/Sites/naabs2/frontend/models/Purchase.php",
+		"/Users/david/Sites/naabs2/frontend/models/RadCheck.php",
+		"/Users/david/Sites/naabs2/common/components/Paypal.php",
+		"/Users/david/Sites/naabs2/backend/controllers/TimeAmountController.php",
+		"/Users/david/Sites/naabs2/frontend/views/purchase/_purchase.php",
+		"/Users/david/Sites/naabs2/frontend/controllers/PurchaseController.php",
+		"/Users/david/Sites/naabs2/frontend/controllers/RadCheckController.php",
+		"/Users/david/Sites/naabs2/common/models/TimeAmountOptions.php",
+		"/Users/david/Sites/naabs2/frontend/controllers/SiteController.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/models/Radcheck.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/views/default/_form.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/views/default/create.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/controllers/DefaultController.php",
+		"/Users/david/Sites/naabs2/backend/views/layouts/main.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/views/default/update.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/views/default/view.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/views/default/index.php",
+		"/Users/david/Sites/naabs2/backend/views/device/_form.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/FreeRadius.php",
+		"/Users/david/Sites/naabs2/backend/config/main.php",
+		"/Users/david/Sites/naabs2/common/config/main.php",
+		"/Users/david/Sites/naabs2/backend/modules/FreeRadius/models/radcheck.php",
+		"/Users/david/Sites/naabs2/docs/do_not_track/radcheck.txt",
+		"/Users/david/Sites/naabs2/common/config/params-local.php",
+		"/Users/david/Sites/naabs/controllers/payment_class.php",
+		"/Users/david/Sites/naabs2/common/models/CCFormat.php",
+		"/Users/david/Sites/naabs2/frontend/views/purchase/view.php",
+		"/Users/david/Sites/naabs2/backend/views/devicecount/view.php",
+		"/Users/david/Sites/naabs2/frontend/views/purchase/index.php",
+		"/Users/david/Sites/naabs2/docs/do_not_track/purchase_logic.php",
+		"/Users/david/Sites/naabs2/frontend/views/purchase/create.php",
+		"/Users/david/Sites/naabs2/frontend/views/purchase/_form.php",
+		"/Users/david/Sites/naabs2/backend/controllers/SiteController.php",
+		"/Users/david/Sites/naabs2/common/models/DeviceCountOptions.php",
+		"/Users/david/Sites/naabs2/themes/earth2/layouts/main.php",
+		"/Users/david/Sites/naabs2/backend/web/index.php",
+		"/Users/david/Sites/naabs2/frontend/models/CCFormat.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/billing.php",
+		"/Users/david/Sites/naabs2/docs/radcheck.txt",
+		"/Users/david/Sites/naabs2/common/models/Device.php",
+		"/Users/david/Sites/naabs2/frontend/config/main.php",
+		"/Users/david/Sites/naabs2/composer.json",
+		"/Users/david/Sites/naabs2/frontend/views/layouts/main.php",
+		"/Users/david/Sites/naabs2/common/models/AppData.php",
+		"/Users/david/Sites/naabs2/backend/views/devicecount/index.php",
+		"/Users/david/Sites/naabs2/backend/views/app-data/index.php",
+		"/Users/david/Sites/naabs2/backend/views/app-data/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/devicecount/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/app-data/update.php",
+		"/Users/david/Sites/naabs2/backend/views/app-data/view.php",
+		"/Users/david/Sites/naabs2/backend/controllers/DeviceController.php",
+		"/Users/david/Sites/naabs2/backend/controllers/AppDateController.php",
+		"/Users/david/Sites/naabs2/backend/controllers/UserDetailsController.php",
+		"/Users/david/Sites/naabs2/common/models/UserDetails.php",
+		"/Users/david/Sites/naabs2/backend/views/layouts/untitled.html",
+		"/Users/david/Sites/naabs2/backend/views/appdata/index.php",
+		"/Users/david/Sites/naabs2/environments/index.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/tos.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/contact.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/about.php",
+		"/Users/david/Sites/naabs2/common/config/main-local.php",
+		"/Users/david/Sites/naabs2/frontend/config/params-local.php",
+		"/Users/david/Sites/naabs2/frontend/config/params.php",
+		"/Users/david/Sites/naabs2/frontend/config/main-local.php",
+		"/Users/david/Sites/naabs2/frontend/config/bootstrap.php",
+		"/Users/david/Sites/naabs2/common/config/params.php",
+		"/Users/david/Sites/naabs2/vendor/marciocamello/yii2-Paypal/Paypal.php",
+		"/Users/david/Sites/naabs2/vendor/marciocamello/Paypal/GHANGELOG.md",
+		"/Users/david/Sites/naabs2/frontend/web/index.php",
+		"/Users/david/Sites/naabs2/frontend/runtime/logs/app.log",
+		"/Users/david/Sites/naabs2/common/views/partials/_cc_form.php",
+		"/Users/david/Sites/naabs2/frontend/models/CC_Format.php",
+		"/Users/david/Sites/naabs2/frontend/models/PasswordResetRequestForm.php",
+		"/Users/david/Sites/naabs2/frontend/models/BillingPurchase.php",
+		"/Users/david/Sites/naabs2/frontend/models/Billing.php",
+		"/Users/david/Sites/naabs2/frontend/models/ContactForm.php",
+		"/Users/david/Sites/naabs/views/my_time.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/account.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/signup.php",
+		"/Users/david/Sites/naabs2/.gitignore",
+		"/Users/david/Sites/naabs2/terminal.glue",
+		"/Users/david/.bash_profile",
+		"/Users/david/.bashrc",
+		"/Users/david/.bash_history",
+		"/Users/david/Sites/viking/mw360shore/frontend/views/mediaAsset/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/device/index.php",
+		"/Users/david/Sites/naabs2/backend/views/userdetails/index.php",
+		"/Users/david/Sites/naabs2/common/models/User.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/requestPasswordResetToken.php",
+		"/Users/david/Sites/naabs2/frontend/models/ResetPasswordForm.php",
+		"/Users/david/Sites/naabs2/common/models/LoginForm.php",
+		"/Users/david/Sites/naabs2/backend/controllers/DeviceCountController.php",
+		"/Users/david/Sites/naabs2/backend/controllers/RoleController.php",
+		"/Users/david/Sites/naabs2/backend/views/device/view.php",
+		"/Users/david/Sites/naabs2/backend/views/DeviceCount/update.php",
+		"/Users/david/Sites/naabs2/backend/views/DeviceCount/index.php",
+		"/Users/david/Sites/naabs2/backend/views/DeviceCount/view.php",
+		"/Users/david/Sites/naabs2/backend/views/DeviceCount/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/userdetails/update.php",
+		"/Users/david/Sites/naabs2/backend/views/userdetails/view.php",
+		"/Users/david/Sites/naabs2/backend/views/userdetails/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/timeamount/update.php",
+		"/Users/david/Sites/naabs2/backend/views/timeamount/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/timeamount/view.php",
+		"/Users/david/Sites/naabs2/backend/views/timeamount/index.php",
+		"/Users/david/Sites/naabs2/backend/views/role/_form.php",
+		"/Users/david/Sites/naabs2/backend/views/role/index.php",
+		"/Users/david/Sites/naabs2/backend/views/role/view.php",
+		"/Users/david/Sites/naabs2/console/migrations/m130524_201442_init.php",
+		"/Users/david/Sites/naabs2/backend/views/site/index.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/create.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/mediaAsset/view.php",
+		"/Users/david/Sites/viking/mw360ship/frontend/views/dailySchedule/index.php",
+		"/Users/david/Sites/naabs2/common/controllers/DeviceController.php",
+		"/Users/david/Sites/naabs2/backend/models/UserDeviceRelation.php",
+		"/Users/david/Sites/naabs2/backend/views/site/login.php",
+		"/Users/david/Sites/naabs2/frontend/models/SignupForm.php",
+		"/Users/david/Sites/naabs2/backend/modules/DeviceCount/controllers/DefaultController.php",
+		"/Users/david/Sites/naabs2/backend/modules/DeviceCount/DeviceCount.php",
+		"/Users/david/Sites/naabs2/backend/modules/DeviceCount/views/default/index.php",
+		"/Users/david/Sites/naabs2/backend/DeviceCountOptions.php",
+		"/Users/david/Sites/naabs2/vendor/marciocamello/yii2-paypal/Paypal.php",
+		"/Users/david/Sites/naabs2/vendor/marciocamello/yii2-paypal/sdk_config.ini",
+		"/Users/david/Sites/naabs2/vendor/marciocamello/Paypal/Paypal.php",
+		"/Users/david/Sites/naabs2/frontend/views/site/login.php",
+		"/Users/david/Sites/naabs2/backend/config/params-local.php",
+		"/Users/david/Sites/naabs2/backend/config/main-local.php",
+		"/Users/david/Documents/db_dumps/Naabs2-0.1.2.sql"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/_output*, -*/runtime/*, -*/tests/*, -*.css, -*.js, -*.md, -*.html, -*/vendor*",
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html, -*/vendor*",
+			"/Users/david/Sites/, -*.map, -*/www*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html, -*/vendor*",
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html, -*/vendor*",
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/naabs2/backend/, -*.map, -*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/naabs2/, -*.map, -*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/naabs2/, -*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"-*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/naabs2/",
+			"-*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/naabs2/",
+			"-*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"-*/www*, -*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/mw360ship/",
+			"-*/vendor*, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/mw360ship/",
+			"-*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/mw360ship/",
+			"-*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html,/Users/david/Sites/viking/mw360ship/frontend/modules/api",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/modules/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/modules/api/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/api/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/api, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md, -*.html",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js, -*.md",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -*/_output*, -*/runtime/*, -*/tests/*, -*.js",
+			"/Users/david/Sites/viking/mw360shore/frontend/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360shore/frontend/api, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360shore/common/components, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360shore/common/componenets, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360shore/componenets, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360shore/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/_output*",
+			"/Users/david/Sites/viking/mw360ship",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/tests/acceptance",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/acceptance/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/acceptance/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/tests/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*, -/Users/david/Sites/viking/mw360ship/common/*, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*, -/Users/david/Sites/viking/mw360ship/common/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*, -/Users/david/Sites/viking/mw360ship/docs/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*, -/Users/david/Sites/viking/mw360ship/frontend/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship, -/Users/david/Sites/viking/mw360ship/common/vendor/*",
+			"/Users/david/Sites/viking/mw360ship",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/runtime/*, -/Users/david/Sites/naabs2/vendor/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*, -/Users/david/Sites/naabs2/naabs2/vendor/*",
+			"/Users/david/Sites/naabs2/, -/Users/david/Sites/naabs2/naabs2/runtime/*",
+			"/Users/david/Sites/naabs2/, -~/Sites/naabs2/naabs2/runtime",
+			"/Users/david/Sites/naabs2/, ,-*/runtime/*.*",
+			"/Users/david/Sites/naabs2/, ,-/runtime/*.*",
+			"/Users/david/Sites/naabs2/, -*/runtime",
+			"/Users/david/Sites/naabs2/, -*/runtime/*",
+			"/Users/david/Sites/naabs2/",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*, -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -*/www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/* -www/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -*/runtime/*, -*/_output/* -*/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -/runtime/*, -/_output/* -/www/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -/runtime/*, -/_output/* -/assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/* -assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -runtime/*, -_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -/runtime/*, -/_output/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/views/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/*",
+			"/Users/david/Sites/viking/mw360ship/, -/Users/david/Sites/viking/mw360ship/frontend/runtime/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/views/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/views/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/views/",
+			"/Users/david/Sites/viking/mw360ship/frontend/www/",
+			"/Users/david/Sites/viking/mw360ship/",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*, -common/lib/*, -assets/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/models, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/modules/api/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*, -/Users/david/Sites/viking/mw360ship/common/lib/*",
+			"/Users/david/Sites/viking/mw360ship/, -tests/*",
+			"/Users/david/Sites/viking/mw360ship/frontend/, -tests/*"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"actionCreateExpiration",
+			"d OK, however an error occured while processing the access request.",
+			"model->load(",
+			"create",
+			"httpStatus",
+			"testingPayment",
+			"RadCheck",
+			"actioCreate",
+			"RadCheck",
+			"FreeRadius",
+			"Expiration",
+			"User",
+			"TimeAmountOptions",
+			"hasOne",
+			"home",
+			"homr",
+			"false",
+			"label",
+			"disabled",
+			"IS NULL",
+			"            'attribute' => 'Attribute',\n            'id'        => 'ID',\n            'op'        => 'Op',\n            'username'  => 'Username',\n            'value'     => 'Value',",
+			"FreeRadius",
+			"lilliemaes466",
+			"type1",
+			"typ1",
+			"ResultPrinter",
+			"-*/vendor*, ",
+			"function ResultPrinter",
+			"ResultPrinter",
+			"            'Create Payment Using Credit Card',",
+			"url",
+			"redirectUrls",
+			"ApiContext",
+			"url",
+			"Yii::$",
+			"ApiContext",
+			"asdf",
+			"apiContext",
+			"_parama_data",
+			"Payment processor returned an error.",
+			"ApiContext",
+			"Yii",
+			"Could not process payment.",
+			"creditCardPayment",
+			"Card data",
+			"DeviceCountOptions",
+			"findModel",
+			"find",
+			"findModel",
+			"creditCardPayment",
+			"endpoint",
+			"sandbox",
+			"return",
+			"footer",
+			"time_id",
+			"device_count_options_mdl",
+			"arrayhelper",
+			"ArrayHelper",
+			"'purchase_mdl'  => $purchase_mdl,",
+			"year",
+			"ApiContext",
+			"        //",
+			"creditCard",
+			"creditCardPayment",
+			"ApiContext",
+			"apiContext",
+			"dropdown",
+			"asdf",
+			"attributeNames",
+			"Paypal",
+			"endPage",
+			"Powered by",
+			"id",
+			"devicecount",
+			"@",
+			"pdo",
+			"startTime",
+			"errorCodeDriver",
+			"errorMessage",
+			"devicecount",
+			"dataProvider",
+			"homeUrl\n",
+			"homeUrl",
+			"abou",
+			"about",
+			"setType($_param_data['type'])\n            ->setNumber($_param_data['number'])\n            ->setExpireMonth($_param_data['exp_month'])\n            ->setExpireYear($_param_data['exp_year'])\n            ->setCvv2($_param_data['cvv2'])\n            ->setFirstName($_param_data['f_name'])\n            ->setLastName($_param_data['l_name']);",
+			"about",
+			"transaction",
+			"// ",
+			"state",
+			"redirect",
+			"tez",
+			"paypal",
+			"YII_ENV_TEST",
+			"assetManager",
+			"$(\"#",
+			"$",
+			"item.value",
+			"model",
+			"PurchaseController",
+			"BillingPurchase",
+			"billing",
+			"purchase_mdl",
+			"Powered by",
+			"<code><?= __FILE__ ?></code>",
+			"cap",
+			"capta",
+			"My Application",
+			"SITEROOT",
+			"No input file specified. ",
+			"<code><?= __FILE__ ?></code>",
+			"    <code><?= __FILE__ ?></code>",
+			"email",
+			"status",
+			"email",
+			"request-password-reset",
+			"getUser",
+			"getUSer",
+			"dvice_mac",
+			"t_phone",
+			"_at",
+			"created_at",
+			"created",
+			"_at",
+			"decimal",
+			"<?",
+			"reset",
+			"['/"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"this->data",
+			"time_amount_id",
+			"timestamp",
+			"tiestamp",
+			"        ",
+			"key",
+			"",
+			"jQuery(\"#",
+			"jQuery",
+			"",
+			"purchase_mdl",
+			"device_mac",
+			"",
+			"billing",
+			"$userDetails",
+			"username",
+			"account",
+			"userDetailsMDL",
+			"_single_so",
+			"DELETE",
+			"grabDataFromResponseByJsonPath",
+			"MarketingCache",
+			"save('MediaAsset', ",
+			"wgetMedia(",
+			"wgetMedia",
+			"saveMediaAsset",
+			"return $_return_data;",
+			"return (!count($_return_data) > 1 ? $_return_data : parent::returnError(__METHOD__));",
+			"return (!empty($_return_data) ? $_return_data : parent::returnError(__METHOD__));",
+			"readLastSyncTime",
+			"createLastSyncTime",
+			"$_method_data",
+			"$_method_data['category']",
+			"]",
+			"[",
+			"10.10.8.50",
+			"OWNER TO postgres",
+			"mw360_ship",
+			"itinerary/",
+			"iti",
+			"cdn_post_data",
+			"table",
+			"'.$res_qs_data",
+			"res_post_data_cancal",
+			"res_post_data_create",
+			"res_post_data",
+			"?'.$res_qs_data",
+			"excursion'",
+			"mxp_vacancy_id",
+			"return_data",
+			"actor",
+			"actorClass",
+			"ost",
+			"_static_vars.php",
+			"include(__DIR__.'/_static_vars.php');",
+			"default_post_data",
+			"default",
+			"?'.$default_qs_data",
+			"$default_post_data",
+			"$ava_post_data",
+			"/?'.$ava_qs_data.$ava_type",
+			"ava_type",
+			"?'.$ava_qs_data",
+			"ava_types",
+			"cat_post_data",
+			"?'.$cdn_qs_data",
+			"$cdn_post_data",
+			"?'.$cdn_qs_data",
+			"$cdn_cat_uuid",
+			"$cdn_post_data",
+			"_return_data",
+			"$actor",
+			"cdn_cat_id",
+			"_return_",
+			"['ship']['code']",
+			"?'.$weather_qs_data",
+			"$weather_post_data",
+			"?'.$room_qs_data",
+			"room_post_data",
+			"restaurant_qs_data",
+			"$restaurant_post_data",
+			"?'.$restaurant_qs_times",
+			"'.$meal_qs_data",
+			"$meal_post_data",
+			"$ship_post_data",
+			"$guest_post_data",
+			"$folio_post_data",
+			"$ship_post_data",
+			"'",
+			"$reservation_post_data_create[$reservation_type]",
+			"reservation_type",
+			"reservation_post_data",
+			"reservation_types",
+			"cat_post_data",
+			"availability_post_data",
+			"availability_type",
+			"availability_data_array",
+			"'.$cat_qs_data",
+			"\".$cat_qs_data",
+			"cat_post_data",
+			"mw360",
+			"availability",
+			"reservation_form_data",
+			"reservation_type",
+			"_param_data",
+			"['app']['data_type']",
+			"http://10.1.8.164/voc/",
+			"params['weather']['",
+			"params['nmea']['",
+			"Yii::app()->params['asset_mgr']['name']",
+			"MW360Sync",
+			"    ",
+			"Yii::log('",
+			"nmea_cache",
+			"echo",
+			"//echo",
+			"uuid",
+			"mxp_vacancy_id",
+			"table",
+			"room",
+			"?room_no=",
+			"room_num",
+			"room_post_json",
+			"room_no_post",
+			"108",
+			"room_no",
+			"Room",
+			"room"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "frontend/controllers/PurchaseController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4466,
+								4488
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"rulers":
+							[
+								100
+							],
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "frontend/controllers/RadCheckController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								977,
+								977
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 210.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "frontend/models/RadCheck.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1024,
+								1024
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 174.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 496,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										337,
+										404
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "frontend/controllers/SiteController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1992,
+								1959
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 124.0
+	},
+	"output.sftp":
+	{
+		"height": 221.0
+	},
+	"pinned_build_system": "",
+	"project": "naabs2.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"admin/sql/install.mysql.utf8.sql"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 27.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 299.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

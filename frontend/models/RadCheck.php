@@ -41,22 +41,11 @@ class RadCheck extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'username' => 'Username',
             'attribute' => 'Attribute',
-            'op' => 'Op',
-            'value' => 'Value',
+            'id'        => 'ID',
+            'op'        => 'Op',
+            'username'  => 'Username',
+            'value'     => 'Value',
         ];
-    }
-
-    //if (RadCheck::addTime( $_op, $_username, $_value )) {
-    public static function addTime( $_op, $_username, $_value )
-    {
-echo '<pre>';
-print_r( $_op );
-print_r( $_username );
-print_r( $_value );
-echo '</pre>';
-exit;
     }
 }
