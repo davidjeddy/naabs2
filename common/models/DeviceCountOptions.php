@@ -44,13 +44,13 @@ class DeviceCountOptions extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'key' => 'Key',
-            'value' => 'Value',
-            'cost' => 'Cost',
+            'cost'    => 'Cost',
             'created' => 'Created',
-            'updated' => 'Updated',
             'deleted' => 'Deleted',
+            'id'      => 'ID',
+            'key'     => 'Key',
+            'updated' => 'Updated',
+            'value'   => 'Value',
         ];
     }
 }

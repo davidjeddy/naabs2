@@ -1,14 +1,18 @@
 <?php
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\bootstrap\activeDropDownList;
+
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
 
 /* @var $this yii\web\View */
 /* @var $purchase_mdl frontend\purchase_mdls\Purchase */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
-<h1>Billing Information:</h1>
 <?php $form = ActiveForm::begin([
     'layout'                 => 'horizontal',
     'enableClientScript'     => true,
@@ -17,14 +21,46 @@ use yii\bootstrap\ActiveForm;
     'validateOnChange'       => true,
 ]); ?>
 
-<?= $form->errorSummary($purchase_mdl);?>
-<?= $form->errorSummary($cc_format_mdl);?>
 
+
+<hr>
+<h1>Billing Information:</h1>
 <?php /*
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
 <?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
-<?= $form->field($purchase_mdl, 'user_id')->textInput() ?>
 */ ?>
+<?= $form->field($purchase_mdl, 'user_id')->label(false)->hiddenInput([
+    'value' => Yii::$app->user->getIdentity()->getAttribute('id')
+]) ?>
+
+
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?= Html::activeDropDownList(
+            $purchase_mdl,
+            'device_count_id',
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'key'),
+            [
+                'prompt'=>'--Select Number of Devices--',
+                'class' => 'form-control'
+            ]
+        ) ?>
+    </div>
+</div>
+
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?= Html::activeDropDownList(
+            $purchase_mdl,
+            'time_amount_id',
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key'),
+            [
+                'prompt'=>'--Select Length of Time--',
+                'class' => 'form-control'
+            ]
+        ) ?>
+    </div>
+</div>
 
 <?= $form->field($purchase_mdl, 'f_name')->label(false)->textInput([
     'maxlength'  => 45,
@@ -34,7 +70,6 @@ use yii\bootstrap\ActiveForm;
 <?= $form->field($purchase_mdl, 'l_name')->label(false)->textInput([
     'maxlength' => 45,
     'placeholder' => 'Last Name',
-    
 ]) ?>
 
 <?= $form->field($purchase_mdl, 'street_1')->label(false)->textInput([
@@ -62,11 +97,26 @@ use yii\bootstrap\ActiveForm;
     'placeholder' => 'ZIP / Postal Code',
 ]) ?>
 
-<hr>
 
+
+<hr>
 <h1>Payment Information:</h1>
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?= Html::activeDropDownList(
+            $cc_format_mdl,
+            'type',
+            [1 => 'discover', 2 => 'mastercard', 3 => 'visa'],
+            [
+                'prompt'=>'--Select Card Type--',
+                'class' => 'form-control'
+            ]
+        ) ?>
+    </div>
+</div>
+
 <?= $form->field($cc_format_mdl, 'number')->label(false)->textInput([
-    'maxlength' => 24,
+    'maxlength' => 16,
     'placeholder' => 'Card Number',
 ]) ?>
 
@@ -76,7 +126,7 @@ use yii\bootstrap\ActiveForm;
 ]) ?>
 
 <?= $form->field($cc_format_mdl, 'exp_year')->label(false)->textInput([
-    'maxlength' => 4,
+    'maxlength' => 2,
     'placeholder' => 'Expiration Year',
 ]) ?>
 
@@ -114,10 +164,14 @@ window.onload=function(){
     $("#purchase-prov").val('asdf');
     $("#purchase-postal").val('asd123');
 
-    $("#ccformat-number").val('1234 6789 09876 5432');
+    $("#ccformat-number").val('1234567887654321');
     $("#ccformat-exp_month").val('01');
-    $("#ccformat-exp_year").val('2014');
-    $("#ccformat-cvv2").val('123');
+    $("#ccformat-exp_year").val('14');
+    $("#ccformat-cvv2").val('1234');
+
+    $("#purchase-device_count_id > option:nth-child(2)").prop('selected', true);
+    $("#purchase-time_amount_id  > option:nth-child(3)").prop('selected', true);
+    $("#ccformat-type            > option:nth-child(4)").prop('selected', true);
 };
 </script>
 <?php } ?>

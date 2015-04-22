@@ -1,7 +1,6 @@
 <?php
 return [
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'components' => [
+    'components'    => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -10,6 +9,7 @@ return [
 			'showScriptName'  => 'false',
         ],
     ],
+    'vendorPath'    => dirname(dirname(__DIR__)) . '/vendor',
 ];
 
 

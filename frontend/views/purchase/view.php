@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Purchase */
 
-$this->title = $model->id;
+$this->title = 'Purchase Number: '.$model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Purchases', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+    <?php /*
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -23,15 +24,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        */ ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'device_count_id',
-            'time_id:datetime',
-            'user_id',
+            'time_amount_id',
+            //'user_id',
             'f_name',
             'l_name',
             'street_1',
@@ -40,12 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'prov',
             'postal',
             'last_4',
-            'year',
+            //'timestamp:datetime',
             'return_code',
             'return_message',
-            'created',
-            'updated',
-            'deleted',
+            'created:datetime',
+            'updated:datetime',
+            //'deleted',
         ],
     ]) ?>
 

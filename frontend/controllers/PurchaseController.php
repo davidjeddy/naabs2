@@ -8,10 +8,18 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
+use frontend\models\Purchase;
+
+use frontend\controllers\RadCheckController;
+
 use common\components\paypal;
 use common\models\CCFormat;
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
+use common\models\User;
+use common\models\UserDetails;
 
-use frontend\models\Purchase;
+
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -30,18 +38,15 @@ class PurchaseController extends Controller
         ];
     }
 
-    /**
-     * Lists all Purchase models.
-     * @return mixed
-     */
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Purchase::find(),
+          'query' => Purchase::find(),
         ]);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+          'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -58,57 +63,126 @@ class PurchaseController extends Controller
     }
 
     /**
-     * Creates a new Purchase.
-     * 
+     * Creates a new Purchase model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $purchase_mdl  = new Purchase();
         $cc_format_mdl = new CCFormat();
+        $purchase_mdl  = new Purchase();
 
-        if ($purchase_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->save()) {
 
-            // todo This iteration is Paypal only. - DJE : 2015-04-11
-            // Process the CC transaction
-            $paypal = new paypal();
-            $test_data = [
-                'cvv2'      => $purchase_mdl->getAttribute('number'),
-                'exp_month' => $purchase_mdl->getAttribute('number'),
-                'exp_year'  => $purchase_mdl->getAttribute('number'),
-                'f_name'    => $purchase_mdl->getAttribute('number'),
-                'l_name'    => $purchase_mdl->getAttribute('number'),
-                'number'    => $purchase_mdl->getAttribute('number'),
-            ];
-            
-echo '<pre>';
-print_r( $paypal->creditCardPayment()->getApprovalLink( $test_data ); );
-echo '</pre>';
-exit;
+
+
+
+        if (!empty(Yii::$app->request->post())) {
+
+            // the CCFormat does not actualy save anything to the DB.
+            if ($cc_format_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->validate()) {
+
+                // for the sake of consistancty, empty success logic block
+            } else {
+
+                Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
+            }
+
+
+
+            $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
+            $purchase_mdl->setAttribute('timestamp', date('U') );
+            if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
+
+                // save attempt at payment for record keeping
+                if ($purchase_mdl->save()) {
+
+
+                    // todo This iteration is Paypal only. - DJE : 2015-04-11
+                    // Process the CC transaction
+                    $payment_data = [
+                        'type'      => $cc_format_mdl['type'],
+                        'cvv2'      => $cc_format_mdl['cvv2'],
+                        'exp_month' => $cc_format_mdl['exp_month'],
+                        'exp_year'  => $cc_format_mdl['exp_year'],
+                        'number'    => $cc_format_mdl['number'],
+                        'f_name'    => $purchase_mdl->getAttribute('f_name'),
+                        'l_name'    => $purchase_mdl->getAttribute('l_name'),
+                    ];
+
+                    // usually place this at the beginning of the method but I dont want to init to obj if we dont need to.
+                    $paypal_com = new paypal();
+                    // todo switch to valid payment processing method - DJE : 2015-04-19
+                    $_payment_result = $paypal_com->setDate($payment_data)->processPayment();
+
+                    // update the purchase TBO with the processors resoponse
+                    $_message = null;
+                    if ($_payment_result->getState() == 'approved') {
+                        $_message = $_payment_result->getState();
+                    } else {
+                        $_message = $_payment_result->getFailedTransactions();
+                    }
+                    $purchase_mdl->setAttribute('return_message', $_message);
+                    $purchase_mdl->setAttribute('return_code', http_response_code());
+                    //$purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
+
+                    // attempt payment processing
+                    if ( $purchase_mdl->save() && $_payment_result->getState() == "approved") {
+
+                        // Update the FreeRadius TBO with new purchase information
+                        $_user_id = User::find()->where(
+                            ['id' => $purchase_mdl->getAttribute('user_id')]
+                        )->one()->getAttribute('id');
+                        $_value    = TimeAmountOptions::find('value')->where(
+                            ['id' => $purchase_mdl->getAttribute('time_amount_id')]
+                        )->one()->getAttribute('value');
+
+                        $_user_email = UserDetails::find()->where([
+                            'user_id' => $_user_id
+                        ])->one()->getAttribute('p_email');
+
+                        if (
+                            RadCheckController::actionCreateUserpass($_user_email) &&
+                            RadCheckController::actionCreateExpiration($_user_email, $_value )
+                        ) {
+
+                            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
+                        } else {
+                            
+                            Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
+                        }
+                    } else {
+
+                        Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
+                    }
+                }
+            } else {
+                Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
+            }
         }
 
-        // process purchase request if the CC transaction completed
-        if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->save()) {
 
-            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
-        } elseif ($purchase_mdl->errors) {
-
-            Yii::$app->getSession()->addFlash('error', 'Unable to complete purchase.');
-        }
 
         return $this->render('create', [
-            'cc_format_mdl' => $cc_format_mdl,
-            'purchase_mdl'  => $purchase_mdl,
+            'cc_format_mdl'            => $cc_format_mdl,
+            'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted' => null]), 
+            'purchase_mdl'             => $purchase_mdl,
+            'time_options_mdl'         => TimeAmountOptions::findAll(['deleted' => null]),
         ]);
     }
 
-/*
-setType($_param_data['type'])
-    ->setNumber($_param_data['number'])
-    ->setExpireMonth($_param_data['exp_month'])
-    ->setExpireYear($_param_data['exp_year'])
-    ->setCvv2($_param_data['cvv2'])
-    ->setFirstName($_param_data['f_name'])
-    ->setLastName($_param_data['l_name']);
-*/
+    /**
+     * Finds the Purchase model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Purchase the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Purchase::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 }

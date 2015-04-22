@@ -11,7 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'FreeRadius' => [
+            'class' => 'backend\modules\FreeRadius\FreeRadius',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',

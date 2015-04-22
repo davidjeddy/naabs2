@@ -39,6 +39,7 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = ['label' => 'Account', 'url' => ['/site/account']];
                 $menuItems[] = ['label' => 'Billing', 'url' => ['/purchase/create']];
+                $menuItems[] = ['label' => 'History', 'url' => ['/purchase/index']];
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'linkOptions' => ['data-method' => 'post'],

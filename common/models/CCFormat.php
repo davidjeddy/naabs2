@@ -13,13 +13,15 @@ use yii\base\Model;
  * @property integer $exp_month
  * @property integer $exp_year
  * @property integer $cvv2
+ * @property string $type
  */
-class CCFormat extends Model
+class CCFormat extends \yii\db\ActiveRecord
 {
     public $cvv2;
     public $exp_month;
     public $exp_year;
     public $number;
+    public $type;
 
     /**
      * @inheritdoc
@@ -35,9 +37,11 @@ class CCFormat extends Model
     public function rules()
     {
         return [
-            [['number', 'exp_month', 'exp_year', 'cvv2'], 'required'],
-            [['exp_month', 'exp_year', 'cvv2'], 'integer'],
-            [['number'], 'string', 'max' => 24],
+            [['type', 'number', 'exp_month', 'exp_year', 'cvv2'], 'required'],
+            [['cvv2'], 'string',  'max'                  => 4],
+            [['exp_month', 'exp_year'], 'string',  'max' => 2],
+            [['number'], 'string', 'max'                 => 16],
+            [['type'], 'string', 'max'                   => 2],
         ];
     }
 
@@ -51,16 +55,7 @@ class CCFormat extends Model
             'exp_month' => 'Exp Month',
             'exp_year'  => 'Exp Year',
             'number'    => 'Number',
+            'type'      => 'Card Type',
         ];
-    }
-
-    /**
-     * 
-     * Temp method till payment system is added
-     * @return [type] [description]
-     */
-    public function save()
-    {
-        return true;
     }
 }
