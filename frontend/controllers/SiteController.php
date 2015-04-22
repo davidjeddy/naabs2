@@ -37,7 +37,7 @@ class SiteController extends Controller
                'only' => ['logout', 'signup', 'tos', 'account', 'billing'],
                'rules' => [
                    [
-                       'actions' => ['about', 'signup'],
+                       'actions' => ['tos', 'signup'],
                        'allow' => true
                    ],
                    [

@@ -30,16 +30,18 @@ AppAsset::register($this);
                 'brandUrl'   => Yii::$app->homeUrl,
                 'options'    => ['class' => 'navbar-inverse navbar-fixed-top']
             ]);
+
             $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
             $menuItems[] = ['label' => 'Terms', 'url' => ['/site/tos']];
-
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                $menuItems[] = ['label' => '|'];
                 $menuItems[] = ['label' => 'Account', 'url' => ['/site/account']];
-                $menuItems[] = ['label' => 'Billing', 'url' => ['/purchase/create']];
                 $menuItems[] = ['label' => 'History', 'url' => ['/purchase/index']];
+                $menuItems[] = ['label' => 'Purchase', 'url' => ['/purchase/create']];
+                $menuItems[] = ['label' => '|'];    
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'linkOptions' => ['data-method' => 'post'],
