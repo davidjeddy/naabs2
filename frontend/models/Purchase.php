@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "purchase".
  *
  * @property integer $id
+ * @property integer $country_id
  * @property integer $device_count_id
  * @property integer $time_amount_id
  * @property integer $user_id
@@ -22,13 +23,13 @@ use Yii;
  * @property integer $timestamp
  * @property integer $return_code
  * @property string $return_message
- * @property string $created
- * @property string $updated
- * @property string $deleted
+ * @property string $created_at
+ * @property string $updated_at
+ * @property string $deleted_at
  *
- * @property User $user
  * @property DeviceCountOptions $deviceCount
- * @property TimeAmountOptions $time
+ * @property TimeAmountOptions $timeAmount
+ * @property User $user
  */
 class Purchase extends \yii\db\ActiveRecord
 {
@@ -46,11 +47,10 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['f_name', 'l_name', 'street_1', 'street_2', 'prov', 'postal'], 'string', 'length' => [3, 45]],
-            [['city', 'prov'], 'string', 'length' => [1, 45]],
-            [['device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
-            [['device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'safe'],
-            [['device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp'], 'integer'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code'], 'integer'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
         ];
     }
 
@@ -61,9 +61,10 @@ class Purchase extends \yii\db\ActiveRecord
     {
         return [
             'city'            => 'City',
-            'created'         => 'Created',
-            'deleted'         => 'Deleted',
-            'device_count_id' => 'Device Count',
+            'country_id'      => 'Country ID',
+            'created_at'      => 'Created',
+            'deleted_at'      => 'Deleted',
+            'device_count_id' => 'Device Count ID',
             'f_name'          => 'First Name',
             'id'              => 'ID',
             'l_name'          => 'Last Name',
@@ -74,9 +75,9 @@ class Purchase extends \yii\db\ActiveRecord
             'return_message'  => 'Return Message',
             'street_1'        => 'Street 1',
             'street_2'        => 'Street 2',
-            'time_amount_id'  => 'Time',
+            'time_amount_id'  => 'Time Amount ID',
             'timestamp'       => 'Timestamp',
-            'updated'         => 'Updated',
+            'updated_at'      => 'Updated',
             'user_id'         => 'User ID',
         ];
     }
@@ -84,10 +85,12 @@ class Purchase extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUser()
+    /*
+    public function getCountry()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(Country::className(), ['id' => 'country_id']);
     }
+    */
 
     /**
      * @return \yii\db\ActiveQuery
@@ -103,5 +106,13 @@ class Purchase extends \yii\db\ActiveRecord
     public function getTimeAmount()
     {
         return $this->hasOne(TimeAmountOptions::className(), ['id' => 'time_amount_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

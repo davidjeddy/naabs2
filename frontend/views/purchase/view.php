@@ -31,8 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'id',
-            'device_count_id',
-            'time_amount_id',
+            //'device_count_id',
+            //'time_amount_id',
             //'user_id',
             'f_name',
             'l_name',
@@ -41,13 +41,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'city',
             'prov',
             'postal',
+            //'country',
             'last_4',
             //'timestamp:datetime',
             'return_code',
             'return_message',
-            'created:datetime',
-            'updated:datetime',
-            //'deleted',
+            'created_at:datetime',
+            'updated_at:datetime',
+            //'deleted_at:datetime',
         ],
     ]) ?>
 

@@ -12,14 +12,13 @@ use frontend\models\Purchase;
 
 use frontend\controllers\RadCheckController;
 
-use common\components\paypal;
+use common\components\Paypal;
 use common\models\CCFormat;
+use common\models\Country;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
 use common\models\UserDetails;
-
-
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -97,9 +96,21 @@ class PurchaseController extends Controller
                 if ($purchase_mdl->save()) {
 
 
+
                     // todo This iteration is Paypal only. - DJE : 2015-04-11
                     // Process the CC transaction
-                    $payment_data = [
+                    $pp_purchase_data['address'] = [
+                        'street_1' => $purchase_mdl->getAttribute('street_1'),
+                        'street_2' => $purchase_mdl->getAttribute('street_2'),
+                        'city'     => $purchase_mdl->getAttribute('city'),
+                        'prov'     => $purchase_mdl->getAttribute('prov'),
+                        'postal'   => $purchase_mdl->getAttribute('postal'),
+                        'country'  => Country::find('value')->where(['id' => $purchase_mdl->getAttribute('country_id')])
+                            ->one()->getAttribute('key'),
+                    ];
+
+                    // Process the CC transaction
+                    $pp_purchase_data['creditcard'] = [
                         'type'      => $cc_format_mdl['type'],
                         'cvv2'      => $cc_format_mdl['cvv2'],
                         'exp_month' => $cc_format_mdl['exp_month'],
@@ -109,10 +120,26 @@ class PurchaseController extends Controller
                         'l_name'    => $purchase_mdl->getAttribute('l_name'),
                     ];
 
+                    // add time and qunatity into total
+                    $pp_purchase_data['amountdetails']['subtotal'] = array_sum([
+                        'subtotal' => trim(substr(
+                            TimeAmountOptions::find('value')->where([
+                                'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
+                            ])->one()->getAttribute('cost'), 1, -4
+                        )),
+                        'quantity' => trim(substr(
+                            DeviceCountOptions::find('value')->where([
+                                'id' => Yii::$app->request->post()['Purchase']['device_count_id']
+                            ])->one()->getAttribute('cost'), 1, -4
+                        )),
+                    ]);
+
+
                     // usually place this at the beginning of the method but I dont want to init to obj if we dont need to.
                     $paypal_com = new paypal();
+
                     // todo switch to valid payment processing method - DJE : 2015-04-19
-                    $_payment_result = $paypal_com->setDate($payment_data)->processPayment();
+                    $_payment_result = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
 
                     // update the purchase TBO with the processors resoponse
                     $_message = null;
@@ -164,6 +191,7 @@ class PurchaseController extends Controller
 
         return $this->render('create', [
             'cc_format_mdl'            => $cc_format_mdl,
+            'country_mdl'              => Country::findAll(['deleted_at' => null]),
             'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted' => null]), 
             'purchase_mdl'             => $purchase_mdl,
             'time_options_mdl'         => TimeAmountOptions::findAll(['deleted' => null]),

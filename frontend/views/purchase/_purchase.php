@@ -6,6 +6,7 @@ use yii\bootstrap\activeDropDownList;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
+use common\models\Country;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 
@@ -24,7 +25,7 @@ use common\models\TimeAmountOptions;
 
 
 <hr>
-<h1>Billing Information:</h1>
+<h1>Service Options:</h1>
 <?php /*
 <?= $form->field($purchase_mdl, 'device_count_id')->textInput() ?>
 <?= $form->field($purchase_mdl, 'time_id')->textInput() ?>
@@ -39,7 +40,7 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'device_count_id',
-            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'key'),
+            ArrayHelper::map(DeviceCountOptions::find()->all(), 'id', 'key', 'cost'),
             [
                 'prompt'=>'--Select Number of Devices--',
                 'class' => 'form-control'
@@ -53,7 +54,7 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $purchase_mdl,
             'time_amount_id',
-            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key'),
+            ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key', 'cost'),
             [
                 'prompt'=>'--Select Length of Time--',
                 'class' => 'form-control'
@@ -62,6 +63,8 @@ use common\models\TimeAmountOptions;
     </div>
 </div>
 
+<hr>
+<h1>Billing Information:</h1>
 <?= $form->field($purchase_mdl, 'f_name')->label(false)->textInput([
     'maxlength'  => 45,
     'placeholder' => 'First Name'
@@ -96,6 +99,19 @@ use common\models\TimeAmountOptions;
     'maxlength' => 45,
     'placeholder' => 'ZIP / Postal Code',
 ]) ?>
+<div class="form-group field-purchase-type required">
+    <div class="col-sm-6 col-sm-offset-3">
+        <?= Html::activeDropDownList(
+            $purchase_mdl,
+            'country_id',
+            ArrayHelper::map(Country::find()->all(), 'id', 'value'),
+            [
+                'prompt'=>'--Select Country--',
+                'class' => 'form-control'
+            ]
+        ) ?>
+    </div>
+</div>
 
 
 
@@ -106,10 +122,14 @@ use common\models\TimeAmountOptions;
         <?= Html::activeDropDownList(
             $cc_format_mdl,
             'type',
-            [1 => 'discover', 2 => 'mastercard', 3 => 'visa'],
             [
-                'prompt'=>'--Select Card Type--',
-                'class' => 'form-control'
+                'discover'   => 'discover',
+                'mastercard' => 'mastercard',
+                'visa'       => 'visa',
+            ],
+            [
+                'class'  => 'form-control',
+                'prompt' =>'--Select Card Type--',
             ]
         ) ?>
     </div>
@@ -122,12 +142,12 @@ use common\models\TimeAmountOptions;
 
 <?= $form->field($cc_format_mdl, 'exp_month')->label(false)->textInput([
     'maxlength' => 2,
-    'placeholder' => 'Expiration Month',
+    'placeholder' => 'Expiration Month, 2 digit: 11',
 ]) ?>
 
 <?= $form->field($cc_format_mdl, 'exp_year')->label(false)->textInput([
-    'maxlength' => 2,
-    'placeholder' => 'Expiration Year',
+    'maxlength' => 4,
+    'placeholder' => 'Expiration Year, 4 digit: 2018',
 ]) ?>
 
 <?= $form->field($cc_format_mdl, 'cvv2')->label(false)->textInput([
@@ -156,21 +176,22 @@ use common\models\TimeAmountOptions;
 <script>
 // jQuery is loaded after the page completes, wait for Window.onload to be valid.   
 window.onload=function(){
-    $("#purchase-f_name").val('qwer');
-    $("#purchase-l_name").val('asdf');
-    $("#purchase-street_1").val('123 zxc');
+    $("#purchase-f_name").val('Joe');
+    $("#purchase-l_name").val('Shopper');
+    $("#purchase-street_1").val('52 N Main ST');
     $("#purchase-street_2").val();
-    $("#purchase-city").val('qwer');
-    $("#purchase-prov").val('asdf');
-    $("#purchase-postal").val('asd123');
+    $("#purchase-city").val('Johnstown');
+    $("#purchase-prov").val('OH');
+    $("#purchase-postal").val('43210');
+    $("#purchase-country_id > option:nth-child(2)").prop('selected', true);
 
-    $("#ccformat-number").val('1234567887654321');
-    $("#ccformat-exp_month").val('01');
-    $("#ccformat-exp_year").val('14');
-    $("#ccformat-cvv2").val('1234');
+    $("#ccformat-number").val('4417119669820331');
+    $("#ccformat-exp_month").val('11');
+    $("#ccformat-exp_year").val('2018');
+    $("#ccformat-cvv2").val('874');
 
-    $("#purchase-device_count_id > option:nth-child(2)").prop('selected', true);
-    $("#purchase-time_amount_id  > option:nth-child(3)").prop('selected', true);
+    $("#purchase-device_count_id > optgroup:nth-child(3) > option").prop('selected', true);
+    $("#purchase-time_amount_id > optgroup:nth-child(3) > option").prop('selected', true);
     $("#ccformat-type            > option:nth-child(4)").prop('selected', true);
 };
 </script>
