@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
+
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Purchase */
 
@@ -27,6 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         */ ?>
     </p>
 
+
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -34,20 +39,35 @@ $this->params['breadcrumbs'][] = $this->title;
             //'device_count_id',
             //'time_amount_id',
             //'user_id',
+            [
+                'label' => 'Length of Time',
+                'value' => TimeAmountOptions::find()->where([
+                    'id' => $model->getAttribute('time_amount_id')]
+                )->one()->getAttribute('key'),
+            ],
+            [
+                'label' => '# of Devices',
+                'value' => DeviceCountOptions::find()->where([
+                    'id' => $model->getAttribute('device_count_id')]
+                )->one()->getAttribute('key'),
+            ],
             'f_name',
             'l_name',
             'street_1',
             'street_2',
             'city',
-            'prov',
+            //'prov',
+            [
+                'label' => 'State / Prov.',
+                'value' => $model->getAttribute('prov')
+            ],
             'postal',
-            //'country',
             'last_4',
             //'timestamp:datetime',
             'return_code',
             'return_message',
             'created_at:datetime',
-            'updated_at:datetime',
+            //'updated_at:datetime',
             //'deleted_at:datetime',
         ],
     ]) ?>

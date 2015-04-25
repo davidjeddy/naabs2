@@ -22,9 +22,9 @@ $this->params['breadcrumbs'][] = $this->title;
             //'time_amount_id',
             'f_name',
             'last_4',
-            'created:datetime',
-            //'updated',
-            // 'deleted',
+            'created_at:datetime',
+            //'updated_at',
+            // 'deleted_at',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
