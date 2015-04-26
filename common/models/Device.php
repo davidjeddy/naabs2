@@ -11,9 +11,9 @@ use Yii;
  * @property string $device_mac
  * @property string $device_name
  * @property integer $user_id
- * @property string $created
- * @property string $updated
- * @property string $deleted
+ * @property string $created_at
+ * @property string $updated_at
+ * @property string $deleted_at
  */
 class Device extends \yii\db\ActiveRecord
 {
@@ -33,7 +33,7 @@ class Device extends \yii\db\ActiveRecord
         return [
             [['device_mac', 'device_name', 'user_id'], 'required'],
             [['user_id'], 'integer'],
-            [['created', 'updated', 'deleted'], 'safe'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['device_mac', 'device_name'], 'string', 'max' => 32]
         ];
     }
@@ -44,12 +44,12 @@ class Device extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created'     => 'Created',
-            'deleted'     => 'Deleted',
+            'created_at'     => 'Created At',
+            'deleted_at'     => 'Deleted At',
             'device_mac'  => 'Device Mac',
             'device_name' => 'Device Name',
             'id'          => 'ID',
-            'updated'     => 'Updated',
+            'updated_at'     => 'Updated At',
             'user_id'     => 'User ID',
         ];
     }

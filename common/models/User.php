@@ -17,9 +17,9 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
- * @property integer $created
- * @property integer $updated
- * @property integer $deleted
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface

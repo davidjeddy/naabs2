@@ -10,8 +10,8 @@ use Yii;
  * @property integer $id
  * @property string $key
  * @property string $value
- * @property string $created
- * @property string $updated
+ * @property string $created_at
+ * @property string $updated_at
  * @property string $delete
  */
 class AppData extends \yii\db\ActiveRecord
@@ -32,7 +32,7 @@ class AppData extends \yii\db\ActiveRecord
         return [
             [['key', 'value'], 'required'],
             [['value'], 'string'],
-            [['key', 'value', 'created', 'updated', 'delete'], 'safe'],
+            [['key', 'value', 'created_at', 'updated_at', 'delete'], 'safe'],
             [['key'], 'string', 'max' => 8]
         ];
     }
@@ -43,11 +43,11 @@ class AppData extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created' => 'Created',
+            'created_at' => 'created_at',
             'delete'  => 'Delete',
             'id'      => 'ID',
             'key'     => 'Key',
-            'updated' => 'Updated',
+            'updated_at' => 'updated_at',
             'value'   => 'Value',
         ];
     }

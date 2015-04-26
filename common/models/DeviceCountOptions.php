@@ -11,9 +11,9 @@ use Yii;
  * @property string $key
  * @property integer $value
  * @property string $cost
- * @property integer $created
- * @property integer $updated
- * @property integer $deleted
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  */
 class DeviceCountOptions extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,7 @@ class DeviceCountOptions extends \yii\db\ActiveRecord
     {
         return [
             [['key', 'value'], 'required'],
-            [['value', 'created', 'updated', 'deleted'], 'integer'],
+            [['value', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['cost'], 'number'],
             [['key'], 'string', 'max' => 32]
         ];
@@ -45,11 +45,11 @@ class DeviceCountOptions extends \yii\db\ActiveRecord
     {
         return [
             'cost'    => 'Cost',
-            'created' => 'Created',
-            'deleted' => 'Deleted',
+            'created_at' => 'Created At',
+            'deleted_at' => 'Deleted At',
             'id'      => 'ID',
             'key'     => 'Key',
-            'updated' => 'Updated',
+            'updated_at' => 'Updated At',
             'value'   => 'Value',
         ];
     }

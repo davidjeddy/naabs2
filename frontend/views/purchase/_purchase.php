@@ -156,8 +156,8 @@ use common\models\TimeAmountOptions;
 ]) ?>
 
 <?php /*
-<?= $form->field($purchase_mdl, 'created')->textInput(['maxlength' => 45]) ?>
-<?= $form->field($purchase_mdl, 'deleted')->textInput(['maxlength' => 45]) ?>
+<?= $form->field($purchase_mdl, 'created_at')->textInput(['maxlength' => 45]) ?>
+<?= $form->field($purchase_mdl, 'deleted_at')->textInput(['maxlength' => 45]) ?>
 <?= $form->field($purchase_mdl, 'return_code')->textInput() ?>
 <?= $form->field($purchase_mdl, 'return_message')->textInput(['maxlength' => 45]) ?>
 <?= $form->field($purchase_mdl, 'updated')->textInput(['maxlength' => 45]) ?>

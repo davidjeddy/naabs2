@@ -10,9 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property integer $value
- * @property string $created
- * @property string $updated
- * @property string $deleted
+ * @property string $created_at
+ * @property string $updated_at
+ * @property string $deleted_at
  */
 class Role extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,7 @@ class Role extends \yii\db\ActiveRecord
         return [
             [['name', 'value'], 'required'],
             [['value'], 'integer'],
-            [['created', 'updated', 'deleted'], 'safe'],
+            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['name'], 'string', 'max' => 32]
         ];
     }
@@ -46,9 +46,9 @@ class Role extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'value' => 'Value',
-            'created' => 'Created',
-            'updated' => 'Updated',
-            'deleted' => 'Deleted',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
 }
