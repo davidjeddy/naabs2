@@ -32,9 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'device_mac',
             'device_name',
             'user_id',
-            'created',
-            'updated',
-            //'deleted',
+            'created_at:datetime',
+            'updated_at:datetime',
+            //'deleted_at:datetime',
         ],
     ]) ?>
 

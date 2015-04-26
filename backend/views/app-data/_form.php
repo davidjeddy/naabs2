@@ -16,11 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'value')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created')->textInput()->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'created_at')->textInput()->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'updated')->textInput()->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'updated_at')->textInput()->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'deleted')->textInput()->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'deleted_at')->textInput()->textInput(['disabled' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -23,9 +23,9 @@ use Yii;
  * @property integer $timestamp
  * @property integer $return_code
  * @property string $return_message
- * @property string $created_at
- * @property string $updated_at
- * @property string $deleted_at
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  *
  * @property DeviceCountOptions $deviceCount
  * @property TimeAmountOptions $timeAmount
@@ -47,9 +47,8 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
-            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code'], 'integer'],
-            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp', 'created_at'], 'required'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
         ];
     }
@@ -60,37 +59,27 @@ class Purchase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'city'            => 'City',
-            'country_id'      => 'Country ID',
-            'created_at'      => 'Created',
-            'deleted_at'      => 'Deleted',
+            'id' => 'ID',
+            'country_id' => 'Country ID',
             'device_count_id' => 'Device Count ID',
-            'f_name'          => 'First Name',
-            'id'              => 'ID',
-            'l_name'          => 'Last Name',
-            'last_4'          => 'Last 4',
-            'postal'          => 'Postal',
-            'prov'            => 'Prov',
-            'return_code'     => 'Return Code',
-            'return_message'  => 'Return Message',
-            'street_1'        => 'Street 1',
-            'street_2'        => 'Street 2',
-            'time_amount_id'  => 'Time Amount ID',
-            'timestamp'       => 'Timestamp',
-            'updated_at'      => 'Updated',
-            'user_id'         => 'User ID',
+            'time_amount_id' => 'Time Amount ID',
+            'user_id' => 'User ID',
+            'f_name' => 'F Name',
+            'l_name' => 'L Name',
+            'street_1' => 'Street 1',
+            'street_2' => 'Street 2',
+            'city' => 'City',
+            'prov' => 'Prov',
+            'postal' => 'Postal',
+            'last_4' => 'Last 4',
+            'timestamp' => 'Timestamp',
+            'return_code' => 'Return Code',
+            'return_message' => 'Return Message',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    /*
-    public function getCountry()
-    {
-        return $this->hasOne(Country::className(), ['id' => 'country_id']);
-    }
-    */
 
     /**
      * @return \yii\db\ActiveQuery
