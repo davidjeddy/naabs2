@@ -33,9 +33,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($details, 's_question') ?>
                 <?= $form->field($details, 's_answer') ?>
                 <div class="form-group">
-                    <?= Html::submitButton('account', ['class' => 'btn btn-primary', 'name' => 'account-button']) ?>
+                    <?= Html::submitButton('Create Account', ['class' => 'btn btn-primary', 'name' => 'account-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
+
+<?php if (YII_DEBUG) { //pre-populate form when testing ?>
+<script>
+// jQuery is loaded after the page completes, wait for Window.onload to be valid.   
+window.onload=function(){
+    $("#signupform-username").val('UserUsername');
+    $("#signupform-password").val('useruser');
+    $("#signupform-password_repeat").val('useruser');
+
+    $("#userdetails-f_name").val('UserFName');
+    $("#userdetails-l_name").val('UserLName');
+    $("#userdetails-p_phone").val('1234567890');
+    $("#userdetails-p_email").val('user@user.com');
+    $("#userdetails-s_question").val('who am i');
+    $("#userdetails-s_answer").val('a user');
+};
+</script>
+<?php } ?>
