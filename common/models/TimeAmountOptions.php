@@ -54,4 +54,24 @@ class TimeAmountOptions extends \yii\db\ActiveRecord
             'deleted_at' => 'Deleted At',
         ];
     }
+
+    /* convert the datetime<->timestamp between saving and displaying */
+
+    public function beforeSave($insert)
+    {
+        // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
+        $this->setAttribute('created_at', strtotime($this->getAttribute('created_at')) );
+        $this->setAttribute('updated_at', strtotime($this->getAttribute('updated_at')) );
+
+        return $this;
+    }
+
+    public function afterFind()
+    {
+        // convert timestamp to datetime for CNTL/VW, but only for 'Expiration' attrib.
+        $this->setAttribute('created_at', date('Y-m-d H:i:s', $this->getAttribute('created_at')));
+        $this->setAttribute('updated_at', date('Y-m-d H:i:s', $this->getAttribute('updated_at')));
+
+        return $this;
+    }
 }
