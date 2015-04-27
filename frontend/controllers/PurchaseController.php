@@ -192,9 +192,9 @@ class PurchaseController extends Controller
         return $this->render('create', [
             'cc_format_mdl'            => $cc_format_mdl,
             'country_mdl'              => Country::findAll(['deleted_at' => null]),
-            'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted' => null]), 
+            'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted_at' => null]), 
             'purchase_mdl'             => $purchase_mdl,
-            'time_options_mdl'         => TimeAmountOptions::findAll(['deleted' => null]),
+            'time_options_mdl'         => TimeAmountOptions::findAll(['deleted_at' => null]),
         ]);
     }
 
