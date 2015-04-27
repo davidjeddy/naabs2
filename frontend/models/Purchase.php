@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "purchase".
@@ -39,6 +40,13 @@ class Purchase extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'purchase';
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
     }
 
     /**

@@ -122,17 +122,16 @@ class PurchaseController extends Controller
 
                     // add time and qunatity into total
                     $pp_purchase_data['amountdetails']['subtotal'] = array_sum([
-                        'subtotal' => trim(substr(
+                        'subtotal' => 
                             TimeAmountOptions::find('value')->where([
                                 'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
-                            ])->one()->getAttribute('cost'), 1, -4
-                        )),
-                        'quantity' => trim(substr(
+                            ])->one()->getAttribute('cost'),
+                        'quantity' => 
                             DeviceCountOptions::find('value')->where([
                                 'id' => Yii::$app->request->post()['Purchase']['device_count_id']
-                            ])->one()->getAttribute('cost'), 1, -4
-                        )),
+                            ])->one()->getAttribute('cost'),
                     ]);
+
 
 
                     // usually place this at the beginning of the method but I dont want to init to obj if we dont need to.

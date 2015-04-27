@@ -22,6 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'time_amount_id',
             'f_name',
             'last_4',
+            'return_code',
+            'return_message',
             'created_at:datetime',
             //'updated_at',
             // 'deleted_at',
