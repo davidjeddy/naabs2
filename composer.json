@@ -13,7 +13,7 @@
         "yiisoft/yii2"            : "*",
         "yiisoft/yii2-bootstrap"  : "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "miloschuman/yii2-highcharts-widget": "dev-master"
+        "2amigos/yii2-highcharts-widget" : "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
