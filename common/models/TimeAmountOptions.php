@@ -11,9 +11,9 @@ use Yii;
  * @property string $key
  * @property integer $value
  * @property string $cost
- * @property integer $created
- * @property integer $updated
- * @property integer $deleted
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  */
 class TimeAmountOptions extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,7 @@ class TimeAmountOptions extends \yii\db\ActiveRecord
     {
         return [
             [['key', 'value', 'cost'], 'required'],
-            [['created', 'updated', 'deleted'], 'integer'],
+            [['created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['value'], 'string'],
             [['cost'], 'number'],
             [['key'], 'string', 'max' => 32]
@@ -49,9 +49,9 @@ class TimeAmountOptions extends \yii\db\ActiveRecord
             'key'     => 'Key',
             'value'   => 'Value',
             'cost'    => 'Cost',
-            'created' => 'Created',
-            'updated' => 'Updated',
-            'deleted' => 'Deleted',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
 }

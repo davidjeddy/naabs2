@@ -38,10 +38,9 @@ class CCFormat extends \yii\db\ActiveRecord
     {
         return [
             [['type', 'number', 'exp_month', 'exp_year', 'cvv2'], 'required'],
-            [['cvv2'], 'string',  'max'                  => 4],
-            [['exp_month', 'exp_year'], 'string',  'max' => 2],
-            [['number'], 'string', 'max'                 => 16],
-            [['type'], 'string', 'max'                   => 2],
+            [['cvv2', 'exp_year'], 'string',  'max' => 4],
+            [['exp_month'], 'string',  'max'        => 2],
+            [['number'], 'string', 'max'            => 16],
         ];
     }
 

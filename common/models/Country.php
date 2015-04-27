@@ -1,27 +1,27 @@
 <?php
 
-namespace backend\models;
+namespace common\models;
 
 use Yii;
 
 /**
- * This is the model class for table "role".
+ * This is the model class for table "country".
  *
  * @property integer $id
- * @property string $name
- * @property integer $value
+ * @property string $key
+ * @property string $value
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
  */
-class Role extends \yii\db\ActiveRecord
+class Country extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'role';
+        return 'country';
     }
 
     /**
@@ -30,10 +30,9 @@ class Role extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'value'], 'required'],
-            [['value'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['name'], 'string', 'max' => 32]
+            [['key'], 'string', 'max' => 2],
+            [['value'], 'string', 'max' => 64]
         ];
     }
 
@@ -43,12 +42,12 @@ class Role extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'value' => 'Value',
             'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
+            'id'         => 'ID',
+            'key'        => 'Key',
+            'updated_at' => 'Updated At',
+            'value'      => 'Value',
         ];
     }
 }

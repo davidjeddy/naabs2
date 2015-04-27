@@ -3,8 +3,10 @@ namespace frontend\models;
 
 use common\models\User;
 use common\models\UserDetails;
-use yii\base\Model;
+
 use Yii;
+use yii\base\Model;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * Signup form
@@ -32,6 +34,16 @@ class SignupForm extends Model
             ['password_repeat', 'compare', 'compareAttribute' => 'password'],
             ['password_repeat','safe'],
             ['password_repeat', 'compare', 'compareAttribute' => 'password'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

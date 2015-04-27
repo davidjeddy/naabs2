@@ -72,8 +72,8 @@ class UserDetails extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created_at'    => 'created_at',
-            'deleted_at'    => 'deleted_at',
+            'created_at' => 'Created At',
+            'deleted_at' => 'Deleted At',
             'f_name'     => 'First Name',
             'id'         => 'ID',
             'l_name'     => 'Last Name',
@@ -84,7 +84,7 @@ class UserDetails extends ActiveRecord
             's_email'    => 'Secondary Email',
             's_phone'    => 'Secondary Phone',
             's_question' => 'Security Question',
-            'updated_at'    => 'updated_at',
+            'updated_at' => 'Updated At',
             'user_id'    => 'User ID',
         ];
     }

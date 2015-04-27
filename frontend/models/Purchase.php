@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "purchase".
  *
  * @property integer $id
+ * @property integer $country_id
  * @property integer $device_count_id
  * @property integer $time_amount_id
  * @property integer $user_id
@@ -22,13 +23,13 @@ use Yii;
  * @property integer $timestamp
  * @property integer $return_code
  * @property string $return_message
- * @property string $created
- * @property string $updated
- * @property string $deleted
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  *
- * @property User $user
  * @property DeviceCountOptions $deviceCount
- * @property TimeAmountOptions $time
+ * @property TimeAmountOptions $timeAmount
+ * @property User $user
  */
 class Purchase extends \yii\db\ActiveRecord
 {
@@ -46,11 +47,9 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['f_name', 'l_name', 'street_1', 'street_2', 'prov', 'postal'], 'string', 'length' => [3, 45]],
-            [['city', 'prov'], 'string', 'length' => [1, 45]],
-            [['device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
-            [['device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'safe'],
-            [['device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp'], 'integer'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp', 'created_at'], 'required'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
+            [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
         ];
     }
 
@@ -60,33 +59,26 @@ class Purchase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'city'            => 'City',
-            'created'         => 'Created',
-            'deleted'         => 'Deleted',
-            'device_count_id' => 'Device Count',
-            'f_name'          => 'First Name',
-            'id'              => 'ID',
-            'l_name'          => 'Last Name',
-            'last_4'          => 'Last 4',
-            'postal'          => 'Postal',
-            'prov'            => 'Prov',
-            'return_code'     => 'Return Code',
-            'return_message'  => 'Return Message',
-            'street_1'        => 'Street 1',
-            'street_2'        => 'Street 2',
-            'time_amount_id'  => 'Time',
-            'timestamp'       => 'Timestamp',
-            'updated'         => 'Updated',
-            'user_id'         => 'User ID',
+            'id' => 'ID',
+            'country_id' => 'Country ID',
+            'device_count_id' => 'Device Count ID',
+            'time_amount_id' => 'Time Amount ID',
+            'user_id' => 'User ID',
+            'f_name' => 'F Name',
+            'l_name' => 'L Name',
+            'street_1' => 'Street 1',
+            'street_2' => 'Street 2',
+            'city' => 'City',
+            'prov' => 'Prov',
+            'postal' => 'Postal',
+            'last_4' => 'Last 4',
+            'timestamp' => 'Timestamp',
+            'return_code' => 'Return Code',
+            'return_message' => 'Return Message',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**
@@ -103,5 +95,13 @@ class Purchase extends \yii\db\ActiveRecord
     public function getTimeAmount()
     {
         return $this->hasOne(TimeAmountOptions::className(), ['id' => 'time_amount_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

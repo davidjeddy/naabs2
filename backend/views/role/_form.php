@@ -16,11 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'value')->textInput()->label('Role Number') ?>
 
-    <?= $form->field($model, 'created')->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'created_at')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'updated')->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'updated_at')->textInput(['disabled' => true]) ?>
 
-    <?php //$form->field($model, 'deleted')->textInput(['disabled' => true]) ?>
+    <?php //$form->field($model, 'deleted_at')->textInput(['disabled' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
