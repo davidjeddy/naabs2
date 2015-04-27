@@ -1,6 +1,8 @@
 <?php
 /* @var $this yii\web\View */
 
+use dosamigos\highcharts\HighCharts;
+
 $this->title = 'Naabs 2 Administrative Panel';
 ?>
 <div class="site-index">
@@ -14,21 +16,29 @@ $this->title = 'Naabs 2 Administrative Panel';
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Backend</h2>
-
-                <p></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Admin</h2>
-
-                <p></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Panel</h2>
-
-                <p></p>
-            </div>
+        <?= HighCharts::widget([
+            'clientOptions' => [
+                'chart' => [
+                        'type' => 'line'
+                ],
+                'title' => [
+                     'text' => 'Sales Per Month'
+                     ],
+                'xAxis' => [
+                    'categories' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                ],
+                'yAxis' => [
+                    'title' => [
+                        'text' => 'Amount'
+                    ]
+                ],
+                'series' => [
+                    ['name' => 'Last Year',     'data' => [1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+                    ['name' => 'Current Year',  'data' => [5, 7, 3]]
+                ]
+            ]
+        ]);
+        ?>
         </div>
 
     </div>
