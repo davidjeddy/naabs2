@@ -47,7 +47,7 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp', 'created_at'], 'required'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
             [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
         ];
@@ -59,25 +59,25 @@ class Purchase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'country_id' => 'Country ID',
+            'city'            => 'City',
+            'country_id'      => 'Country ID',
+            'created_at'      => 'Created At',
+            'deleted_at'      => 'Deleted At',
             'device_count_id' => 'Device Count ID',
-            'time_amount_id' => 'Time Amount ID',
-            'user_id' => 'User ID',
-            'f_name' => 'F Name',
-            'l_name' => 'L Name',
-            'street_1' => 'Street 1',
-            'street_2' => 'Street 2',
-            'city' => 'City',
-            'prov' => 'Prov',
-            'postal' => 'Postal',
-            'last_4' => 'Last 4',
-            'timestamp' => 'Timestamp',
-            'return_code' => 'Return Code',
-            'return_message' => 'Return Message',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'deleted_at' => 'Deleted At',
+            'f_name'          => 'First Name',
+            'id'              => 'ID',
+            'l_name'          => 'Last Name',
+            'last_4'          => 'Last 4',
+            'postal'          => 'Postal',
+            'prov'            => 'Prov',
+            'return_code'     => 'Return Code',
+            'return_message'  => 'Return Message',
+            'street_1'        => 'Street 1',
+            'street_2'        => 'Street 2',
+            'time_amount_id'  => 'Time Amount ID',
+            'timestamp'       => 'Timestamp',
+            'updated_at'      => 'Updated At',
+            'user_id'         => 'User ID',
         ];
     }
 
