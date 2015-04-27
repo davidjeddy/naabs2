@@ -11,14 +11,12 @@ $this->title = 'Naabs 2 Administrative Panel';
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
-
         <p class="lead">Administrative backend panel.</p>
     </div>
 
     <div class="body-content">
 
         <div class="row">
-
         <?= HighCharts::widget([
             'clientOptions' => [
                 'chart' => [
@@ -36,9 +34,9 @@ $this->title = 'Naabs 2 Administrative Panel';
                     ]
                 ],
                 'series' => [
-                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSaleByYear((integer)date('Y')-1)) ],
-                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSaleByYear((integer)date('Y'))) ],
-                    ['name' => 'Demo Year',     'data' => [1,5,2,2,5,8,9,6,4,2,4,6] ],
+                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSaleByYear((integer)date('Y')-1))],
+                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSaleByYear((integer)date('Y')))],
+                    ['name' => 'Demo Year',     'data' => [1,5,2,2,5,8,9,6,4,2,4,6]],
                 ]
             ]
         ]);

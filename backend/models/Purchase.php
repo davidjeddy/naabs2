@@ -127,14 +127,21 @@ class Purchase extends \yii\db\ActiveRecord
 
     /* Custom Data Aggregate methods */
 
+    /**
+     * Return the # of sales per month based on teh year param
+     *
+     * @since  0.4.5 [description]
+     * @param  integer $year [description]
+     * @return array
+     */
     public static function getSaleByYear($year)
     {
         $return_data = [];
         if (!is_numeric($year)) { return false; };
 
-        foreach ([1,2,3,4,5,6,7,8,9,10,11,12] as $_v => $_key) {
-            $start = mktime(0, 0, 0, $_key, 1,  $year);
-            $end   = mktime(0, 0, 0, $_key, 31, $year);
+        foreach ([1,2,3,4,5,6,7,8,9,10,11,12] as $_key => $_value) {
+            $start = mktime(0, 0, 0, $_value, 1,  $year);
+            $end   = mktime(0, 0, 0, $_value, 31, $year);
 
             $return_data[] = (integer)Purchase::find()
                 ->select('id')
