@@ -136,19 +136,18 @@ class Purchase extends \yii\db\ActiveRecord
      */
     public static function getSaleByYear($year)
     {
-        $return_data = [];
         if (!is_numeric($year)) { return false; };
+        $return_data = [];
 
-        foreach ([1,2,3,4,5,6,7,8,9,10,11,12] as $_key => $_value) {
-            $start = mktime(0, 0, 0, $_value, 1,  $year);
-            $end   = mktime(0, 0, 0, $_value, 31, $year);
+        foreach ([0,11,2,3,4,5,6,7,8,9,10,11] as $_key) {
+            $start = mktime(0, 0, 0, $_key+1, 1,  $year);
+            $end   = mktime(0, 0, 0, $_key+1, 31, $year);
 
             $return_data[] = (integer)Purchase::find()
                 ->select('id')
-                ->where(['return_code' => 200])
+                ->where(['return_code' => 200, 'deleted_at' => null])
                 ->andWhere(['>=', 'created_at', $start])
                 ->andWhere(['<=', 'created_at', $end])
-                ->andWhere(['deleted_at' => null])
                 ->count();
         }
 
