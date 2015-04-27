@@ -3,11 +3,14 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Role;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+
+use backend\models\Role;
+use common\models\UserDetails;
 
 /**
  * RoleController implements the CRUD actions for Role model.
@@ -17,6 +20,17 @@ class RoleController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => (boolean)UserDetails::find()
+                            ->where(['>=', 'role', 20])
+                            ->andWhere(['id' => Yii::$app->user->id])
+                            ->one(),
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

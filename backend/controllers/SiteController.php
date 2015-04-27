@@ -1,11 +1,14 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
-use common\models\LoginForm;
 use yii\filters\VerbFilter;
+use yii\web\Controller;
+
+use common\models\LoginForm;
+use common\models\UserDetails;
 
 /**
  * Site controller
@@ -22,13 +25,20 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
+                        'actions' => ['logout', 'index'],
+                        'allow'   => true,
+                        'roles'   => ['@'],
                     ],
                     [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
+                        'actions' => ['login', 'error'],
+                        'allow'   => true,
+                        'roles'   => ['?'],
+                    ],
+                    [
+                        'allow' => (boolean)UserDetails::find()
+                            ->where(['>=', 'role', 20])
+                            ->andWhere(['id' => Yii::$app->user->id])
+                            ->one(),
                     ],
                 ],
             ],
