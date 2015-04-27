@@ -124,4 +124,27 @@ class Purchase extends \yii\db\ActiveRecord
 
         return $this;
     }
+
+    /* Custom Data Aggregate methods */
+
+    public static function getSaleByYear($year)
+    {
+        $return_data = [];
+        if (!is_numeric($year)) { return false; };
+
+        foreach ([1,2,3,4,5,6,7,8,9,10,11,12] as $_v => $_key) {
+            $start = mktime(0, 0, 0, $_key, 1,  $year);
+            $end   = mktime(0, 0, 0, $_key, 31, $year);
+
+            $return_data[] = (integer)Purchase::find()
+                ->select('id')
+                ->where(['return_code' => 200])
+                ->andWhere(['>=', 'created_at', $start])
+                ->andWhere(['<=', 'created_at', $end])
+                ->andWhere(['deleted_at' => null])
+                ->count();
+        }
+
+        return $return_data;
+    }
 }

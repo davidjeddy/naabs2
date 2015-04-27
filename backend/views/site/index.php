@@ -3,6 +3,8 @@
 
 use dosamigos\highcharts\HighCharts;
 
+use backend\models\Purchase;
+
 $this->title = 'Naabs 2 Administrative Panel';
 ?>
 <div class="site-index">
@@ -16,6 +18,7 @@ $this->title = 'Naabs 2 Administrative Panel';
     <div class="body-content">
 
         <div class="row">
+
         <?= HighCharts::widget([
             'clientOptions' => [
                 'chart' => [
@@ -33,8 +36,9 @@ $this->title = 'Naabs 2 Administrative Panel';
                     ]
                 ],
                 'series' => [
-                    ['name' => 'Last Year',     'data' => [1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
-                    ['name' => 'Current Year',  'data' => [5, 7, 3]]
+                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSaleByYear((integer)date('Y')-1)) ],
+                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSaleByYear((integer)date('Y'))) ],
+                    ['name' => 'Demo Year',     'data' => [1,5,2,2,5,8,9,6,4,2,4,6] ],
                 ]
             ]
         ]);
