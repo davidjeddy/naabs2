@@ -88,12 +88,21 @@ class PurchaseController extends Controller
 
 
 
-            $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
-            $purchase_mdl->setAttribute('timestamp', date('U') );
             if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
 
                 // save attempt at payment for record keeping
                 if ($purchase_mdl->save()) {
+
+                    // add time and qunatity into total
+                    $_cost = (
+                        TimeAmountOptions::find('value')->where([
+                            'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
+                        ])->one()->getAttribute('cost')
+                        +
+                        DeviceCountOptions::find('value')->where([
+                            'id' => Yii::$app->request->post()['Purchase']['device_count_id']
+                        ])->one()->getAttribute('cost')
+                    );
 
 
 
@@ -120,17 +129,7 @@ class PurchaseController extends Controller
                         'l_name'    => $purchase_mdl->getAttribute('l_name'),
                     ];
 
-                    // add time and qunatity into total
-                    $pp_purchase_data['amountdetails']['subtotal'] = array_sum([
-                        'subtotal' => 
-                            TimeAmountOptions::find('value')->where([
-                                'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
-                            ])->one()->getAttribute('cost'),
-                        'quantity' => 
-                            DeviceCountOptions::find('value')->where([
-                                'id' => Yii::$app->request->post()['Purchase']['device_count_id']
-                            ])->one()->getAttribute('cost'),
-                    ]);
+                    $pp_purchase_data['amountdetails']['subtotal'] = $_cost;
 
 
 
@@ -147,24 +146,24 @@ class PurchaseController extends Controller
                     } else {
                         $_message = $_payment_result->getFailedTransactions();
                     }
+
+                    $purchase_mdl->setAttribute('price', $_cost);
                     $purchase_mdl->setAttribute('return_message', $_message);
                     $purchase_mdl->setAttribute('return_code', http_response_code());
-                    //$purchase_mdl->setAttribute('updated', date('Y-m-d H:i:s'));
+                    $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
 
                     // attempt payment processing
                     if ( $purchase_mdl->save() && $_payment_result->getState() == "approved") {
 
                         // Update the FreeRadius TBO with new purchase information
-                        $_user_id = User::find()->where(
-                            ['id' => $purchase_mdl->getAttribute('user_id')]
-                        )->one()->getAttribute('id');
+                        $_user_email = UserDetails::find()->where([
+                            'user_id' => User::find()->where(
+                                            ['id' => $purchase_mdl->getAttribute('user_id')]
+                                        )->one()->getAttribute('id')
+                        ])->one()->getAttribute('p_email');
                         $_value    = TimeAmountOptions::find('value')->where(
                             ['id' => $purchase_mdl->getAttribute('time_amount_id')]
                         )->one()->getAttribute('value');
-
-                        $_user_email = UserDetails::find()->where([
-                            'user_id' => $_user_id
-                        ])->one()->getAttribute('p_email');
 
                         if (
                             RadCheckController::actionCreateUserpass($_user_email) &&
@@ -182,6 +181,7 @@ class PurchaseController extends Controller
                     }
                 }
             } else {
+
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
             }
         }

@@ -21,7 +21,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $prov
  * @property string $postal
  * @property integer $last_4
- * @property integer $timestamp
+ * @property integer $price
  * @property integer $return_code
  * @property string $return_message
  * @property integer $created_at
@@ -55,8 +55,8 @@ class Purchase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal', 'last_4', 'timestamp'], 'required'],
-            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'timestamp', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal'], 'required'],
+            [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
         ];
     }
@@ -77,13 +77,13 @@ class Purchase extends \yii\db\ActiveRecord
             'l_name'          => 'Last Name',
             'last_4'          => 'Last 4',
             'postal'          => 'Postal',
+            'price'           => 'Price',
             'prov'            => 'Prov',
             'return_code'     => 'Return Code',
             'return_message'  => 'Return Message',
             'street_1'        => 'Street 1',
             'street_2'        => 'Street 2',
             'time_amount_id'  => 'Time Amount ID',
-            'timestamp'       => 'Timestamp',
             'updated_at'      => 'Updated At',
             'user_id'         => 'User ID',
         ];

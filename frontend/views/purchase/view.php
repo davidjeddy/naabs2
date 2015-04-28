@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'postal',
             'last_4',
-            //'timestamp:datetime',
+            'price',
             'return_code',
             'return_message',
             'created_at:datetime',
