@@ -63,9 +63,8 @@ $this->title = 'Naabs 2 Administrative Panel';
                     ]
                 ],
                 'series' => [
-                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')-1))],
-                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')))],
-                    ['name' => 'Demo Year',     'data' => [1,5,2,2,5,8,9,6,4,2,4,6]],
+                    ['name' => 'Last Year',     'data' => array_values(Purchase::getMoneyPerMonth((integer)date('Y')-1))],
+                    ['name' => 'Current Year',  'data' => array_values(Purchase::getMoneyPerMonth((integer)date('Y')))],
                 ]
             ]
         ]);

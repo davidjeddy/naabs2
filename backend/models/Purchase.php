@@ -155,4 +155,31 @@ class Purchase extends \yii\db\ActiveRecord
 
         return $return_data;
     }
+
+    /**
+     * Return the $ per month based on teh year param
+     *
+     * @since  0.4.5 [description]
+     * @param  integer $year [description]
+     * @return array
+     */
+    public static function getMoneyPerMonth($year)
+    {
+        if (!is_numeric($year)) { return false; };
+        $return_data = DateAndTimes::getMonthAs('m');
+
+        foreach ($return_data as $_key => $_month) {
+            $start = mktime(0, 0, 0, $_month, 1,  $year);
+            $end   = mktime(0, 0, 0, $_month, 31, $year);
+
+            $return_data[$_key] = (integer)Purchase::find()
+                ->select('price')
+                ->where(['return_code' => 200, 'deleted_at' => null])
+                ->andWhere(['>=', 'created_at', $start])
+                ->andWhere(['<=', 'created_at', $end])
+                ->sum('price');
+        }
+
+        return $return_data;
+    }
 }
