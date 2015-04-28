@@ -4,6 +4,8 @@ namespace backend\models;
 
 use Yii;
 
+use common\components\DateAndTimes;
+
 /**
  * This is the model class for table "purchase".
  *
@@ -134,16 +136,16 @@ class Purchase extends \yii\db\ActiveRecord
      * @param  integer $year [description]
      * @return array
      */
-    public static function getSaleByYear($year)
+    public static function getSalePerMonth($year)
     {
         if (!is_numeric($year)) { return false; };
-        $return_data = [];
+        $return_data = DateAndTimes::getMonthAs('m');
 
-        foreach ([0,11,2,3,4,5,6,7,8,9,10,11] as $_key) {
-            $start = mktime(0, 0, 0, $_key+1, 1,  $year);
-            $end   = mktime(0, 0, 0, $_key+1, 31, $year);
+        foreach ($return_data as $_key => $_month) {
+            $start = mktime(0, 0, 0, $_month, 1,  $year);
+            $end   = mktime(0, 0, 0, $_month, 31, $year);
 
-            $return_data[] = (integer)Purchase::find()
+            $return_data[$_key] = (integer)Purchase::find()
                 ->select('id')
                 ->where(['return_code' => 200, 'deleted_at' => null])
                 ->andWhere(['>=', 'created_at', $start])

@@ -5,6 +5,8 @@ use dosamigos\highcharts\HighCharts;
 
 use backend\models\Purchase;
 
+use common\components\DateAndTimes;
+
 $this->title = 'Naabs 2 Administrative Panel';
 ?>
 <div class="site-index">
@@ -23,10 +25,10 @@ $this->title = 'Naabs 2 Administrative Panel';
                         'type' => 'line'
                 ],
                 'title' => [
-                     'text' => 'Sales Per Month'
+                     'text' => '# of Sales'
                      ],
                 'xAxis' => [
-                    'categories' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    'categories' => array_values(DateAndTimes::getMonthAs('M')),
                 ],
                 'yAxis' => [
                     'title' => [
@@ -34,8 +36,35 @@ $this->title = 'Naabs 2 Administrative Panel';
                     ]
                 ],
                 'series' => [
-                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSaleByYear((integer)date('Y')-1))],
-                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSaleByYear((integer)date('Y')))],
+                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')-1))],
+                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')))],
+                    ['name' => 'Demo Year',     'data' => [4,7,5,3,4,7,9,9,6,3,2,4]],
+                ]
+            ]
+        ]);
+        ?>
+        </div>
+
+        <div class="row">
+        <?= HighCharts::widget([
+            'clientOptions' => [
+                'chart' => [
+                        'type' => 'line'
+                ],
+                'title' => [
+                     'text' => 'Dollar of Sales'
+                     ],
+                'xAxis' => [
+                    'categories' => array_values(DateAndTimes::getMonthAs('F')),
+                ],
+                'yAxis' => [
+                    'title' => [
+                        'text' => 'Amount'
+                    ]
+                ],
+                'series' => [
+                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')-1))],
+                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')))],
                     ['name' => 'Demo Year',     'data' => [1,5,2,2,5,8,9,6,4,2,4,6]],
                 ]
             ]
