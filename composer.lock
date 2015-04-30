@@ -4,70 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "027fe10830fb4279628d463aa00fa39c",
+    "hash": "945f70b0049b1a120a793a64c4b742c8",
     "packages": [
-        {
-            "name": "2amigos/yii2-highcharts-widget",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/2amigos/yii2-highcharts-widget.git",
-                "reference": "e820aa981335d0c7269706ad6cb2d0ae81da495b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-highcharts-widget/zipball/e820aa981335d0c7269706ad6cb2d0ae81da495b",
-                "reference": "e820aa981335d0c7269706ad6cb2d0ae81da495b",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/highcharts-release": "4.1.4",
-                "yiisoft/yii2": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
-                "asset-installer-paths": {
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "dosamigos\\highcharts\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "2amigOS! Consulting Group",
-                    "email": "hola@2amigos.us",
-                    "homepage": "http://2amigos.us",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Highcharts JS widget for Yii2.",
-            "homepage": "http://yiiwheels.com/extension/highcharts-widget",
-            "keywords": [
-                "2amigos",
-                "chart",
-                "extension",
-                "highcharts",
-                "widget",
-                "yii",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2015-03-16 21:55:20"
-        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.4",
@@ -121,40 +59,17 @@
             ]
         },
         {
-            "name": "bower-asset/highcharts-release",
-            "version": "v4.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/highslide-software/highcharts-release.git",
-                "reference": "8ec04ca0aa02fe7e9584dc24b6902e4338360763"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/highslide-software/highcharts-release/zipball/8ec04ca0aa02fe7e9584dc24b6902e4338360763",
-                "reference": "8ec04ca0aa02fe7e9584dc24b6902e4338360763",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "highcharts.js",
-                    "highcharts-more.js",
-                    "modules/exporting.js"
-                ]
-            }
-        },
-        {
             "name": "bower-asset/jquery",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery.git",
-                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0"
+                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery/zipball/8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
-                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
+                "url": "https://api.github.com/repos/jquery/jquery/zipball/7751e69b615c6eca6f783a81e292a55725af6b85",
+                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85",
                 "shasum": ""
             },
             "require-dev": {
@@ -169,6 +84,7 @@
                 "bower-asset-ignore": [
                     "**/.*",
                     "build",
+                    "dist/cdn",
                     "speed",
                     "test",
                     "*.md",
@@ -502,6 +418,50 @@
                 "mailer"
             ],
             "time": "2015-03-14 06:06:39"
+        },
+        {
+            "name": "vova07/yii2-start-themes",
+            "version": "0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vova07/yii2-start-themes.git",
+                "reference": "d064e947f7c7311f4c9d2b44cb709ce5f292154f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vova07/yii2-start-themes/zipball/d064e947f7c7311f4c9d2b44cb709ce5f292154f",
+                "reference": "d064e947f7c7311f4c9d2b44cb709ce5f292154f",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "vova07\\themes\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "vova07\\themes\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Crudu Vasile",
+                    "email": "bazillio07@yandex.ru"
+                }
+            ],
+            "description": "The themes extension for Yii2-Start application.",
+            "keywords": [
+                "start",
+                "template",
+                "themes",
+                "yii 2",
+                "yii2",
+                "yii2-start"
+            ],
+            "time": "2015-03-01 13:43:45"
         },
         {
             "name": "yiisoft/yii2",
