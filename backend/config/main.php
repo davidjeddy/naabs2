@@ -17,11 +17,10 @@ return [
         ],
     ],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+        'errorHandler'  => [
+            'errorAction' => 'site/error',
         ],
-        'log' => [
+        'log'           => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
@@ -30,8 +29,12 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
+        'user'          => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+        ],
+        'view'          => [
+            //'theme' => 'vova07\themes\admin\Theme'
         ],
     ],
     'params' => $params,
