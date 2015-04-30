@@ -17,11 +17,10 @@ return [
         ],
     ],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+        'errorHandler'  => [
+            'errorAction' => 'site/error',
         ],
-        'log' => [
+        'log'           => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
@@ -30,9 +29,17 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
+        'user'          => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
         ],
+        /*'view' => [
+             'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-advanced-app'
+                ],
+             ],
+        ],*/
     ],
     'params' => $params,
 ];
