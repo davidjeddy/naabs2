@@ -25,14 +25,14 @@ $this->title = 'Naabs 2 Administrative Panel';
                         'type' => 'line'
                 ],
                 'title' => [
-                     'text' => '# of Sales'
+                     'text' => 'Number of Sales per Month'
                      ],
                 'xAxis' => [
                     'categories' => array_values(DateAndTimes::getMonthAs('M')),
                 ],
                 'yAxis' => [
                     'title' => [
-                        'text' => 'Amount'
+                        'text' => 'Amount (Count)'
                     ]
                 ],
                 'series' => [
@@ -52,14 +52,14 @@ $this->title = 'Naabs 2 Administrative Panel';
                         'type' => 'line'
                 ],
                 'title' => [
-                     'text' => 'Dollar of Sales'
+                     'text' => 'Sales Price per Month'
                      ],
                 'xAxis' => [
                     'categories' => array_values(DateAndTimes::getMonthAs('F')),
                 ],
                 'yAxis' => [
                     'title' => [
-                        'text' => 'Amount'
+                        'text' => 'Amount (USD)'
                     ]
                 ],
                 'series' => [

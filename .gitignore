@@ -37,5 +37,5 @@ phpunit.phar
 /docs/do_not_track
 /common/components
 /backend/modules/FreeRadius
-*.sublime-*
 frontend/web/themes
+naabs2.sublime-workspace
