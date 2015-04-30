@@ -13,7 +13,7 @@
         "yiisoft/yii2"            : "*",
         "yiisoft/yii2-bootstrap"  : "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "vova07/yii2-start-themes": "0.1.5"
+        "dmstr/yii2-adminlte-asset": "2.*@beta"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

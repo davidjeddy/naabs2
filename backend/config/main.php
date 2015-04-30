@@ -33,9 +33,13 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
-        'view'          => [
-            //'theme' => 'vova07\themes\admin\Theme'
-        ],
+        /*'view' => [
+             'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-advanced-app'
+                ],
+             ],
+        ],*/
     ],
     'params' => $params,
 ];
