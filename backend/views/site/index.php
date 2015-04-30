@@ -19,56 +19,7 @@ $this->title = 'Naabs 2 Administrative Panel';
     <div class="body-content">
 
         <div class="row">
-        <?= HighCharts::widget([
-            'clientOptions' => [
-                'chart' => [
-                        'type' => 'line'
-                ],
-                'title' => [
-                     'text' => 'Number of Sales per Month'
-                     ],
-                'xAxis' => [
-                    'categories' => array_values(DateAndTimes::getMonthAs('M')),
-                ],
-                'yAxis' => [
-                    'title' => [
-                        'text' => 'Amount (Count)'
-                    ]
-                ],
-                'series' => [
-                    ['name' => 'Last Year',     'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')-1))],
-                    ['name' => 'Current Year',  'data' => array_values(Purchase::getSalePerMonth((integer)date('Y')))],
-                    ['name' => 'Demo Year',     'data' => [4,7,5,3,4,7,9,9,6,3,2,4]],
-                ]
-            ]
-        ]);
-        ?>
-        </div>
 
-        <div class="row">
-        <?= HighCharts::widget([
-            'clientOptions' => [
-                'chart' => [
-                        'type' => 'line'
-                ],
-                'title' => [
-                     'text' => 'Sales Price per Month'
-                     ],
-                'xAxis' => [
-                    'categories' => array_values(DateAndTimes::getMonthAs('F')),
-                ],
-                'yAxis' => [
-                    'title' => [
-                        'text' => 'Amount (USD)'
-                    ]
-                ],
-                'series' => [
-                    ['name' => 'Last Year',     'data' => array_values(Purchase::getMoneyPerMonth((integer)date('Y')-1))],
-                    ['name' => 'Current Year',  'data' => array_values(Purchase::getMoneyPerMonth((integer)date('Y')))],
-                ]
-            ]
-        ]);
-        ?>
         </div>
 
     </div>
