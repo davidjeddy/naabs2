@@ -30,3 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<?php if (YII_DEBUG) { //pre-populate form when testing ?>
+<script>
+// jQuery is loaded after the page completes, wait for Window.onload to be valid.   
+window.onload=function(){
+    $("#loginform-username").val('UserUsername');
+    $("#loginform-password").val('useruser');
+};
+</script>
+<?php } ?>
