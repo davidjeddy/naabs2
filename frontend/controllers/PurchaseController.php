@@ -2,23 +2,22 @@
 
 namespace frontend\controllers;
 
-use Yii;
-use yii\data\ActiveDataProvider;
-use yii\filters\VerbFilter;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-
-use frontend\models\Purchase;
-
-use frontend\controllers\RadCheckController;
-
 use common\components\Paypal;
+use common\controllers\RadCheckController;
 use common\models\CCFormat;
 use common\models\Country;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
 use common\models\UserDetails;
+
+use frontend\models\Purchase;
+
+use Yii;
+use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.

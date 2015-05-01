@@ -4,14 +4,16 @@ namespace frontend\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 use frontend\models\RadCheck;
 
-
-
+/**
+ * 
+ */
 class RadCheckController extends \yii\web\Controller
 {
     public function actionIndex()
