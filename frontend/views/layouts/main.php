@@ -38,8 +38,9 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = ['label' => '|'];
-                $menuItems[] = ['label' => 'Account', 'url' => ['/site/account']];
-                $menuItems[] = ['label' => 'History', 'url' => ['/purchase/index']];
+                $menuItems[] = ['label' => 'Account',  'url' => ['/site/account']];
+                $menuItems[] = ['label' => 'Devices',  'url' => ['/device/index']];
+                $menuItems[] = ['label' => 'History',  'url' => ['/purchase/index']];
                 $menuItems[] = ['label' => 'Purchase', 'url' => ['/purchase/create']];
                 $menuItems[] = ['label' => '|'];    
                 $menuItems[] = [
