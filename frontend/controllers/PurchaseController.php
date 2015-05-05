@@ -69,9 +69,8 @@ class PurchaseController extends Controller
     public function actionCreate()
     {
         $cc_format_mdl = new CCFormat();
+        $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
-
-
 
 
 
@@ -93,67 +92,25 @@ class PurchaseController extends Controller
                 // save attempt at payment for record keeping
                 if ($purchase_mdl->save()) {
 
-                    // add time and qunatity into total
-                    $_cost = (
-                        TimeAmountOptions::find('value')->where([
-                            'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
-                        ])->one()->getAttribute('cost')
-                        +
-                        DeviceCountOptions::find('value')->where([
-                            'id' => Yii::$app->request->post()['Purchase']['device_count_id']
-                        ])->one()->getAttribute('cost')
+                    // create the Paypal data object
+                    $pp_purchase_data = $this->prepPayPalData($purchase_mdl, $cc_format_mdl);
+                    $_payment_result  = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
+                    $response_message = (
+                        $_payment_result->getState() == 'approved' ? 'approved' : $_payment_result->getFailedTransactions()
                     );
 
+echo '<pre>';
+print_r( $response_message );
+echo '</pre>';
+exit;
 
-
-                    // todo This iteration is Paypal only. - DJE : 2015-04-11
-                    // Process the CC transaction
-                    $pp_purchase_data['address'] = [
-                        'street_1' => $purchase_mdl->getAttribute('street_1'),
-                        'street_2' => $purchase_mdl->getAttribute('street_2'),
-                        'city'     => $purchase_mdl->getAttribute('city'),
-                        'prov'     => $purchase_mdl->getAttribute('prov'),
-                        'postal'   => $purchase_mdl->getAttribute('postal'),
-                        'country'  => Country::find('value')->where(['id' => $purchase_mdl->getAttribute('country_id')])
-                            ->one()->getAttribute('key'),
-                    ];
-
-                    // Process the CC transaction
-                    $pp_purchase_data['creditcard'] = [
-                        'type'      => $cc_format_mdl['type'],
-                        'cvv2'      => $cc_format_mdl['cvv2'],
-                        'exp_month' => $cc_format_mdl['exp_month'],
-                        'exp_year'  => $cc_format_mdl['exp_year'],
-                        'number'    => $cc_format_mdl['number'],
-                        'f_name'    => $purchase_mdl->getAttribute('f_name'),
-                        'l_name'    => $purchase_mdl->getAttribute('l_name'),
-                    ];
-
-                    $pp_purchase_data['amountdetails']['subtotal'] = $_cost;
-
-
-
-                    // usually place this at the beginning of the method but I dont want to init to obj if we dont need to.
-                    $paypal_com = new paypal();
-
-                    // todo switch to valid payment processing method - DJE : 2015-04-19
-                    $_payment_result = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
-
-                    // update the purchase TBO with the processors resoponse
-                    $_message = null;
-                    if ($_payment_result->getState() == 'approved') {
-                        $_message = $_payment_result->getState();
-                    } else {
-                        $_message = $_payment_result->getFailedTransactions();
-                    }
-
-                    $purchase_mdl->setAttribute('price', $_cost);
-                    $purchase_mdl->setAttribute('return_message', $_message);
-                    $purchase_mdl->setAttribute('return_code', http_response_code());
-                    $purchase_mdl->setAttribute('last_4',    substr($cc_format_mdl->number, -4) );
+                    $purchase_mdl->setAttribute('price',            $pp_purchase_data['amountdetails']['subtotal']);
+                    $purchase_mdl->setAttribute('return_message',   $response_message);
+                    $purchase_mdl->setAttribute('return_code',      http_response_code());
+                    $purchase_mdl->setAttribute('last_4',           substr($cc_format_mdl->number, -4) );
 
                     // attempt payment processing
-                    if ( $purchase_mdl->save() && $_payment_result->getState() == "approved") {
+                    if ( $purchase_mdl->save() && $response_message == "approved") {
 
                         // Update the FreeRadius TBO with new purchase information
                         $_user_email = UserDetails::find()->where([
@@ -165,8 +122,10 @@ class PurchaseController extends Controller
                             ['id' => $purchase_mdl->getAttribute('time_amount_id')]
                         )->one()->getAttribute('value');
 
-                        if (
-                            RadCheckController::actionCreateUserpass($_user_email) &&
+
+
+
+                        if (RadCheckController::actionCreateUserpass($_user_email) &&
                             RadCheckController::actionCreateExpiration($_user_email, $_value )
                         ) {
 
@@ -175,6 +134,7 @@ class PurchaseController extends Controller
                             
                             Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
                         }
+
                     } else {
 
                         Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
@@ -211,5 +171,53 @@ class PurchaseController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    /**
+     * [prepPayPalData description]
+     *
+     * @version 0.5.1
+     * @since  0.5.1
+     * @param  Purchase $param_data
+     * @param  CCFormat $cc_data
+     * @return array
+     */
+    private function prepPayPalData(Purchase $param_data, CCFormat $cc_data)
+    {
+        // todo This iteration is Paypal only. - DJE : 2015-04-11
+        // Process the CC transaction
+        $return_data['address'] = [
+            'street_1' => $param_data->getAttribute('street_1'),
+            'street_2' => $param_data->getAttribute('street_2'),
+            'city'     => $param_data->getAttribute('city'),
+            'prov'     => $param_data->getAttribute('prov'),
+            'postal'   => $param_data->getAttribute('postal'),
+            'country'  => Country::find('value')->where(['id' => $param_data->getAttribute('country_id')])
+                ->one()->getAttribute('key'),
+        ];
+
+        // Process the CC transaction
+        $return_data['creditcard'] = [
+            'type'      => $cc_data['type'],
+            'cvv2'      => $cc_data['cvv2'],
+            'exp_month' => $cc_data['exp_month'],
+            'exp_year'  => $cc_data['exp_year'],
+            'number'    => $cc_data['number'],
+            'f_name'    => $param_data->getAttribute('f_name'),
+            'l_name'    => $param_data->getAttribute('l_name'),
+        ];
+
+        // add time and qunatity into total
+        $return_data['amountdetails']['subtotal'] = (
+            TimeAmountOptions::find('value')->where([
+                'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
+            ])->one()->getAttribute('cost')
+            +
+            DeviceCountOptions::find('value')->where([
+                'id' => Yii::$app->request->post()['Purchase']['device_count_id']
+            ])->one()->getAttribute('cost')
+        );
+
+        return $return_data;
     }
 }

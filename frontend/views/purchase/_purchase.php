@@ -185,7 +185,7 @@ window.onload=function(){
     $("#purchase-postal").val('43210');
     $("#purchase-country_id > option:nth-child(2)").prop('selected', true);
 
-    $("#ccformat-number").val('4417119669820331');
+    $("#ccformat-number").val('4012888888881881');
     $("#ccformat-exp_month").val('11');
     $("#ccformat-exp_year").val('2018');
     $("#ccformat-cvv2").val('874');
