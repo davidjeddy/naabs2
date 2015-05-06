@@ -31,4 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+    <div class="form-group">
+        <a href="./purchase/_time.php" class="btn btn-success">Purchase more time</a>
+    </div>
 </div>

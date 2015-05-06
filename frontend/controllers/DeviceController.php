@@ -118,4 +118,32 @@ class DeviceController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    /**
+     * Create Device/time for account
+     *
+     * @version  0.5.1
+     * @since  0.5.1
+     * @param  string $user_email
+     * @param  integer $device_count
+     * @param  integer $time_amount  Amount of time in seconds
+     * @return boolean
+     */
+    public static function createNew($username, $device_count, $time_amount)
+    {
+
+echo '<pre>';
+print_r( $username );echo "\n";
+print_r( $device_count );echo "\n";
+print_r( $time_amount );echo "\n";
+echo '</pre>';
+exit;
+
+        return false;
+    }
+
+    public static function updateExisting()
+    {
+
+    }
 }

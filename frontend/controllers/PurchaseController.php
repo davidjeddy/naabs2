@@ -11,10 +11,12 @@ use yii\web\NotFoundHttpException;
 use frontend\models\Purchase;
 
 use frontend\controllers\RadCheckController;
+use frontend\controllers\DeviceController;
 
 use common\components\Paypal;
 use common\models\CCFormat;
 use common\models\Country;
+use common\models\Device;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
@@ -71,6 +73,7 @@ class PurchaseController extends Controller
         $cc_format_mdl = new CCFormat();
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
+        $device_mdl    = new Device();
 
 
 
@@ -88,58 +91,61 @@ class PurchaseController extends Controller
 
 
             if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
+                $pp_purchase_data = $this->prepPayPalData($purchase_mdl, $cc_format_mdl);
+                $response_message = 'not approved';
 
-                // save attempt at payment for record keeping
-                if ($purchase_mdl->save()) {
-
-                    // create the Paypal data object
-                    $pp_purchase_data = $this->prepPayPalData($purchase_mdl, $cc_format_mdl);
-                    $_payment_result  = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
-                    $response_message = (
-                        $_payment_result->getState() == 'approved' ? 'approved' : $_payment_result->getFailedTransactions()
-                    );
-
-echo '<pre>';
-print_r( $response_message );
-echo '</pre>';
-exit;
-
-                    $purchase_mdl->setAttribute('price',            $pp_purchase_data['amountdetails']['subtotal']);
-                    $purchase_mdl->setAttribute('return_message',   $response_message);
-                    $purchase_mdl->setAttribute('return_code',      http_response_code());
-                    $purchase_mdl->setAttribute('last_4',           substr($cc_format_mdl->number, -4) );
-
-                    // attempt payment processing
-                    if ( $purchase_mdl->save() && $response_message == "approved") {
-
-                        // Update the FreeRadius TBO with new purchase information
-                        $_user_email = UserDetails::find()->where([
-                            'user_id' => User::find()->where(
-                                            ['id' => $purchase_mdl->getAttribute('user_id')]
-                                        )->one()->getAttribute('id')
-                        ])->one()->getAttribute('p_email');
-                        $_value    = TimeAmountOptions::find('value')->where(
-                            ['id' => $purchase_mdl->getAttribute('time_amount_id')]
-                        )->one()->getAttribute('value');
+                $purchase_mdl->setAttribute('price',            $pp_purchase_data['amountdetails']['subtotal']);
+                $purchase_mdl->setAttribute('return_message',   $response_message);
+                $purchase_mdl->setAttribute('return_code',      http_response_code());
+                $purchase_mdl->setAttribute('last_4',           substr($cc_format_mdl->number, -4) );
 
 
 
+                /*
+                $_payment_result  = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
+                $response_message = (
+                    $_payment_result->getState() == 'approved' ? 'approved' : $_payment_result->getFailedTransactions()
+                );*/
+                $response_message = "approved";
 
-                        if (RadCheckController::actionCreateUserpass($_user_email) &&
-                            RadCheckController::actionCreateExpiration($_user_email, $_value )
-                        ) {
 
-                            return $this->redirect(['view', 'id' => $purchase_mdl->id]);
-                        } else {
-                            
-                            Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
-                        }
 
+                // payment has cleared. Create the devices.
+                if ( $response_message == "approved" && $purchase_mdl->save()) {
+
+                    $username       = User::find()->where(
+                        ['id' => $purchase_mdl->getAttribute('user_id')]
+                    )->one()->getAttribute('username');
+                    $device_count   = DeviceCountOptions::find('value')->where(
+                        ['id' => $purchase_mdl->getAttribute('device_count_id')]
+                    )->one()->getAttribute('value');
+                    $time_amount    = TimeAmountOptions::find('value')->where(
+                        ['id' => $purchase_mdl->getAttribute('time_amount_id')]
+                    )->one()->getAttribute('value');
+
+                    $device_result = DeviceController::createNew($username, $device_count, $time_amount);
+
+
+
+
+                    // devices create / updated as needed.
+                    /*
+                    if (RadCheckController::actionCreateUserpass($_user_email) &&
+                        RadCheckController::actionCreateExpiration($_user_email, $_value )
+                    ) {
+
+                        return $this->redirect(['view', 'id' => $purchase_mdl->id]);
                     } else {
-
-                        Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
+                        
+                        Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
                     }
+                    */
+
+                } else {
+
+                    Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
                 }
+
             } else {
 
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
