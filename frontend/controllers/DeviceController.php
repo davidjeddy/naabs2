@@ -63,7 +63,7 @@ class DeviceController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($param_data = null)
+    public static function actionCreate($param_data = null)
     {
         $model = new Device();
 

@@ -17,6 +17,7 @@ use common\models\Device;
 /* @var $form yii\widgets\ActiveForm */
 
 $this->title = 'Add Device';
+$this->params['breadcrumbs'][] = ['label' => 'Purchases', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

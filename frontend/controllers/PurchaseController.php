@@ -117,7 +117,7 @@ class PurchaseController extends Controller
                 if ( $response_message == "approved" && $purchase_mdl->save()) {
 
                     // if the devices are created successfully
-                    if (DeviceController::create($purchase_mdl)) {
+                    if (DeviceController::actionCreate($purchase_mdl)) {
 
                         // push them into the radcheck table
                     }

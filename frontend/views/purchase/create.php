@@ -12,8 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="purchase-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
 	<?php
 	/**
 	 * Accounts have 3 options for purchase:
