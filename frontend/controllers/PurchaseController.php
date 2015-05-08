@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 use frontend\models\Purchase;
+use common\models\Device;
 
 use frontend\controllers\RadCheckController;
 use frontend\controllers\DeviceController;
@@ -16,11 +17,9 @@ use frontend\controllers\DeviceController;
 use common\components\Paypal;
 use common\models\CCFormat;
 use common\models\Country;
-use common\models\Device;
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
-use common\models\User;
-use common\models\UserDetails;
+
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -46,8 +45,13 @@ class PurchaseController extends Controller
           'query' => Purchase::find(),
         ]);
 
+        $deviceProvider = new ActiveDataProvider([
+          'query' => Device::find()->where(['user_id' => Yii::$app->user->id]),
+        ]);
+
         return $this->render('index', [
-          'dataProvider' => $dataProvider,
+          'dataProvider'   => $dataProvider,
+          'deviceProvider' => $deviceProvider,
         ]);
     }
 
@@ -73,8 +77,7 @@ class PurchaseController extends Controller
         $cc_format_mdl = new CCFormat();
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
-        $device_mdl    = new Device();
-
+        
 
 
         if (!empty(Yii::$app->request->post())) {
@@ -113,17 +116,11 @@ class PurchaseController extends Controller
                 // payment has cleared. Create the devices.
                 if ( $response_message == "approved" && $purchase_mdl->save()) {
 
-                    $username       = User::find()->where(
-                        ['id' => $purchase_mdl->getAttribute('user_id')]
-                    )->one()->getAttribute('username');
-                    $device_count   = DeviceCountOptions::find('value')->where(
-                        ['id' => $purchase_mdl->getAttribute('device_count_id')]
-                    )->one()->getAttribute('value');
-                    $time_amount    = TimeAmountOptions::find('value')->where(
-                        ['id' => $purchase_mdl->getAttribute('time_amount_id')]
-                    )->one()->getAttribute('value');
+                    // if the devices are created successfully
+                    if (DeviceController::create($purchase_mdl)) {
 
-                    $device_result = DeviceController::createNew($username, $device_count, $time_amount);
+                        // push them into the radcheck table
+                    }
 
 
 
@@ -141,6 +138,8 @@ class PurchaseController extends Controller
                     }
                     */
 
+                    // redirect to Purchase/index if all goes well
+                    return $this->redirect('../purchase/index');
                 } else {
 
                     Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
@@ -160,6 +159,39 @@ class PurchaseController extends Controller
             'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted_at' => null]), 
             'purchase_mdl'             => $purchase_mdl,
             'time_options_mdl'         => TimeAmountOptions::findAll(['deleted_at' => null]),
+        ]);
+    }
+
+    /**
+     * Adding a device pulls the expiration time from a pre existing device
+     *
+     * @version  0.6.0
+     * @since  0.6.0
+     * @return [type] [description]
+     */
+    public function actionAdddevice()
+    {
+        $cc_format_mdl = new CCFormat();
+        $paypal_com    = new paypal();
+        $purchase_mdl  = new Purchase();
+
+        return $this->render('adddevice', [
+            'cc_format_mdl'            => $cc_format_mdl,
+            'device_count_options_mdl' => DeviceCountOptions::findAll(['deleted_at' => null]), 
+            'purchase_mdl'             => $purchase_mdl,
+        ]);
+    }
+
+    public function actionAddtime()
+    {
+        $cc_format_mdl = new CCFormat();
+        $paypal_com    = new paypal();
+        $purchase_mdl  = new Purchase();
+        
+        return $this->render('addtime', [
+            'cc_format_mdl'            => $cc_format_mdl,
+            'time_amount_options_mdl' => timeAmountOptions::findAll(['deleted_at' => null]), 
+            'purchase_mdl'             => $purchase_mdl,
         ]);
     }
 
