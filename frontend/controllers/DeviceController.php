@@ -9,6 +9,11 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
+use common\models\User;
+use common\models\UserDetails;
+
 /**
  * DeviceController implements the CRUD actions for Device model.
  */
@@ -58,9 +63,49 @@ class DeviceController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($param_data = null)
     {
         $model = new Device();
+
+
+
+        if ($param_data) {
+            $device_count = DeviceCountOptions::find('value')->where(['id' => $param_data->getAttribute('device_count_id')])
+                ->one()->getAttribute('value');
+            $username = User::find()->where(['id' => $param_data->getAttribute('user_id')])->one()->getAttribute('username');
+
+
+
+            // loop for the # of devices purchased
+            $counter = 1;
+            while ($counter <= $device_count) {
+
+                $device_mdl = new Device();
+                $device_mdl->setAttribute('user_id',        $param_data->getAttribute('user_id'));
+                $device_mdl->setAttribute('device_name',    $username.'\'s device '.$counter);
+                $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
+                $device_mdl->setAttribute('expiration',     time() + (integer)TimeAmountOptions::find('value')
+                    ->where(['id' => $param_data->getAttribute('time_amount_id')])->one()->getAttribute('value')
+                );
+                $device_mdl->setAttribute('created_at',     time());  
+
+                // save entery
+                if (!$device_mdl->validate() ||! $device_mdl->save()) {
+                    Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
+                    return false;
+                }
+
+                unset($device_mdl);
+                $counter++;
+            }
+            
+            Yii::$app->getSession()->addFlash('success', $device_count .' device(s) successfully added to your account.');
+            return ($counter ==  $device_count ? true: false);
+        }
+
+
+
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -120,30 +165,18 @@ class DeviceController extends Controller
     }
 
     /**
-     * Create Device/time for account
      *
-     * @version  0.5.1
-     * @since  0.5.1
-     * @param  string $user_email
-     * @param  integer $device_count
-     * @param  integer $time_amount  Amount of time in seconds
-     * @return boolean
+     * @todo  abstract this into a lib somewhere
+     * @source http://stackoverflow.com/questions/4356289/php-random-string-generator
      */
-    public static function createNew($username, $device_count, $time_amount)
-    {
+    public static function generateRandomString ($length = 6) {
+        $characters       = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString     = '';
 
-echo '<pre>';
-print_r( $username );echo "\n";
-print_r( $device_count );echo "\n";
-print_r( $time_amount );echo "\n";
-echo '</pre>';
-exit;
-
-        return false;
-    }
-
-    public static function updateExisting()
-    {
-
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }
