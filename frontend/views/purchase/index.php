@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'pass_phrase',
         'expiration:datetime',
         'created_at:datetime',
-        'updated_at:datetime',
+        //'updated_at:datetime',
         // 'deleted_at',
 
         //['class' => 'yii\grid\ActionColumn', 'template' => '{view}'],
