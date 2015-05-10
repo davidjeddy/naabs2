@@ -102,7 +102,7 @@ class DeviceController extends Controller
             while ($current_device_count < $final_device_count) {
                 $device_mdl = new Device();
                 $device_mdl->setAttribute('created_at',     $current_time);  
-                $device_mdl->setAttribute('device_name',    $username.' '.$current_device_count++);
+                $device_mdl->setAttribute('device_name',    $username.' '.++$current_device_count);
                 $device_mdl->setAttribute('expiration',     $current_exp);
                 $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
                 $device_mdl->setAttribute('user_id',        $user_id);
