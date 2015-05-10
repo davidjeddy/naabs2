@@ -129,12 +129,20 @@ class DeviceController extends Controller
     {
         // update all the devices of a user as per user_id
         if ($param_data) {
+            $new_exp = DeviceController::getCurrentExpiration($param_data);
+            $time   = TimeAmountOptions::find()->where(['id' => $param_data['time_amount_id']])->one()->getAttribute('key');
 
             // Customer::updateAll(['status' => 1], 'status = 2');
-            return Device::updateAll(
-                ['expiration' => DeviceController::getCurrentExpiration($param_data)],
-                ['user_id'    => $param_data['user_id']]
-            );
+            if (Device::updateAll(['expiration' => $new_exp], ['user_id'    => $param_data['user_id']]) ) {
+                Yii::$app->getSession()->addFlash('success', $time.' added to your account.');
+                return $new_exp;
+            } else {
+                Yii::$app->getSession()->addFlash('error', 'Unable to add '.$time.' to your account.');
+                return $new_exp;
+            }
+            
+
+            return false;
         }
 
         $model = $this->findModel($id);
