@@ -8,12 +8,13 @@ use Yii;
  * This is the model class for table "device".
  *
  * @property integer $id
- * @property string $device_mac
- * @property string $device_name
  * @property integer $user_id
- * @property string $created_at
- * @property string $updated_at
- * @property string $deleted_at
+ * @property string $device_name
+ * @property string $pass_phrase
+ * @property integer $expiration
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property integer $deleted_at
  */
 class Device extends \yii\db\ActiveRecord
 {
@@ -31,10 +32,10 @@ class Device extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['device_mac', 'device_name', 'user_id'], 'required'],
-            [['user_id'], 'integer'],
-            [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['device_mac', 'device_name'], 'string', 'max' => 32]
+            [['user_id', 'device_name', 'pass_phrase', 'created_at'], 'required'],
+            [['user_id', 'expiration', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
+            [['device_name'], 'string', 'max' => 64],
+            [['pass_phrase'], 'string', 'max' => 8]
         ];
     }
 
@@ -44,33 +45,22 @@ class Device extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'created_at'  => 'Created At',
-            'deleted_at'  => 'Deleted At',
-            'device_mac'  => 'Device Mac',
+            'id' => 'ID',
+            'user_id' => 'User ID',
             'device_name' => 'Device Name',
-            'id'          => 'ID',
-            'updated_at'  => 'Updated At',
-            'user_id'     => 'User ID',
+            'pass_phrase' => 'Pass Phrase',
+            'expiration' => 'Expiration',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'deleted_at' => 'Deleted At',
         ];
     }
 
-    /* convert the datetime<->timestamp between saving and displaying */
-
-    public function beforeSave($insert)
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
     {
-        // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
-        $this->setAttribute('created_at', strtotime($this->getAttribute('created_at')) );
-        $this->setAttribute('updated_at', strtotime($this->getAttribute('updated_at')) );
-
-        return $this;
-    }
-
-    public function afterFind()
-    {
-        // convert timestamp to datetime for CNTL/VW, but only for 'Expiration' attrib.
-        $this->setAttribute('created_at', date('Y-m-d H:i:s', $this->getAttribute('created_at')));
-        $this->setAttribute('updated_at', date('Y-m-d H:i:s', $this->getAttribute('updated_at')));
-
-        return $this;
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

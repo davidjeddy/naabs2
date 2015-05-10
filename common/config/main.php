@@ -6,7 +6,7 @@ return [
         ],
         'urlManager' => [
 			'enablePrettyUrl' => true,
-			'showScriptName'  => 'false',
+			'showScriptName'  => false,
         ],
     ],
     'vendorPath'    => dirname(dirname(__DIR__)) . '/vendor',

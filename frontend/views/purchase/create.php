@@ -12,8 +12,15 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="purchase-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+	<?php
+	/**
+	 * Accounts have 3 options for purchase:
+	 * New Purchase
+	 * Add Device
+	 * Add Time to Account
+	 */
 
+	?>
     <?= $this->render('_purchase', [
 		'cc_format_mdl'            => $cc_format_mdl,
 		'country_mdl'              => $country_mdl,
