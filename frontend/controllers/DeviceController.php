@@ -60,47 +60,62 @@ class DeviceController extends Controller
 
     /**
      * Creates a new Device model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * 
      * @return mixed
      */
     public static function actionCreate($param_data = null)
     {
         $model = new Device();
 
-
-
         if ($param_data) {
-            $device_count = DeviceCountOptions::find('value')->where(['id' => $param_data->getAttribute('device_count_id')])
-                ->one()->getAttribute('value');
+            $prev_expiration = Device::find()->where(['user_id' => $param_data['user_id']])->one();
+
+            // calculate the new expiration time
+            $current_time = time();
+            $current_exp = (integer)isset($prev_expiration)
+                ? $prev_expiration->getAttribute('expiration')
+                : time();
+            $current_exp = isset($param_data['time_amount_options']) ?
+                $current_exp + (integer)TimeAmountOptions::find()->where([['id'] => $param_data['time_amount_options']])->getAttribute('value')
+                : $current_exp;
+
+echo '<pre>';
+print_r( $current_exp );
+echo '</pre>';
+exit;
+
+            // calculate current and future device count
+            $current_device_count = Device::find()->where(['user_id' => $param_data['user_id']])->count();
+            $current_device_count = (integer)isset($current_device_count)
+                ? $current_device_count
+                : 0;
+            $new_device_count = DeviceCountOptions::find('value')->where(['id' => $param_data->getAttribute('device_count_id')])->one()->getAttribute('value');
+            $final_device_count = $current_device_count + $new_device_count;
+
+            // misc req. info
             $username = User::find()->where(['id' => $param_data->getAttribute('user_id')])->one()->getAttribute('username');
+            $user_id  = $param_data->getAttribute('user_id');
 
 
 
             // loop for the # of devices purchased
-            $counter = 1;
-            while ($counter <= $device_count) {
-
+            while ($current_device_count <= $final_device_count) {
                 $device_mdl = new Device();
-                $device_mdl->setAttribute('user_id',        $param_data->getAttribute('user_id'));
-                $device_mdl->setAttribute('device_name',    $username.'\'s device '.$counter);
+                $device_mdl->setAttribute('created_at',     $current_time);  
+                $device_mdl->setAttribute('device_name',    $username.' '.$current_device_count++);
+                $device_mdl->setAttribute('expiration',     $current_exp);
                 $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
-                $device_mdl->setAttribute('expiration',     time() + (integer)TimeAmountOptions::find('value')
-                    ->where(['id' => $param_data->getAttribute('time_amount_id')])->one()->getAttribute('value')
-                );
-                $device_mdl->setAttribute('created_at',     time());  
+                $device_mdl->setAttribute('user_id',        $user_id);
 
                 // save entery
-                if (!$device_mdl->validate() ||! $device_mdl->save()) {
+                if (!$device_mdl->validate() || !$device_mdl->save()) {
                     Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
                     return false;
                 }
-
-                unset($device_mdl);
-                $counter++;
             }
             
-            Yii::$app->getSession()->addFlash('success', $device_count .' device(s) successfully added to your account.');
-            return ($counter ==  $device_count ? true: false);
+            Yii::$app->getSession()->addFlash('success', $new_device_count .' device(s) successfully added to your account.');
+            return $this;
         }
 
 

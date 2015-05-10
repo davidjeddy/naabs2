@@ -143,11 +143,13 @@ class PurchaseController extends Controller
                 } else {
 
                     Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
+                    return $this;
                 }
 
             } else {
 
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
+                return $this;
             }
         }
 
@@ -174,6 +176,10 @@ class PurchaseController extends Controller
         $cc_format_mdl = new CCFormat();
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
+
+        if (!empty(Yii::$app->request->post())) {
+            $this->actionCreate();
+        }
 
         return $this->render('adddevice', [
             'cc_format_mdl'            => $cc_format_mdl,
@@ -245,16 +251,11 @@ class PurchaseController extends Controller
             'l_name'    => $param_data->getAttribute('l_name'),
         ];
 
-        // add time and qunatity into total
-        $return_data['amountdetails']['subtotal'] = (
-            TimeAmountOptions::find('value')->where([
-                'id' => Yii::$app->request->post()['Purchase']['time_amount_id']
-            ])->one()->getAttribute('cost')
-            +
-            DeviceCountOptions::find('value')->where([
-                'id' => Yii::$app->request->post()['Purchase']['device_count_id']
-            ])->one()->getAttribute('cost')
-        );
+        $subtotal       = [];
+        $subtotal[0]    = isset(Yii::$app->request->post()['Purchase']['time_amount_id'])  ? TimeAmountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')   : 0;
+        $subtotal[1]    = isset(Yii::$app->request->post()['Purchase']['device_count_id']) ? DeviceCountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost') : 0;
+        $return_data['amountdetails']['subtotal'] = array_sum($subtotal);
+
 
         return $return_data;
     }
