@@ -9,7 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 use frontend\models\RadCheck;
-
+use common\models\Device;
 
 
 class RadCheckController extends \yii\web\Controller
@@ -17,36 +17,6 @@ class RadCheckController extends \yii\web\Controller
     public function actionIndex()
     {
         return $this->render('');
-    }
-
-    /**
-     * Creates a new Role model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public static function actionCreateExpiration($_param_data, $_value, $_op = ':=')
-    {
-        $_method_data = [];
-        $_model        = null;
-
-        // existing record
-        if ( !($_model = RadCheck::find()->where([
-                'attribute' => 'Expiration',
-                'username'  => $_param_data,
-            ])->one()) ) {
-            $_model = new RadCheck();                                                                                       
-        }
-
-        // we might only have to update the `attribute` but this is simply for insert/update
-        $_method_data['attribute'] = 'Expiration';
-        $_method_data['op']        = $_op;
-        $_method_data['username']  = (string)$_param_data;
-        // if time already exists, add to it
-        $_method_data['value']     = (string)(!empty($_model->getAttribute('value')) ? $_model->getAttribute('value')+$_value : time()+$_value);
-
-        $_model->setAttributes($_method_data);
-
-        return ($_model->save() ? true : $_model->getErrors());
     }
 
     /**
@@ -72,16 +42,69 @@ class RadCheckController extends \yii\web\Controller
             $device_mdl->setAttribute('username',   $param_data->getAttribute('device_name'));  
             $device_mdl->setAttribute('attribute',  'expiration');
             $device_mdl->setAttribute('op',         ':=');
-            $device_mdl->setAttribute('value',      $param_data->getAttribute('expiration'));
+            $device_mdl->setAttribute('value',      (string)$param_data->getAttribute('expiration'));
             $device_mdl->save();
 
-            return true;
+            if (count($device_mdl->getErrors()) == 0) {
+                return true;
+            } 
+
+            Yii::$app->getSession()->addFlash('error', 'Unable to create the system.');
+            return false;
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing Device model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public static function actionUpdate($id, $param_data = null, $new_exp = null)
+    {
+        // update multi RadCheck enteries with new data
+        if ($param_data) {
+
+            $user_devices_ar = Device::find()
+                ->where(['user_id' => $param_data['user_id']])
+                ->all();
+
+            $device_names = [];
+            foreach ($user_devices_ar as $key => $value) {
+
+                // update RadCheck TBO where attrib is expiration and username is the device name
+                RadCheck::updateAll(
+                    ['expiration' => $new_exp],
+                    [
+                        'attribute' => 'expiration',
+                        'username'  => $value['device_name'],
+                    ]
+                );
+            }
+
+
+            if (count(RadCheck::getErrors()) == 0) {
+                return true;
+            } 
+
+            Yii::$app->getSession()->addFlash('error', 'Unable to update the system.');
+            return false;
+        }
+
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
                 'model' => $model,
             ]);
         }
