@@ -68,19 +68,7 @@ class DeviceController extends Controller
         $model = new Device();
 
         if ($param_data) {
-            $prev_expiration = Device::find()->where(['user_id' => $param_data['user_id']])->one();
-            
-
-
-            // calculate the new expiration time
-            $current_time = time();
-            $current_exp = (integer)isset($prev_expiration)
-                ? $prev_expiration->getAttribute('expiration')
-                : $current_time;
-            // if the form wants to set a new expiratin time
-            if ($param_data->getAttribute('time_amount_id') !== null) {
-                $current_exp =  $current_exp + TimeAmountOptions::find()->where(['id' => $param_data->getAttribute('time_amount_id')])->one()->getAttribute('value');
-            };
+            $current_exp = DeviceController::getCurrentExpiration($param_data);
 
 
 
@@ -101,7 +89,7 @@ class DeviceController extends Controller
             // loop for the # of devices purchased
             while ($current_device_count < $final_device_count) {
                 $device_mdl = new Device();
-                $device_mdl->setAttribute('created_at',     $current_time);  
+                $device_mdl->setAttribute('created_at',     time());  
                 $device_mdl->setAttribute('device_name',    $username.' '.++$current_device_count);
                 $device_mdl->setAttribute('expiration',     $current_exp);
                 $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
@@ -137,8 +125,18 @@ class DeviceController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public static function actionUpdate($id, $param_data = null)
     {
+        // update all the devices of a user as per user_id
+        if ($param_data) {
+
+            // Customer::updateAll(['status' => 1], 'status = 2');
+            return Device::updateAll(
+                ['expiration' => DeviceController::getCurrentExpiration($param_data)],
+                ['user_id'    => $param_data['user_id']]
+            );
+        }
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -193,5 +191,30 @@ class DeviceController extends Controller
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
+    }
+
+    /**
+     * Get the users current expiration time, OR current timestamp OR future expiration time
+     *
+     * @version  0.6.5
+     * @since 0.6.5
+     * @param  object $param_data
+     * @return integer $return_data
+     */
+    private static function getCurrentExpiration($param_data)
+    {
+        $prev_expiration = Device::find()->where(['user_id' => $param_data['user_id']])->one();
+
+        // calculate the new expiration time
+        $return_data  = (isset($prev_expiration) && count($prev_expiration) > 0)
+            ? $prev_expiration->getAttribute('expiration')
+            : time();
+
+        // if the form wants to set a new expiratin time
+        if ($param_data->getAttribute('time_amount_id') !== null) {
+            $return_data =  $return_data + TimeAmountOptions::find()->where(['id' => $param_data->getAttribute('time_amount_id')])->one()->getAttribute('value');
+        };
+
+        return $return_data;
     }
 }
