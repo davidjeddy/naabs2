@@ -69,26 +69,26 @@ class DeviceController extends Controller
 
         if ($param_data) {
             $prev_expiration = Device::find()->where(['user_id' => $param_data['user_id']])->one();
+            
+
 
             // calculate the new expiration time
             $current_time = time();
             $current_exp = (integer)isset($prev_expiration)
                 ? $prev_expiration->getAttribute('expiration')
-                : time();
-            $current_exp = isset($param_data['time_amount_options']) ?
-                $current_exp + (integer)TimeAmountOptions::find()->where([['id'] => $param_data['time_amount_options']])->getAttribute('value')
-                : $current_exp;
+                : $current_time;
+            // if the form wants to set a new expiratin time
+            if ($param_data->getAttribute('time_amount_id') !== null) {
+                $current_exp =  $current_exp + TimeAmountOptions::find()->where(['id' => $param_data->getAttribute('time_amount_id')])->one()->getAttribute('value');
+            };
 
-echo '<pre>';
-print_r( $current_exp );
-echo '</pre>';
-exit;
+
 
             // calculate current and future device count
             $current_device_count = Device::find()->where(['user_id' => $param_data['user_id']])->count();
-            $current_device_count = (integer)isset($current_device_count)
+            $current_device_count = ($current_device_count > 0)
                 ? $current_device_count
-                : 0;
+                : 1;
             $new_device_count = DeviceCountOptions::find('value')->where(['id' => $param_data->getAttribute('device_count_id')])->one()->getAttribute('value');
             $final_device_count = $current_device_count + $new_device_count;
 
@@ -99,7 +99,7 @@ exit;
 
 
             // loop for the # of devices purchased
-            while ($current_device_count <= $final_device_count) {
+            while ($current_device_count < $final_device_count) {
                 $device_mdl = new Device();
                 $device_mdl->setAttribute('created_at',     $current_time);  
                 $device_mdl->setAttribute('device_name',    $username.' '.$current_device_count++);
@@ -115,7 +115,7 @@ exit;
             }
             
             Yii::$app->getSession()->addFlash('success', $new_device_count .' device(s) successfully added to your account.');
-            return $this;
+            return $new_device_count;
         }
 
 
