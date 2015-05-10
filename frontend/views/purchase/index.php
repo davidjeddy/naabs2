@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?php
-    $device = Device::find('*')
+    $device = Device::find()
         ->where(['user_id' => Yii::$app->user->id])
         ->andWhere(['deleted_at' => NULL])
         ->all();

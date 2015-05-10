@@ -121,14 +121,12 @@ class PurchaseController extends Controller
                         $this->module->requestedAction->id == 'create'
                     ) {
                         DeviceController::actionCreate($purchase_mdl);
-                        // push them into the radcheck table
                     }
 
                     // create time if the calling method was 'time'
                     // create devices if the calling methid was 'device'
                     if ($this->module->requestedAction->id == 'addtime') {
                         DeviceController::actionUpdate(null, $purchase_mdl);
-                        // push them into the radcheck table
                     }
 
                     // create init device/time if the calling method is null
@@ -149,7 +147,8 @@ class PurchaseController extends Controller
                     */
 
                     // redirect to Purchase/index if all goes well
-                    return $this->redirect('../purchase/index');
+                    //return $this->redirect('../purchase/index');
+                    return $this;
                 } else {
 
                     Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
