@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-sm-6 col-sm-offset-3">
         <?= Html::activeDropDownList(
             $purchase_mdl,
-            'device_count_id',
+            'time_amount_id',
             ArrayHelper::map(TimeAmountOptions::find()->all(), 'id', 'key', 'cost'),
             [
                 'prompt'=>'--Select Number of Devices--',

@@ -116,12 +116,22 @@ class PurchaseController extends Controller
                 // payment has cleared. Create the devices.
                 if ( $response_message == "approved" && $purchase_mdl->save()) {
 
-                    // if the devices are created successfully
-                    if (DeviceController::actionCreate($purchase_mdl)) {
-
+                    // create devices if the calling methid was 'device'
+                    if ($this->module->requestedAction->id == 'adddevice' || 
+                        $this->module->requestedAction->id == 'create'
+                    ) {
+                        DeviceController::actionCreate($purchase_mdl);
                         // push them into the radcheck table
                     }
 
+                    // create time if the calling method was 'time'
+                    // create devices if the calling methid was 'device'
+                    if ($this->module->requestedAction->id == 'addtime') {
+                        DeviceController::actionUpdate(null, $purchase_mdl);
+                        // push them into the radcheck table
+                    }
+
+                    // create init device/time if the calling method is null
 
 
 
@@ -194,6 +204,10 @@ class PurchaseController extends Controller
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
         
+        if (!empty(Yii::$app->request->post())) {
+            $this->actionCreate();
+        }
+
         return $this->render('addtime', [
             'cc_format_mdl'            => $cc_format_mdl,
             'time_amount_options_mdl' => timeAmountOptions::findAll(['deleted_at' => null]), 
