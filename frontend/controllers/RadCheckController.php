@@ -55,27 +55,35 @@ class RadCheckController extends \yii\web\Controller
      * @todo  Move this to be a model::()
      * @return [type] [description]
      */
-    public static function actionCreateUserpass($_param_data)
+    public static function actionCreate($param_data = null)
     {
-        $_method_data = [];
-        $_model = null;
-        
-        // existing record
-        if ( !($_model = RadCheck::find()->where([
-                'attribute' => 'MD5-Password',
-                'username'  => $_param_data,
-            ])->one()) ) {
-            $_model = new RadCheck();                                                                                       
+        // insert into RadCheck TBO for FreeRadius
+        if ($param_data) {
+            // insert a new device entery for pass_phrase
+            $device_mdl = new RadCheck();
+            $device_mdl->setAttribute('username',   $param_data->getAttribute('device_name'));  
+            $device_mdl->setAttribute('attribute',  'clear-password');
+            $device_mdl->setAttribute('op',         ':=');
+            $device_mdl->setAttribute('value',      $param_data->getAttribute('pass_phrase'));
+            $device_mdl->save();
+
+            // insert a new device entery for expxiration
+            $device_mdl = new RadCheck();
+            $device_mdl->setAttribute('username',   $param_data->getAttribute('device_name'));  
+            $device_mdl->setAttribute('attribute',  'expiration');
+            $device_mdl->setAttribute('op',         ':=');
+            $device_mdl->setAttribute('value',      $param_data->getAttribute('expiration'));
+            $device_mdl->save();
+
+            return true;
         }
 
-        // we might only have to update the `attribute` but this is simply for insert/update
-        $_method_data['attribute'] = 'MD5-Password';
-        $_method_data['op']        = ':=';
-        $_method_data['username']  = $_param_data;
-        $_method_data['value']     = md5($_param_data);
-
-        $_model->setAttributes($_method_data);
-
-        return ($_model->save() ? true : $_model->getErrors());
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
     }
 }
