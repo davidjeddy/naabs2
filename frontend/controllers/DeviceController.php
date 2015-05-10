@@ -98,15 +98,19 @@ class DeviceController extends Controller
                 $device_mdl->setAttribute('user_id',        $user_id);
 
                 // save entery and insert into RadCheck
-                if (!$device_mdl->validate() || !$device_mdl->save()) {
+                if ($device_mdl->validate() && $device_mdl->save()) {
+
+                    RadCheckController::actionCreate($device_mdl);
+                } else {
                     Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
                     return false;
-                } else {
-                    //RadCheckController::actionCreate($device_mdl);
                 }
             }
-            
-            Yii::$app->getSession()->addFlash('success', $new_device_count .' device(s) successfully added to your account.');
+
+            Yii::$app->getSession()->addFlash(
+                'success',
+                $new_device_count .' device(s) successfully added to your account.'
+            );
             return $device_mdl;
         }
 
