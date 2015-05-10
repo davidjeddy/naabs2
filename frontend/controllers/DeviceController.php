@@ -88,7 +88,7 @@ class DeviceController extends Controller
             $current_device_count = Device::find()->where(['user_id' => $param_data['user_id']])->count();
             $current_device_count = ($current_device_count > 0)
                 ? $current_device_count
-                : 1;
+                : 0;
             $new_device_count = DeviceCountOptions::find('value')->where(['id' => $param_data->getAttribute('device_count_id')])->one()->getAttribute('value');
             $final_device_count = $current_device_count + $new_device_count;
 
