@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use frontend\controllers\RadCheckController;
+
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
@@ -95,15 +97,17 @@ class DeviceController extends Controller
                 $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
                 $device_mdl->setAttribute('user_id',        $user_id);
 
-                // save entery
+                // save entery and insert into RadCheck
                 if (!$device_mdl->validate() || !$device_mdl->save()) {
                     Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
                     return false;
+                } else {
+                    //RadCheckController::actionCreate($device_mdl);
                 }
             }
             
             Yii::$app->getSession()->addFlash('success', $new_device_count .' device(s) successfully added to your account.');
-            return $new_device_count;
+            return $device_mdl;
         }
 
 
