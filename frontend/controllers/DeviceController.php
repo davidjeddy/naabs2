@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use frontend\controllers\RadCheckController;
+
 use common\models\DeviceCountOptions;
 use common\models\TimeAmountOptions;
 use common\models\User;
@@ -95,15 +97,21 @@ class DeviceController extends Controller
                 $device_mdl->setAttribute('pass_phrase',    DeviceController::generateRandomString());
                 $device_mdl->setAttribute('user_id',        $user_id);
 
-                // save entery
-                if (!$device_mdl->validate() || !$device_mdl->save()) {
+                // save entery and insert into RadCheck
+                if ($device_mdl->validate() && $device_mdl->save()) {
+
+                    RadCheckController::actionCreate($device_mdl);
+                } else {
                     Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
                     return false;
                 }
             }
-            
-            Yii::$app->getSession()->addFlash('success', $new_device_count .' device(s) successfully added to your account.');
-            return $new_device_count;
+
+            Yii::$app->getSession()->addFlash(
+                'success',
+                $new_device_count .' device(s) successfully added to your account.'
+            );
+            return $device_mdl;
         }
 
 
@@ -130,18 +138,17 @@ class DeviceController extends Controller
         // update all the devices of a user as per user_id
         if ($param_data) {
             $new_exp = DeviceController::getCurrentExpiration($param_data);
-            $time   = TimeAmountOptions::find()->where(['id' => $param_data['time_amount_id']])->one()->getAttribute('key');
+            $time    = TimeAmountOptions::find()->where(['id' => $param_data['time_amount_id']])->one()->getAttribute('key');
 
-            // Customer::updateAll(['status' => 1], 'status = 2');
-            if (Device::updateAll(['expiration' => $new_exp], ['user_id'    => $param_data['user_id']]) ) {
+            if (
+                Device::updateAll(['expiration' => $new_exp], ['user_id'    => $param_data['user_id']]) &&
+                RadCheckController::actionUpdate(null, $param_data, $new_exp)
+            ) {
                 Yii::$app->getSession()->addFlash('success', $time.' added to your account.');
-                return $new_exp;
-            } else {
-                Yii::$app->getSession()->addFlash('error', 'Unable to add '.$time.' to your account.');
                 return $new_exp;
             }
             
-
+            Yii::$app->getSession()->addFlash('error', 'Unable to add '.$time.' to your account.');
             return false;
         }
 

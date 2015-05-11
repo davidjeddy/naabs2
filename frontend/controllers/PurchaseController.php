@@ -11,7 +11,6 @@ use yii\web\NotFoundHttpException;
 use frontend\models\Purchase;
 use common\models\Device;
 
-use frontend\controllers\RadCheckController;
 use frontend\controllers\DeviceController;
 
 use common\components\Paypal;
@@ -124,41 +123,21 @@ class PurchaseController extends Controller
                     }
 
                     // create time if the calling method was 'time'
-                    // create devices if the calling methid was 'device'
                     if ($this->module->requestedAction->id == 'addtime') {
                         DeviceController::actionUpdate(null, $purchase_mdl);
                     }
 
-                    // create init device/time if the calling method is null
-
-
-
-                    // devices create / updated as needed.
-                    /*
-                    if (RadCheckController::actionCreateUserpass($_user_email) &&
-                        RadCheckController::actionCreateExpiration($_user_email, $_value )
-                    ) {
-
-                        return $this->redirect(['view', 'id' => $purchase_mdl->id]);
-                    } else {
-                        
-                        Yii::$app->getSession()->addFlash('error', 'Payment processed OK, however an error occured while processing the access request.');
-                    }
-                    */
-
-                    // redirect to Purchase/index if all goes well
-                    //return $this->redirect('../purchase/index');
-                    return $this;
+                    $this->redirect('../purchase/index');
                 } else {
 
                     Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
-                    return $this;
+                    return false;
                 }
 
             } else {
 
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
-                return $this;
+                return false;
             }
         }
 

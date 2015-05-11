@@ -51,13 +51,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
         //'id',
         //'user_id',
-        'device_name',
-        'pass_phrase',
+        //'device_name',
+        [
+            'label'     => 'Device Username',
+            'attribute' => 'device_name'
+        ],
+        //'pass_phrase',
+        [
+            'label'     => 'Device Passphrase',
+            'attribute' => 'pass_phrase'
+        ],
         'expiration:datetime',
         'created_at:datetime',
         //'updated_at:datetime',
         // 'deleted_at',
-
         //['class' => 'yii\grid\ActionColumn', 'template' => '{view}'],
     ],
 ]); ?>
