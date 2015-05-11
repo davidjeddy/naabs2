@@ -36,6 +36,7 @@ class RadCheckController extends \yii\web\Controller
             $device_mdl->setAttribute('op',         ':=');
             $device_mdl->setAttribute('value',      $param_data->getAttribute('pass_phrase'));
             $device_mdl->save();
+            unset($device_mdl);
 
             // insert a new device entery for expxiration
             $device_mdl = new RadCheck();
@@ -71,27 +72,22 @@ class RadCheckController extends \yii\web\Controller
     public static function actionUpdate($id, $param_data = null, $new_exp = null)
     {
         // update multi RadCheck enteries with new data
-        if ($param_data) {
+        if ($param_data && is_numeric($new_exp)) {
 
             $user_devices_ar = Device::find()
                 ->where(['user_id' => $param_data['user_id']])
                 ->all();
 
-            $device_names = [];
             foreach ($user_devices_ar as $key => $value) {
-
-                // update RadCheck TBO where attrib is expiration and username is the device name
-                RadCheck::updateAll(
-                    ['expiration' => $new_exp],
-                    [
+                $radcheck_mdl = RadCheck::find()->where([
                         'attribute' => 'expiration',
-                        'username'  => $value['device_name'],
-                    ]
-                );
+                        'username'  => $value->getAttribute('device_name'),
+                    ])->one();
+                $radcheck_mdl->value = (string)$new_exp;
+                $radcheck_mdl->save();
             }
 
-
-            if (count(RadCheck::getErrors()) == 0) {
+            if (count($radcheck_mdl->getErrors()) == 0) {
                 return true;
             } 
 

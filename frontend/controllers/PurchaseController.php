@@ -127,17 +127,17 @@ class PurchaseController extends Controller
                         DeviceController::actionUpdate(null, $purchase_mdl);
                     }
 
-                    return $this;
+                    $this->redirect('../purchase/index');
                 } else {
 
                     Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
-                    return $this;
+                    return false;
                 }
 
             } else {
 
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
-                return $this;
+                return false;
             }
         }
 
