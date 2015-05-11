@@ -24,10 +24,15 @@ class UserDetailsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'allow' => (boolean)UserDetails::find()
-                            ->where(['>=', 'role', 20])
-                            ->andWhere(['id' => Yii::$app->user->id])
-                            ->one(),
+                        'actions' => ['login'],
+                        'allow'   => true,
+                    ],
+                    [
+                        'allow'         => true,
+                        'roles'         => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return UserDetails::isUserAdmin(Yii::$app->user->identity->id);
+                        }
                     ],
                 ],
             ],

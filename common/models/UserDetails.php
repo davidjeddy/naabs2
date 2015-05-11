@@ -99,16 +99,19 @@ class UserDetails extends ActiveRecord
 
     /**
      * [isUserAdmin description]
-     * @param  [type]  $username [description]
-     * @return boolean           [description]
+     * @param  integer  $user_id
+     * @return boolean
      */
-    public static function isUserAdmin($username)
+    public static function isUserAdmin($user_id)
     {
-        if (static::findOne(['role' => self::ROLE_ADMIN])){
-     
+        if (static::findOne(['user_id' => $user_id, 'role' => self::ROLE_ADMIN])){
+
             return true;
+        } else {
+
+            return false;
         }
-     
+
         return false;
     }
 
