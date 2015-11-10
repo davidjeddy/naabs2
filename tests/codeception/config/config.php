@@ -7,7 +7,7 @@ return [
         'db' => [
             'charset'  => 'utf8',
             'class'    => 'yii\db\Connection',
-            'dsn'      => 'mysql:host=localhost;dbname=yii2_advanced_tests',
+            'dsn'      => 'mysql:host=localhost;dbname=naabs2_tests',
             'password' => '',
             'username' => 'root',
         ],
