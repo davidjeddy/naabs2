@@ -1,0 +1,1400 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"seeIn",
+				"seeInCurrentUrl"
+			],
+			[
+				"tabl",
+				"tableSchema"
+			],
+			[
+				"sql",
+				"sqlDataProvider"
+			],
+			[
+				"compl",
+				"completeAmount"
+			],
+			[
+				"pro",
+				"profileModuleData"
+			],
+			[
+				"next",
+				"nextItemData"
+			],
+			[
+				"rule",
+				"ruleData"
+			],
+			[
+				"enable",
+				"enabledTables"
+			],
+			[
+				"tab",
+				"tableNames"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"re",
+				"returnData"
+			],
+			[
+				"parse",
+				"parseInt"
+			],
+			[
+				"return",
+				"returnData"
+			],
+			[
+				"provi",
+				"providence_id"
+			],
+			[
+				"method",
+				"methodData"
+			],
+			[
+				"is_nu",
+				"is_numeric"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"class",
+				"class_exists"
+			],
+			[
+				"mod",
+				"modifiers"
+			],
+			[
+				"cart",
+				"cartItemSoeItemDataProvider"
+			],
+			[
+				"jsone_De",
+				"json_decode"
+			],
+			[
+				"ca",
+				"cartItemKey"
+			],
+			[
+				"array_mr",
+				"array_merge"
+			],
+			[
+				"actionCreat",
+				"actionCreateCartItemSoeItems"
+			],
+			[
+				"so",
+				"soeItemTypes"
+			],
+			[
+				"pa",
+				"paramItem"
+			],
+			[
+				"meth",
+				"methodData"
+			],
+			[
+				"actionCar",
+				"actionCreateNewCart"
+			],
+			[
+				"car",
+				"cartItemData"
+			],
+			[
+				"met",
+				"methodData"
+			],
+			[
+				"para",
+				"paramItem"
+			],
+			[
+				"itemTy",
+				"itemTypeValue"
+			],
+			[
+				"itemTyp",
+				"itemTypeKey"
+			],
+			[
+				"soe",
+				"soeItem"
+			],
+			[
+				"wid",
+				"widget"
+			],
+			[
+				"soeIte",
+				"soeItemMdl"
+			],
+			[
+				"submitted",
+				"submittedSoeItemList"
+			],
+			[
+				"curren",
+				"currentItemSoeItemRelations"
+			],
+			[
+				"it",
+				"itemValue"
+			],
+			[
+				"itemValue",
+				"itemVTypeValue"
+			],
+			[
+				"soeIt",
+				"soeItemMDL"
+			],
+			[
+				"soeT",
+				"soeItemMDL"
+			],
+			[
+				"item",
+				"itemTypes"
+			],
+			[
+				"sele",
+				"selectedSOEItems"
+			],
+			[
+				"get_class",
+				"get_class_vars"
+			],
+			[
+				"parent",
+				"class_parents"
+			],
+			[
+				"IT",
+				"Item"
+			],
+			[
+				"retur",
+				"returnData"
+			],
+			[
+				"ite",
+				"itemSOEs"
+			],
+			[
+				"strt",
+				"strtolower"
+			],
+			[
+				"type",
+				"typeValue"
+			],
+			[
+				"typ",
+				"typeValue"
+			],
+			[
+				"me",
+				"methodData"
+			],
+			[
+				"ret",
+				"returnData"
+			],
+			[
+				"isa",
+				"is_array"
+			],
+			[
+				"is_s",
+				"is_string"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"search",
+				"searchMDL"
+			],
+			[
+				"sera",
+				"searchMDL"
+			],
+			[
+				"u",
+				"ucfirst"
+			],
+			[
+				"returnDa",
+				"returnDataItem"
+			],
+			[
+				"toggle",
+				"toggleLayer"
+			],
+			[
+				"param",
+				"paramData"
+			],
+			[
+				"create",
+				"createCoverageLayer"
+			],
+			[
+				"par",
+				"paramData"
+			],
+			[
+				"isn",
+				"is_numeric"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"marker",
+				"markerItem"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"json_d",
+				"json_encode"
+			],
+			[
+				"page",
+				"pageTitle"
+			],
+			[
+				"for",
+				"forum"
+			],
+			[
+				"mess",
+				"messageMDL"
+			],
+			[
+				"mem",
+				"member_id"
+			],
+			[
+				"min",
+				"min_posts"
+			],
+			[
+				"las",
+				"last_post_id"
+			],
+			[
+				"des",
+				"destImage"
+			],
+			[
+				"Survey",
+				"SurveyController"
+			],
+			[
+				"acc",
+				"accountModel"
+			],
+			[
+				"poll",
+				"pollResponseMDL"
+			],
+			[
+				"pol",
+				"pollsTakenByUser"
+			],
+			[
+				"getA",
+				"getAttributes"
+			],
+			[
+				"cat",
+				"category_id"
+			],
+			[
+				"user",
+				"userMDL"
+			],
+			[
+				"tit",
+				"title_video_url"
+			],
+			[
+				"voi",
+				"voicesPer"
+			],
+			[
+				"before",
+				"beforeAction"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"Journal",
+				"JournalController"
+			],
+			[
+				"passw",
+				"password"
+			],
+			[
+				"password",
+				"password_hash"
+			],
+			[
+				"aja",
+				"ajaxOptions"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"survey",
+				"survey_poll_ids"
+			],
+			[
+				"val",
+				"validSurveys"
+			],
+			[
+				"surve",
+				"survey"
+			],
+			[
+				"unt",
+				"untakenPolls"
+			],
+			[
+				"un",
+				"untakenPolls"
+			],
+			[
+				"surv",
+				"surveyMDL"
+			],
+			[
+				"sur",
+				"surveyMDL"
+			],
+			[
+				"unp",
+				"unpublish"
+			],
+			[
+				"PollRe",
+				"PollResponseQuery"
+			],
+			[
+				"answer",
+				"answerOptions"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"d",
+				"div	Tag"
+			],
+			[
+				"yii2-",
+				"yii2-utility-classes"
+			],
+			[
+				"retu",
+				"returnData"
+			],
+			[
+				"ans",
+				"answerOptions"
+			],
+			[
+				"data",
+				"dataProvider"
+			],
+			[
+				"dyn",
+				"dynamic_attributes"
+			],
+			[
+				"anse",
+				"answer_text"
+			],
+			[
+				"Aa",
+				"AaeAnswer"
+			],
+			[
+				"pio",
+				"pollId"
+			],
+			[
+				"voice",
+				"voicesData"
+			],
+			[
+				"get_cla",
+				"get_class_methods"
+			],
+			[
+				"url",
+				"urlManager"
+			],
+			[
+				"F",
+				"ForumCNTL"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"get_cl",
+				"get_class_methods"
+			],
+			[
+				"get_c",
+				"get_class_methods"
+			],
+			[
+				"geT_cla",
+				"get_class_methods"
+			],
+			[
+				"jsone_",
+				"json_encode"
+			],
+			[
+				"roo",
+				"room_no"
+			],
+			[
+				"room",
+				"room_no"
+			],
+			[
+				"spa_",
+				"spa_service_value"
+			],
+			[
+				"M",
+				"MediaAsset"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "glue",
+		"selected_items":
+		[
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"Word",
+				"DashDoc: invoke Dash with selected word"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"sublim",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"subli",
+				"Sublimerge: Compare to Revision..."
+			],
+			[
+				"subl",
+				"Set Syntax: Sublimerge"
+			],
+			[
+				"xde",
+				"Set Syntax: Xdebug"
+			],
+			[
+				"xdeb",
+				"Xdebug: Clear Watch Expressions"
+			],
+			[
+				"xdebug",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"xdebu",
+				"Xdebug: Breakpoint - Stop"
+			],
+			[
+				"xd",
+				"Preferences: Xdebug Settings – Default"
+			],
+			[
+				"xderb",
+				"Xdebug: Clear All Breakpoints"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"sub",
+				"Sublimerge: Compare Revision to Revision..."
+			],
+			[
+				"j",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"J",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"sublime",
+				"Sublimerge: Compare Revision to Revision..."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: dbg",
+				"Snippet: Inline PHP debug."
+			],
+			[
+				"Snippet: ",
+				"Snippet: Comment"
+			],
+			[
+				"jsom",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"sftp",
+				"SFTP: Show Panel"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp:sy",
+				"SFTP: Sync Local -> Remote…"
+			],
+			[
+				"sftp: sh",
+				"SFTP: Show Panel"
+			],
+			[
+				"SFTP",
+				"SFTP: Setup Server…"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package c",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 327.0,
+		"history":
+		[
+			"git",
+			"cd /Users/",
+			"cd ~/Sites/",
+			"ls -la",
+			"file_diff_menu:",
+			"file_diff_menu",
+			"/git status",
+			"git status",
+			"/git",
+			"git",
+			"git status",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/david/Sites/naabs2"
+	],
+	"file_history":
+	[
+		"/Users/david/Sites/best-bad-website/music.html",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aEmploymentModuleCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/models/query/TableOptionQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/UserHistoryQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/UserCertificationQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/CertificationBodyQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/CertificationCategoryQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/CertificationOptionQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/LocationCountryQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/LocationOptionQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/LocationProvidenceQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/LocationRegionQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/SkillAmountQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/SkillOptionQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/UserLocationQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/UserSkillQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/models/query/TFBaseQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-skill/_form.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-skill/index.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/components/TradesFactorFunctions.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-skill/_search.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-skill/view.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/UserSkill.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/SkillOption.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/search/UserSkill.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/m151001_000000_install.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/SkillAmount.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/EmploymentSkillAmount.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/controllers/DefaultController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/query/EmploymentSkillAmountQuery.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/models/UserBase.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/m151030_000000_tf_employment_certification_data.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/m151030_000000_tf_employment_location_data.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/m151030_000000_tf_employment_skill_option_data.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/m151113_183110_EmploymentSkillAmountTextToSelect.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools/Events.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aDevToolsModuleCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aTRADCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools/Module.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools/DevToolsAsset.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools/config.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools/module.json",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/admin/widgets/AdminMenu.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/Events.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-history/_form.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/partial/_layout.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-history/index.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-history/create.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-history/update.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-history/view.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/controllers/ErrorController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/views/error/index.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/models/TableOption.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/config/web.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/widgets/views/_profileBuilder.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/models/search/TableOption.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/widgets/ProfileBuilder.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/controllers/DefaultController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/admin/controllers/GroupController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/controllers/UserCertificationController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/config/dynamic.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/controllers/ErrorController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/controllers/TableOptionController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/views/table-option/index.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/config.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/models/ProfileBuilderBase.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/migrations/m151001_000001_install.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/migrations/m151001_000000_install.php",
+		"/Users/david/.bashrc",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/migrations/uninstall.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/migrations/uninstall.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aProfileBuilderModuleCest.php",
+		"/Users/david/Sites/tradesfactor.dev/rerere-train.sh",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/views/profile/_layout.php",
+		"/Users/david/Documents/db_dumps/trades-2015-11-10-1645-profile-builder-structure.sql",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/_output/aProfileBuilderModuleCest.enableRequirements.fail.html",
+		"/Users/david/Sites/tradesfactor.dev/docs/codeship.md",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/views/user-location/_form.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/assets/css/profileBuilder.css",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/Module.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/ProfilBuilderAsset.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/user/widgets/views/_profileBuilder.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/user/widgets/ProfileBuilder.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/views/layouts/_panel_menu.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/views/layouts/_update_delete.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/config/common.php",
+		"/Users/david/Sites/tradesfactor.dev/themes/TradesFactor/css/theme.less",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/AppAsset.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/installer/views/layouts/main.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/assets/AppAsset.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/user/widgets/AccountMenu.php",
+		"/Users/david/Sites/moffitt/frontend/views/article/_item.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/user/widgets/ProfileHeader.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/user/widgets/profileBuilder.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/ProfileHeaderControls.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/views/profileHeader.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/AccountTopMenu.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/ProfileHeader.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/ProfileMenu.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/widgets/ProfileSidebar.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/controllers/ProfileController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/views/profile/index.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/config.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/config/functional.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aChangeThemeCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/functional/fTRADCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/config/acceptance.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/functional.suite.yml",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/controllers/AuthController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/config/web.php",
+		"/Users/david/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/config/web.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/config/common.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/dashboard/controllers/DashboardController.php",
+		"/Users/david/Sites/tradesfactor.dev/.htaccess",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/widgets/RichText.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/Module.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/user/controllers/AccountController.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/config/console.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/aUserStoryCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/functional/fLogInCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/components/Controller.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/acceptance/EmploymentCest.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/config/unit.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/codeception/config/config.php",
+		"/Users/david/Sites/tradesfactor.dev/index-test.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/config/common.php",
+		"/Users/david/Sites/tradesfactor.dev/protected/humhub/modules/installer/Module.php"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 114.0,
+		"where_history":
+		[
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/Skill",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/devTools",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradcesfactor/modules/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/profileBuilder/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/tests/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/Humhub/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/tests/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/employment/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/modules/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.lock, -*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.json, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/frontend/modules/bbii/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/frontend/modules/bbii2/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/frontend/views/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/frontend/view",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/moffitt/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/tradesfactor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/pieces-compendium-webapp/",
+			"/Users/david/Sites/pieces-compendium-webapp/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/pieces-compendium-webapp/",
+			"/Users/david/Sites/pieces-compendium-webapp/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/pieces-compendium-webapp/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/modules/space/messages/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/modules/space/views/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/modules/space/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/, -*namespace*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/, *-/protected/humhub/modules/space/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/, *-/humhub/modules/space/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, -*/vendor/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/, -*/messages/*, -*/vendor/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/, -*/messages/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/composer",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/composer/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/, -*/Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/messages/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup, -*/Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/messages/*",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup, -/Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/messages/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*,/Users/david/Sites/tradesfactor.dev/protected/modules/mygroup",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/composer/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/composer/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protect/vendor/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/tradesfactor/src/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*,/Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/tradesfactor-component/src/modules/mygroup/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*,/Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/tradesfactor-component/src/modules/group/messages",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.sql, -*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/vendor/sourcetoad/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, -*/messages/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/protected/humhub/",
+			"-*.css, -*.data, -*.map, -*.log, -*.md, -*.js, -*/docs/*, /Users/david/Sites/tradesfactor.dev/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Email",
+			"div.panel-default.user-skill-index div.panel-body p a.btn",
+			"addSkill",
+			"\\tradesfactor\\models\\query",
+			"->timeSpan",
+			"skill_id",
+			"EmploymentSkill",
+			"Employment",
+			"TfEmploymentUserSkill",
+			"EmploymentUserSkill",
+			"EmploymentSkillAmountQuery",
+			"SkillOption",
+			"SkillOptionQuery",
+			"value",
+			"TRUNCATE TABLE IF EXISTS",
+			"truncate",
+			",0,1),\n",
+			"\n",
+			"tf_employment_skill_option",
+			"`user`",
+			"aProfileBuilderModuleCest",
+			"profile",
+			"Development</strong> Data",
+			"AdminMenu",
+			"git",
+			"prov",
+			"Province",
+			"Add Employment",
+			"Experiencey",
+			"history",
+			"Experiencey",
+			"History",
+			"history",
+			"Employment</strong> menu",
+			"Employment</strong> menu ",
+			"History",
+			"ErrorController",
+			"base",
+			"TableOption",
+			"redirect",
+			"192.168.33.11",
+			"error",
+			"redirect",
+			"tf_profile_builder_table_option",
+			"TradesFactorFunctions",
+			"self",
+			"user_id",
+			"processProfileBuilderEligibleTables",
+			"onProfileHeaderControlsInit",
+			"ActiveRecord",
+			"ProfileBuilderBase",
+			"nextItemData",
+			"m151001_000000_install",
+			"DROP TABLE IF EXISTS",
+			"foreach ($this->enabledTables as $tableIndex => $tableData) {",
+			"admin",
+			"Added table content to Table Option list",
+			"{module_enabled}",
+			"module_enabled",
+			"$this->completeAmount = (round(($userAmount / count($this->enabledTables)) * 100, 0) ?: $userAmount);",
+			"fillField",
+			"convertTableToName",
+			"getNextItemData",
+			"TableUser",
+			"@since",
+			"splitAtUpperCase",
+			"60",
+			"completeAmount",
+			"completAmount",
+			"col-xs-12 layout-profile-builder-container",
+			"tradesfactor\\modules\\user\\widgets\\ProfileBuilder",
+			"tradesfactor\\modules\\user\\widgets\\ProfileBuilder:",
+			"radesfactor\\modules\\user\\widgets\\ProfileBuilder:",
+			"user",
+			"_update_delete",
+			"user-spaces-panel",
+			"layout-sidebar-container",
+			"'assetManager'",
+			".image-profile-header-background",
+			"ProfilBuilderAsset::register($this);",
+			"AppAsset::register($this);",
+			"profile-layout-container",
+			"AppAsset",
+			"profile-layout-container",
+			"Space",
+			"UserFollowButton",
+			"event",
+			"onUserInit",
+			"profile-layout-container",
+			"UserProfileBuilderStatus",
+			"AdminMenu",
+			"humhub\\modules\\content\\widgets\\Stream",
+			"Your profile feed is still empty",
+			"profileHeader",
+			"panel-profile",
+			"AdminMenu",
+			"test",
+			"'test'",
+			"trad13",
+			"trad134",
+			"enablePrettyUrl",
+			"createAbsoluteUrl",
+			"indent",
+			"prettyUrl",
+			"'u'",
+			"defaultRoute",
+			"'u'",
+			"setAliais('u'",
+			"prettyUrl",
+			"url",
+			"base",
+			"pretty",
+			"script",
+			"request",
+			"route",
+			"tradesfactor.dev",
+			"dashboard/dashboard",
+			"'u'",
+			"'homeUrl'",
+			"dashboard/dashboard",
+			"__returnUrl",
+			"returnUrl",
+			"user->returnUrl",
+			"Url",
+			"/u/",
+			"/user/auth/login",
+			"/u/",
+			"'/u/'"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\tradesfactor\\models\\query\\TFBaseQuery",
+			"SkillAmount",
+			"TRUNCATE TABLE",
+			",0,1),\n('",
+			"',0,1),\n",
+			"aDevToolsModuleCest",
+			"tradesfactor",
+			"m151001_000001_install",
+			"user-profile-builder-panel",
+			"    ",
+			"region_id",
+			"<?php echo ",
+			"    ",
+			"<?php echo ",
+			"location",
+			"",
+			"certification_body_id",
+			"user-skill",
+			"<?php echo ",
+			"user-skill",
+			"namespace tradesfactor\\modules\\employment\\",
+			"<?php echo ",
+			"{model}",
+			"?php echo ",
+			"certification_option_id",
+			"tf_employment_certification_option",
+			"CertificationOption",
+			"UserHistory",
+			"<?php echo ",
+			"namespace tradesfactor\\modules\\employment\\",
+			"certifications",
+			"Certifications",
+			"History",
+			"namespace tradesfactor\\modules\\employment\\models;",
+			"",
+			"UserHistory",
+			"    ",
+			"end_date",
+			"tradesfactor\\modules\\employment\\models",
+			"History",
+			"country_id",
+			"->label('')",
+			"->textInput(['placeholder' => ''])->label(NULL); ?>",
+			"providence_id",
+			"<?php echo $form",
+			"?php echo $form",
+			"TradesFactor",
+			"tradesfactor",
+			"EmploymentModule",
+			"// humhub",
+			"\\\\humhub",
+			"'Groups'",
+			"</strong> groups",
+			"Search for users and groups",
+			"e users to this group",
+			" group settings",
+			">Group<",
+			"groups",
+			"Group",
+			"group",
+			"models_myGroup",
+			"* @package tradesfactor.modules.mygroup.",
+			"my_group_id",
+			"my_group_membership",
+			"my_group",
+			"myg_roup",
+			"tradesfactor\\modules\\",
+			"`My Group`",
+			" * @since 0.0.1",
+			"mygroup",
+			"tradesfactor\\modules\\mygroup\\",
+			"['\\tradesfactor\\modules\\mygroup\\Events',",
+			"tradesfactor\\modules\\mygroup",
+			"mygroup",
+			"namespace",
+			"mygroup",
+			"MyGroup",
+			"mygroupModule",
+			"MyGroupModule",
+			" * @author Luke, David J Eddy",
+			"assName()",
+			"]",
+			"[",
+			"sourcetoad\\\\modules\\\\mygroup",
+			"sourcetoad\\modules\\mygroup\\",
+			"MyGroup",
+			"mygroup",
+			"/sourcetoad/tradesfactor/src/modules/mygroup/",
+			"\\modules\\mygroup\\",
+			"Group",
+			"group",
+			" * @author Luke, David J Eddy <me@davidjeddy.com>",
+			"namespace",
+			"Group",
+			"group",
+			"_group_",
+			"`group_",
+			"`group`",
+			"* @package sourcetoad.modules.group",
+			"sourcetoad\\\\modules\\\\group",
+			"sourcetoad\\modules\\group",
+			"Group",
+			"group",
+			"Group",
+			"sourcetoad\\modules\\group",
+			"humhub\\modules\\space",
+			"Group",
+			"sourcetoad\\\\modules\\\\group",
+			"sourcetoad\\modules\\group",
+			"profile->birthday",
+			"davdjeddy\\demo\\Module",
+			"    'class' => 'humhub\\modules\\demo\\Module\\demo\\Module',\ndavidjeddy\\demo\\Module",
+			"DemoModule.base",
+			"demoWidget",
+			" * @author Sebastian Stumpf, David J Eddy",
+			"demo",
+			"DemoConfigureForm",
+			"    ",
+			"demo",
+			"Draw",
+			"    ",
+			"'",
+			"\" =>",
+			"]",
+			"[",
+			"=>",
+			"\"",
+			"'"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 124.0
+	},
+	"output.markdown":
+	{
+		"height": 100.0
+	},
+	"output.sftp":
+	{
+		"height": 221.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"j",
+				"frontend/www/assets/15717982/jquery.js"
+			],
+			[
+				"",
+				"admin/sql/install.mysql.utf8.sql"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 27.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 255.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -13,7 +13,7 @@ use common\models\UserDetails;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc
@@ -33,12 +33,6 @@ class SiteController extends Controller
                         'actions' => ['login', 'error'],
                         'allow'   => true,
                         'roles'   => ['?'],
-                    ],
-                    [
-                        'allow' => (boolean)UserDetails::find()
-                            ->where(['>=', 'role', 20])
-                            ->andWhere(['id' => Yii::$app->user->id])
-                            ->one(),
                     ],
                 ],
             ],
