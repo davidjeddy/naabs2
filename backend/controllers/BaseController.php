@@ -12,7 +12,6 @@ use yii\web\NotFoundHttpException;
 use common\models\Device;
 use common\models\LoginForm;
 use common\models\UserDetails;
-use common\models\UserDetails;
 
 /**
  * Site controller
