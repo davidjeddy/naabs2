@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\accountForm */
 
-$this->title = 'Account';
+$this->title = 'Account Details';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>

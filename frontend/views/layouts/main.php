@@ -31,16 +31,15 @@ AppAsset::register($this);
                 'options'    => ['class' => 'navbar-inverse navbar-fixed-top']
             ]);
 
-            $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
-            $menuItems[] = ['label' => 'Terms', 'url' => ['/site/tos']];
+            $menuItems[] = ['label' => 'Contact',   'url' => ['/site/contact']];
+            $menuItems[] = ['label' => 'Terms',     'url' => ['/site/tos']];
+
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => 'Signup',                'url' => ['/site/signup']];
+                $menuItems[] = ['label' => 'Account Management',    'url' => ['/site/login']];
             } else {
-                $menuItems[] = ['label' => '|'];
-                $menuItems[] = ['label' => 'Account', 'url' => ['/site/account']];
-                $menuItems[] = ['label' => 'Purchase', 'url' => ['/purchase/index']];
-                $menuItems[] = ['label' => '|'];    
+                $menuItems[] = ['label' => 'Purchase',          'url' => ['/purchase/index']];
+                $menuItems[] = ['label' => 'Account Details',   'url' => ['/site/account']];
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'linkOptions' => ['data-method' => 'post'],
