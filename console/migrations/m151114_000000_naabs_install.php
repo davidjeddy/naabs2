@@ -23,6 +23,53 @@ class m151114_000000_naabs_install extends Migration
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+--
+-- Table structure for table `time_amount_options`
+--
+
+DROP TABLE IF EXISTS `time_amount_options`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `time_amount_options` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(32) NOT NULL,
+  `value` int(11) NOT NULL,
+  `cost` varchar(16) NOT NULL DEFAULT '0.00',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `deleted_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `time_amount_options`
+--
+
+LOCK TABLES `time_amount_options` WRITE;
+/*!40000 ALTER TABLE `time_amount_options` DISABLE KEYS */;
+INSERT INTO `time_amount_options` (`id`, `key`, `value`, `cost`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,'4 hours',14400,'2.95',0,NULL,NULL),(2,'1 day (24 hours)',86400,'5.95',0,NULL,NULL),(3,'One Week (7 days)',604800,'11.95',0,NULL,NULL),(4,'One Month (30 days)',2419200,'24.95',0,NULL,NULL),(5,'Three Months (90 days)',7776000,'69.95',0,NULL,NULL),(6,'Six Months (180 days)',15552000,'132.95',0,NULL,NULL);
+/*!40000 ALTER TABLE `time_amount_options` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `time_amount_options_BINS` BEFORE INSERT ON `time_amount_options` FOR EACH ROW
+
+            SET new.created_at = UNIX_TIMESTAMP(NOW()) */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
 --
 -- Table structure for table `purchase`
 --
@@ -319,83 +366,6 @@ LOCK TABLES `role` WRITE;
 INSERT INTO `role` (`id`, `name`, `value`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,'admin',10,0,NULL,NULL),(2,'user',20,0,NULL,NULL);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `time_amount_options`
---
-
-DROP TABLE IF EXISTS `time_amount_options`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `time_amount_options` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `key` varchar(32) NOT NULL,
-  `value` int(11) NOT NULL,
-  `cost` varchar(16) NOT NULL DEFAULT '0.00',
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) DEFAULT NULL,
-  `deleted_at` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `time_amount_options`
---
-
-LOCK TABLES `time_amount_options` WRITE;
-/*!40000 ALTER TABLE `time_amount_options` DISABLE KEYS */;
-INSERT INTO `time_amount_options` (`id`, `key`, `value`, `cost`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,'4 hours',14400,'2.95',0,NULL,NULL),(2,'1 day (24 hours)',86400,'5.95',0,NULL,NULL),(3,'One Week (7 days)',604800,'11.95',0,NULL,NULL),(4,'One Month (30 days)',2419200,'24.95',0,NULL,NULL),(5,'Three Months (90 days)',7776000,'69.95',0,NULL,NULL),(6,'Six Months (180 days)',15552000,'132.95',0,NULL,NULL);
-/*!40000 ALTER TABLE `time_amount_options` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `time_amount_options_BINS` BEFORE INSERT ON `time_amount_options` FOR EACH ROW
-
-            SET new.created_at = UNIX_TIMESTAMP(NOW()) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `status` smallint(6) NOT NULL DEFAULT '10',
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) DEFAULT NULL,
-  `deleted_at` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-
 
 --
 -- Dumping events for database 'naabs2'
