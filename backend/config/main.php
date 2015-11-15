@@ -13,7 +13,7 @@ return [
     'bootstrap' => ['log'],
     'modules' => [
         'FreeRadius' => [
-            'class' => 'backend\modules\FreeRadius\FreeRadius',
+            'class' => 'davidjeddy\freeradius\Module',
         ],
     ],
     'components' => [
