@@ -64,12 +64,13 @@ INSTALLATION
 * Enter project `cd naabs2`
 * Initialize project `./init`
 * install composer FXP `composer global require "fxp/composer-asset-plugin:~1"`
-* Install 3rd party libraries `composer install --prefer-dist --profile --no-dev -o -v`
+* Install 3rd party libraries `composer install --prefer-dist --profile -o -v`
 * Update MySQL value of `components['db']` configuration in `common/config/main-local.php`
 * Insert DB data `./yii migrate`
 * Set document roots of your Web server:
     - for frontend `/path/to/yii-application/frontend/web/` and using the URL `http://frontend/`
     - for backend `/path/to/yii-application/backend/web/`   and using the URL `http://backend/`
+* Optional: Remove dev / testing / setup libraries `composer install --prefer-dist --profile --no-dev -o -v`
 
 TESTING
 -------
