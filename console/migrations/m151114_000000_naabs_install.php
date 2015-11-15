@@ -161,29 +161,6 @@ class m151114_000000_naabs_install extends Migration
             /*!50003 SET character_set_results = @saved_cs_results */ ;
             /*!50003 SET collation_connection  = @saved_col_connection */ ;
 
-            --
-            -- Table structure for table `migration`
-            --
-
-            DROP TABLE IF EXISTS `migration`;
-            /*!40101 SET @saved_cs_client     = @@character_set_client */;
-            /*!40101 SET character_set_client = utf8 */;
-            CREATE TABLE `migration` (
-              `version` varchar(180) NOT NULL,
-              `apply_time` int(11) DEFAULT NULL,
-              PRIMARY KEY (`version`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-            /*!40101 SET character_set_client = @saved_cs_client */;
-
-            --
-            -- Dumping data for table `migration`
-            --
-
-            LOCK TABLES `migration` WRITE;
-            /*!40000 ALTER TABLE `migration` DISABLE KEYS */;
-            INSERT INTO `migration` (`version`, `apply_time`) VALUES ('m000000_000000_base',1422940934),('m130524_201442_init',1422940936),('m140506_102106_rbac_init',1422941294),('m151114_000000_free_radius_install',1447553235);
-            /*!40000 ALTER TABLE `migration` ENABLE KEYS */;
-            UNLOCK TABLES;
 
             --
             -- Table structure for table `purchase`
@@ -385,15 +362,6 @@ class m151114_000000_naabs_install extends Migration
             ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
             /*!40101 SET character_set_client = @saved_cs_client */;
 
-            --
-            -- Dumping data for table `user_details`
-            --
-
-            LOCK TABLES `user_details` WRITE;
-            /*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
-            INSERT INTO `user_details` (`id`, `user_id`, `f_name`, `l_name`, `p_phone`, `s_phone`, `s_question`, `s_answer`, `p_email`, `s_email`, `role`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,1,'Admin','Istrator',123456780,NULL,'what am i','an admin','admin@naabs2.dev',NULL,20,0,NULL,NULL);
-            /*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
-            UNLOCK TABLES;
 
             --
             -- Dumping events for database 'naabs2'
