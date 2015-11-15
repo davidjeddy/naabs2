@@ -32,9 +32,8 @@ phpunit.phar
 # ST3 terminal plugin
 *.glue
 
-# Yii2 theme dir
-/docs/do_not_track
-**/components
-**/modules
-**/themes
-naabs2.sublime-workspace
+# Codeception support files built during `codecept build`
+tests/codeception/backend/_support
+tests/codeception/common/_support
+tests/codeception/console/_support
+tests/codeception/frontend/_support

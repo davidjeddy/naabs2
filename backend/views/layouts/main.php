@@ -34,23 +34,16 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
-                $menuItems[] = ['label' => 'Users', 'url' => ['/userdetails/index']];
-                $menuItems[] = [
-                    'label'       => 'Free Radius',
-                    'linkOptions' => ['target' => 'new'],
-                    'url'         => ['/FreeRadius/default/index'],
-                ];
-                $menuItems[] = ['label' => '|'];
-                $menuItems[] = ['label' => 'Devices', 'url' => ['/device/index']];
-                $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/devicecount/index']];
-                $menuItems[] = ['label' => 'Timeframe(s)', 'url' => ['/timeamount/index']];
-                $menuItems[] = ['label' => '|'];
-                $menuItems[] = ['label' => 'Roles', 'url' => ['/role/index']];
-                $menuItems[] = ['label' => 'Frontend',
-                    'url' => ['../../../frontend/web/index.php/site/index'],
+                $menuItems[] = ['label' => 'Users', 'url'       => ['/user-details']];
+                $menuItems[] = ['label' => 'Radius', 'url'      => ['/free-radius/default']];
+                $menuItems[] = ['label' => 'Devices', 'url'     => ['/device']];
+                $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/device-count']];
+                $menuItems[] = ['label' => 'Timeframe(s)', 'url'=> ['/time-amount']];
+                $menuItems[] = ['label' => 'Roles', 'url'       => ['/role']];
+                /* $menuItems[] = ['label' => 'Frontend',
+                    'url' => \Yii::$app->request-[$_SERVER['HTTP_HOST'].'/frontend/web/index.php/site/index'],
                     'linkOptions' => ['target' => 'new']
-                ];
-                $menuItems[] = ['label' => '|'];
+                ]; */
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url'         => ['/site/logout'],
