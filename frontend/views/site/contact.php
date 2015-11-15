@@ -17,8 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
         If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
     </p>
 
+
     <div class="row">
         <div class="col-lg-5">
+            <h1>Email</h1>
             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                 <?= $form->field($model, 'name') ?>
                 <?= $form->field($model, 'email') ?>
@@ -31,6 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <h1>Phone</h1>
+            <p>US: <?php echo Yii::$app->params['supportPhone']; ?></p>
         </div>
     </div>
 
