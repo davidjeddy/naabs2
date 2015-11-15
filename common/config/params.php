@@ -6,8 +6,8 @@ return [
     'paypal' => [
         'currency'      => 'USD',
         'intent'        => 'sale',
-        'setCancelUrl'  => $_SERVER["HTTP_HOST"],
-        'setReturnUrl'  => $_SERVER["HTTP_HOST"],
+        'setCancelUrl'  => isset($_SERVER["HTTP_HOST"]) ?: false,
+        'setReturnUrl'  => isset($_SERVER["HTTP_HOST"]) ?: false,
         'shipping_rate' => 0.00,
         'tax_rate'      => 0.07,
         'transaction'   => ['desc' => 'Wireless network access.',],
