@@ -1,7 +1,8 @@
 <?php
 return [
-	'adminEmail'                    => 'admin@naabs2.com',
-	'supportEmail'                  => 'suppot@naabs2.com',
+	'adminEmail'                    => 'admin@windnetworks.net',
+	'supportEmail'                  => 'support@windnetworks.net',
+    'supportPhone'                  => '+1 (352) 577 5127',
 	'user.passwordResetTokenExpire' => 3600,
     'paypal' => [
         'currency'      => 'USD',
