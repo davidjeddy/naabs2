@@ -362,7 +362,7 @@ class m151114_000000_naabs_install extends Migration
 
             LOCK TABLES `user` WRITE;
             /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-            INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,'AdminUsername','GoUfBzBTHtLRfVxvLRxCblfYvwIvD0Ax','$2y$13$flp19ES6z54d/URyQtZKu.emDuu2sSd2fb36DiSBSZ6nGci4pXRUK',NULL,10,0,0,NULL);
+            INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (1,\'AdminUsername\',\'GoUfBzBTHtLRfVxvLRxCblfYvwIvD0Ax\',\'$2y$13$flp19ES6z54d/URyQtZKu.emDuu2sSd2fb36DiSBSZ6nGci4pXRUK\',NULL,10,0,0,NULL);
             /*!40000 ALTER TABLE `user` ENABLE KEYS */;
             UNLOCK TABLES;
 
@@ -422,7 +422,7 @@ class m151114_000000_naabs_install extends Migration
             /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
             -- Dump completed on 2015-11-14 22:10:32
-");
+        ");
 
         return $command->execute();
     }
