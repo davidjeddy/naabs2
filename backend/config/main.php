@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-        'FreeRadius' => [
+        'free-radius' => [
             'class' => 'davidjeddy\freeradius\Module',
         ],
     ],
