@@ -2,8 +2,10 @@
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
-			"path": "."
+			"path": "/Users/david/Sites/naabs2"
+		},
+		{
+			"path": "/Users/david/Sites/naabs2/vendor/davidjeddy/yii2-freeradius-module"
 		}
 	]
 }

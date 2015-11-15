@@ -7,14 +7,16 @@
     "license": "BSD-3-Clause",
     "support": {},
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
-        "davidjeddy/yii2-freeradius-module": "*",
+        "davidjeddy/yii2-freeradius-module": "@dev",
         "dmstr/yii2-adminlte-asset"        : "2.*@beta",
         "paypal/rest-api-sdk-php"          : "*",
         "php"                              : ">=5.4.0",
         "yiisoft/yii2"                     : "*",
         "yiisoft/yii2-bootstrap"           : "*",
-        "yiisoft/yii2-swiftmailer"         : "*"
+        "yiisoft/yii2-swiftmailer"         : "*",
+        "davidjeddy/yii2-article-category": "^0.0.3"
     },
     "require-dev": {
         "codeception/codeception" : "~2.0",
