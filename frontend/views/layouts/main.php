@@ -6,32 +6,12 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
 
+use davidjeddy\freeradius\models\radcheck;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
-
-// todo clean this up - DJE - 2015-11-15
-$displayAmount = NULL;
-if (\Yii::$app->user->getIdentity()) {
-    // get account time expiration
-    $expiration = new DateTime(
-        \davidjeddy\freeradius\models\radcheck::getExpiration(\Yii::$app->user->getIdentity()->username)
-    );
-
-    $dateTime = new DateTime();
-    $interval = $dateTime->diff( $expiration );
-
-    $dayData  = $interval->format('%a');
-    $hourData = $interval->format('%h');
-
-    $displayAmount = 'EXPIRED';
-    if ($dayData) {
-        $displayAmount = 'in '.$dayData.' day'.($dayData < 1 ?: 's').' on '.$expiration->format('Y-M-d'); 
-    } else {
-        $displayAmount = 'in '.$hourData.' hour'.($hourData < 1 ?: 's');
-    }
-}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -76,26 +56,24 @@ if (\Yii::$app->user->getIdentity()) {
         ?>
 
         <?php
-            if ($displayAmount) {
-                navbar::begin([
-                    'options'    => [
-                        'class' => 'navbar-inverse navbar-fixed-top',
-                        'style' => 'top:50px;'
-                    ]
-                ]);
+            navbar::begin([
+                'options'    => [
+                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'style' => 'top:50px;'
+                ]
+            ]);
 
-                echo Nav::widget([
-                    'options'   => ['class' => 'navbar-nav navbar-right'],
-                    'items'     => [
-                        [
-                            'label' => 'Expires '.$displayAmount,
-                            'url'   => ['/purchase/create'],
-                        ]
+            echo Nav::widget([
+                'options'   => ['class' => 'navbar-nav navbar-right'],
+                'items'     => [
+                    [
+                        'label' => (\Yii::$app->user->getIdentity() ? radcheck::getHumanReadableExpiration(\Yii::$app->user->getIdentity()->username) : NULL),
+                        'url'   => ['/purchase/create'],
                     ]
-                ]);
+                ]
+            ]);
 
-                NavBar::end();
-            }
+            NavBar::end();
         ?>
 
         <div class="container">
