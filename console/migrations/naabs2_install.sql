@@ -47,7 +47,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `time_amount_options_BINS` BEFORE INSERT ON `time_amount_options` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `time_amount_options_BINS` BEFORE INSERT ON `time_amount_options` FOR EACH ROW
 
             SET new.created_at = UNIX_TIMESTAMP(NOW()) */;;
 DELIMITER ;
@@ -289,7 +289,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `device_count_options_BINS` BEFORE INSERT ON `device_count_options` FOR EACH ROW
+/*!50003 CREATE*/ /*!50003 TRIGGER `device_count_options_BINS` BEFORE INSERT ON `device_count_options` FOR EACH ROW
 
             SET new.created_at = UNIX_TIMESTAMP(NOW()) */;;
 DELIMITER ;
