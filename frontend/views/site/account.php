@@ -19,6 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-account']); ?>
 
+                <h3>Username: <?= \common\models\User::find()->andWhere(['id' => \Yii::$app->user->getIdentity()->id])->one()->username; ?></h3>
+
                 <?= $form->field($details, 'id')->hiddenInput()->label(false) ?>
                 <?= $form->field($details, 'user_id')->hiddenInput()->label(false) ?>
                 <?= $form->field($details, 'f_name') ?>
