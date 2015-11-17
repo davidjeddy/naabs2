@@ -17,6 +17,10 @@ use common\models\UserDetails;
  */
 class UserDetailsController extends Controller
 {
+    /**
+     * [behaviors description]
+     * @return [type] [description]
+     */
     public function behaviors()
     {
         return [
@@ -24,15 +28,16 @@ class UserDetailsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login'],
-                        'allow'   => true,
-                    ],
-                    [
                         'allow'         => true,
                         'roles'         => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             return UserDetails::isUserAdmin(Yii::$app->user->identity->id);
                         }
+                    ],
+                    [
+                        'actions' => ['login'],
+                        'allow'   => true,
+                        'roles'   => ['?'],
                     ],
                 ],
             ],
