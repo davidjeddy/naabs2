@@ -9,7 +9,16 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Sign Up';
 $this->params['breadcrumbs'][] = $this->title;
 
+use frontend\assets\AppAsset;
+AppAsset::register($this);
 ?>
+<?php // todo appassets - DJE - 2015-11-16 ?>
+<style>
+div.required label.control-label:after {
+    content: " *";
+    color: red;
+}
+</style>
 <div class="site-account">
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -17,8 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-                <!-- user TBO -->               
+            <?php $form = ActiveForm::begin([
+                'id'               => 'form-signup',
+                'requiredCssClass' => 'required',
+            ]); ?>
+                <!-- user TBO -->
                 <?= $form->field($model, 'username') ?>                
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <?= $form->field($model, 'password_repeat')->passwordInput() ?>
@@ -29,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($details, 'f_name') ?>
                 <?= $form->field($details, 'l_name') ?>
                 <?= $form->field($details, 'p_phone') ?>
+                <?= $form->field($details, 's_phone') ?>
                 <?= $form->field($details, 'p_email') ?>
                 <?= $form->field($details, 's_question') ?>
                 <?= $form->field($details, 's_answer') ?>
@@ -51,6 +64,7 @@ window.onload=function(){
     $("#userdetails-f_name").val('UserFName');
     $("#userdetails-l_name").val('UserLName');
     $("#userdetails-p_phone").val('1234567890');
+    $("#userdetails-p_phone").val('0987654321');
     $("#userdetails-p_email").val('user@user.com');
     $("#userdetails-s_question").val('who am i');
     $("#userdetails-s_answer").val('a user');

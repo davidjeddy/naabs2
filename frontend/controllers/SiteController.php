@@ -163,7 +163,7 @@ class SiteController extends Controller
                 if ($userDetails->save()) {
 
                     if (Yii::$app->getUser()->login($user)) {
-                        return $this->goHome();
+                        return \Yii::$app->response->redirect(['site/signup-complete']);
                     }
                 }
             }
@@ -172,6 +172,25 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model'   => $signupform,
             'details' => $userDetails,
+        ]);
+    }
+
+    /**
+     *
+     * @todo  find how how to get the next inserted ID, reserve it, and save both User and UserDetails at the same time.
+     * @return [type] [description]
+     */
+    public function actionSignupComplete()
+    {
+        // return user if referrer is not from signup form        
+        if (!strstr(\Yii::$app->request->referrer, "site/signup")) {
+            return $this->goBack();
+        }
+
+        return $this->render('signup_complete', [
+            'details' => \common\models\User::find()
+                ->andWhere(['id' => \Yii::$app->user->getIdentity()->id])
+                ->one()
         ]);
     }
 
