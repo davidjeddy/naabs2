@@ -12,13 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'device_mac')->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'user_id')->textInput() ?>
 
-    <?= $form->field($model, 'device_name')->textInput(['maxlength' => 32]) ?>
+    <?= $form->field($model, 'device_name')->textInput(['maxlength' => 64]) ?>
 
-    <?= $form->field($model, 'user_id')->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'pass_phrase')->textInput(['maxlength' => 8]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput(['disabled' => true]) ?>
+    <?= $form->field($model, 'expiration')->textInput() ?>
 
     <?= $form->field($model, 'updated_at')->textInput(['disabled' => true]) ?>
 

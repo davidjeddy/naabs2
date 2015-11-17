@@ -29,9 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'id',
-            'device_mac',
+            'user_id'
             'device_name',
-            'user_id',
+            'pass_phrase',
+            'expiration',
             'created_at:datetime',
             'updated_at:datetime',
             //'deleted_at:datetime',
