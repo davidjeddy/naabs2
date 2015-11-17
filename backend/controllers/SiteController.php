@@ -13,7 +13,7 @@ use common\models\UserDetails;
 /**
  * Site controller
  */
-class SiteController extends BaseController
+class SiteController extends Controller
 {
    public function actionIndex()
     {
