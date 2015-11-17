@@ -56,6 +56,7 @@ AppAsset::register($this);
         ?>
 
         <?php
+        if (\Yii::$app->user->getIdentity()) {
             navbar::begin([
                 'options'    => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -67,13 +68,14 @@ AppAsset::register($this);
                 'options'   => ['class' => 'navbar-nav navbar-right'],
                 'items'     => [
                     [
-                        'label' => (\Yii::$app->user->getIdentity() ? radcheck::getHumanReadableExpiration(\Yii::$app->user->getIdentity()->username) : NULL),
+                        'label' => 'Time Remaining: '.radcheck::getHumanReadableExpiration(\Yii::$app->user->getIdentity()->username),
                         'url'   => ['/purchase/create'],
                     ]
                 ]
             ]);
 
             NavBar::end();
+        }
         ?>
 
         <div class="container">
