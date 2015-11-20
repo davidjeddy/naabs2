@@ -12,5 +12,9 @@ return [
         'shipping_rate' => 0.00,
         'tax_rate'      => 0.07,
         'transaction'   => ['desc' => 'Wireless network access.',],
+        'paypal_client' => [
+            'id'     => '',
+            'secret' => '',
+        ]
     ]
 ];
