@@ -23,7 +23,14 @@ $this->params['breadcrumbs'][] = $this->title;
             //['class' => 'yii\grid\SerialColumn'],
             //'id',
             'device_name',
-            'user_id',
+            // 'user_id',
+            // todo get this to work via model relations - DJE - 2015-11-20
+            [
+                'label' => 'user',
+                'value' => function ($model) {
+                    return \common\models\User::find()->andWhere(['id' => $model->user_id])->one()->username;
+                }
+            ],
             'created_at:datetime',
             'updated_at:datetime',
             // 'deleted_at:datetime',

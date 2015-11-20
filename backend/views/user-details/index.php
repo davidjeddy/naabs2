@@ -31,7 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
             's_email',
             's_question',
             's_answer',
-            'role',
+            // 'role',
+            // todo get this to work via model relations - DJE - 2015-11-20
+            [
+                'label' => 'role',
+                'value' => function ($model) {
+                    return \backend\models\Role::find()->andWhere(['value' => $model->role])->one()->name;
+                }
+            ],
             'created_at:datetime',
             'updated_at:datetime',
             //'deleted_at:datetime',
