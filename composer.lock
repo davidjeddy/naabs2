@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35b8917f3a91840bad076eedae881896",
-    "content-hash": "0f18f0c1e63ba2f958b5abb7848a3459",
+    "hash": "784050e7d9f46dac39ca8b0d2e6a6d67",
+    "content-hash": "86ee35dfc65259b2826f187c3e96d7cf",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -543,6 +543,47 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "marciocamello/yii2-paypal",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marciocamello/yii2-paypal.git",
+                "reference": "361ad42f4874c83d0e05df49ea7d660c8c507ce0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marciocamello/yii2-paypal/zipball/361ad42f4874c83d0e05df49ea7d660c8c507ce0",
+                "reference": "361ad42f4874c83d0e05df49ea7d660c8c507ce0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "ak\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Klimenko",
+                    "email": "andrey.iemail@gmail.com"
+                }
+            ],
+            "description": "The PayPal extension for the Yii2 framework",
+            "keywords": [
+                "paypal",
+                "yii2"
+            ],
+            "time": "2014-05-16 13:39:43"
         },
         {
             "name": "paypal/rest-api-sdk-php",
