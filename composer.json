@@ -16,7 +16,7 @@
         "yiisoft/yii2"                     : "*",
         "yiisoft/yii2-bootstrap"           : "*",
         "yiisoft/yii2-swiftmailer"         : "*",
-        "marciocamello/yii2-paypal": "*"
+        "marciocamello/yii2-paypal"        : "dev-master@dev"
     },
     "require-dev": {
         "codeception/codeception" : "~2.0",

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "784050e7d9f46dac39ca8b0d2e6a6d67",
-    "content-hash": "86ee35dfc65259b2826f187c3e96d7cf",
+    "hash": "0d08cca0908c43f1818f14ad3ee7ef14",
+    "content-hash": "f82cf3e181241e47cf33a193e68bcb3e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -546,26 +546,29 @@
         },
         {
             "name": "marciocamello/yii2-paypal",
-            "version": "v0.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marciocamello/yii2-paypal.git",
-                "reference": "361ad42f4874c83d0e05df49ea7d660c8c507ce0"
+                "reference": "5e2d2ad038b462508de16bc0d5deeffe95757551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marciocamello/yii2-paypal/zipball/361ad42f4874c83d0e05df49ea7d660c8c507ce0",
-                "reference": "361ad42f4874c83d0e05df49ea7d660c8c507ce0",
+                "url": "https://api.github.com/repos/marciocamello/yii2-paypal/zipball/5e2d2ad038b462508de16bc0d5deeffe95757551",
+                "reference": "5e2d2ad038b462508de16bc0d5deeffe95757551",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "paypal/rest-api-sdk-php": "*",
+                "php": ">=5.3.0",
                 "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "ak\\": ""
+                    "marciocamello\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -574,8 +577,8 @@
             ],
             "authors": [
                 {
-                    "name": "Andrey Klimenko",
-                    "email": "andrey.iemail@gmail.com"
+                    "name": "Marcio Camello",
+                    "email": "marciocamello@outlook.com"
                 }
             ],
             "description": "The PayPal extension for the Yii2 framework",
@@ -583,7 +586,7 @@
                 "paypal",
                 "yii2"
             ],
-            "time": "2014-05-16 13:39:43"
+            "time": "2014-12-15 10:06:41"
         },
         {
             "name": "paypal/rest-api-sdk-php",
@@ -3341,7 +3344,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "davidjeddy/yii2-freeradius-module": 20,
-        "dmstr/yii2-adminlte-asset": 10
+        "dmstr/yii2-adminlte-asset": 10,
+        "marciocamello/yii2-paypal": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

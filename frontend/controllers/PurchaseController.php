@@ -74,75 +74,31 @@ class PurchaseController extends Controller
     public function actionCreate()
     {
         $cc_format_mdl = new CCFormat();
-        $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
-        
-
 
         if (!empty(Yii::$app->request->post())) {
 
             // the CCFormat does not actualy save anything to the DB.
-            if ($cc_format_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->validate()) {
-
-                // for the sake of consistancty, empty success logic block
-            } else {
+            if (!$cc_format_mdl->load(Yii::$app->request->post()) || !$cc_format_mdl->validate()) {
 
                 Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
             }
 
-
-
-            if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
-                $pp_purchase_data = $this->prepPayPalData($purchase_mdl, $cc_format_mdl);
-                $response_message = 'not approved';
-
-                $purchase_mdl->setAttribute('price',            $pp_purchase_data['amountdetails']['subtotal']);
-                $purchase_mdl->setAttribute('return_message',   $response_message);
-                $purchase_mdl->setAttribute('return_code',      http_response_code());
-                $purchase_mdl->setAttribute('last_4',           substr($cc_format_mdl->number, -4) );
-
-
-
-                /*
-                $_payment_result  = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
-                $response_message = (
-                    $_payment_result->getState() == 'approved' ? 'approved' : $_payment_result->getFailedTransactions()
-                );*/
-                $response_message = "approved";
-
-
-
-                // payment has cleared. Create the devices.
-                if ( $response_message == "approved" && $purchase_mdl->save()) {
-
-                    // create devices if the calling methid was 'device'
-                    if ($this->module->requestedAction->id == 'adddevice' || 
-                        $this->module->requestedAction->id == 'create'
-                    ) {
-                        DeviceController::actionCreate($purchase_mdl);
-                    }
-
-                    // create time if the calling method was 'time'
-                    if ($this->module->requestedAction->id == 'addtime') {
-                        DeviceController::actionUpdate(null, $purchase_mdl);
-                    }
-
-                    $this->redirect('../purchase/index');
-                } else {
-
-                    Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
-                    return false;
-                }
-
-            } else {
+            // save the purchase to the DB if the purchase data is valid
+            if (!$purchase_mdl->load(Yii::$app->request->post()) || !$purchase_mdl->validate()) {
 
                 Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
                 return false;
             }
+
+            // process PayPal payment
+            if ($this->processPayPal($this->prepPayPalData($purchase_mdl, $cc_data)))) {
+
+                $this->actionIndex();
+            }
         }
 
-
-
+        // no post data, load form
         return $this->render('create', [
             'cc_format_mdl'            => $cc_format_mdl,
             'country_mdl'              => Country::findAll(['deleted_at' => null]),
@@ -243,12 +199,67 @@ class PurchaseController extends Controller
             'l_name'    => $param_data->getAttribute('l_name'),
         ];
 
-        $subtotal       = [];
-        $subtotal[0]    = isset(Yii::$app->request->post()['Purchase']['time_amount_id'])  ? TimeAmountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')   : 0;
-        $subtotal[1]    = isset(Yii::$app->request->post()['Purchase']['device_count_id']) ? DeviceCountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost') : 0;
+        $subtotal    = [];
+        $subtotal[0] = isset(Yii::$app->request->post()['Purchase']['time_amount_id']) 
+            ? TimeAmountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')  
+            : 0;
+        $subtotal[1] = isset(Yii::$app->request->post()['Purchase']['device_count_id'])
+            ? DeviceCountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost')
+            : 0;
         $return_data['amountdetails']['subtotal'] = array_sum($subtotal);
 
+echo '<pre>';
+print_r( $return_data );
+echo '</pre>';
+exit;
 
         return $return_data;
+    }
+
+    /**
+     * [payDemo description]
+     * @param  array  $paramData [description]
+     * @return Payment           [description]
+     */
+    public function payDemo($paramData = [])
+    {
+        if (empty($paramData)) { return false; }
+
+        $addr = new Address();
+        $addr->setLine1('52 N Main ST');
+        $addr->setCity('Johnstown');
+        $addr->setCountryCode('US');
+        $addr->setPostalCode('43210');
+        $addr->setState('OH');
+        $card = new CreditCard();
+        $card->setNumber('4417119669820331');
+        $card->setType('visa');
+        $card->setExpireMonth('11');
+        $card->setExpireYear('2018');
+        $card->setCvv2('874');
+        $card->setFirstName('Joe');
+        $card->setLastName('Shopper');
+        $card->setBillingAddress($addr);
+        $fi = new FundingInstrument();
+        $fi->setCreditCard($card);
+        $payer = new Payer();
+        $payer->setPaymentMethod('credit_card');
+        $payer->setFundingInstruments(array($fi));
+        $amountDetails = new Details();
+        $amountDetails->setSubtotal('15.99');
+        $amountDetails->setTax('0.03');
+        $amountDetails->setShipping('0.03');
+        $amount = new Amount();
+        $amount->setCurrency('USD');
+        $amount->setTotal('7.47');
+        $amount->setDetails($amountDetails);
+        $transaction = new Transaction();
+        $transaction->setAmount($amount);
+        $transaction->setDescription('This is the payment transaction description.');
+        $payment = new Payment();
+        $payment->setIntent('sale');
+        $payment->setPayer($payer);
+        $payment->setTransactions(array($transaction));
+        return $payment->create($this->_apiContext);
     }
 }
