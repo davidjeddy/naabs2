@@ -82,6 +82,7 @@ class PurchaseController extends Controller
             if (!$cc_format_mdl->load(Yii::$app->request->post()) || !$cc_format_mdl->validate()) {
 
                 Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
+                return false;
             }
 
             // save the purchase to the DB if the purchase data is valid
@@ -92,7 +93,7 @@ class PurchaseController extends Controller
             }
 
             // process PayPal payment
-            if ($this->processPayPal($this->prepPayPalData($purchase_mdl, $cc_data)))) {
+            if ($this->processPayPal($this->prepPayPalData($purchase_mdl, $cc_format_mdl))) {
 
                 $this->actionIndex();
             }
@@ -208,58 +209,75 @@ class PurchaseController extends Controller
             : 0;
         $return_data['amountdetails']['subtotal'] = array_sum($subtotal);
 
-echo '<pre>';
-print_r( $return_data );
-echo '</pre>';
-exit;
-
         return $return_data;
     }
 
     /**
-     * [payDemo description]
+     * [processPayPal description]
      * @param  array  $paramData [description]
      * @return Payment           [description]
      */
-    public function payDemo($paramData = [])
+    public function processPayPal($paramData = [])
     {
         if (empty($paramData)) { return false; }
 
-        $addr = new Address();
-        $addr->setLine1('52 N Main ST');
-        $addr->setCity('Johnstown');
-        $addr->setCountryCode('US');
-        $addr->setPostalCode('43210');
-        $addr->setState('OH');
-        $card = new CreditCard();
-        $card->setNumber('4417119669820331');
-        $card->setType('visa');
-        $card->setExpireMonth('11');
-        $card->setExpireYear('2018');
-        $card->setCvv2('874');
-        $card->setFirstName('Joe');
-        $card->setLastName('Shopper');
+        $addr = new \PayPal\Api\Address();
+        $addr->setLine1($paramData['address']['street_1']);
+        $addr->setLine2($paramData['address']['street_1'] ?: NULL);
+        $addr->setCity($paramData['address']['city']);
+        $addr->setCountryCode($paramData['address']['country']);
+        $addr->setPostalCode($paramData['address']['postal']);
+        $addr->setState($paramData['address']['prov']);
+
+        $card = new \PayPal\Api\CreditCard();
+        $card->setNumber($paramData['creditcard']['number']);
+        $card->setType($paramData['creditcard']['type']);
+        $card->setExpireMonth($paramData['creditcard']['exp_month']);
+        $card->setExpireYear($paramData['creditcard']['exp_year']);
+        $card->setCvv2($paramData['creditcard']['cvv2']);
+        $card->setFirstName($paramData['creditcard']['f_name']);
+        $card->setLastName($paramData['creditcard']['l_name']);
         $card->setBillingAddress($addr);
-        $fi = new FundingInstrument();
+
+        $fi = new \PayPal\Api\FundingInstrument();
         $fi->setCreditCard($card);
-        $payer = new Payer();
+
+        $payer = new \PayPal\Api\Payer();
         $payer->setPaymentMethod('credit_card');
         $payer->setFundingInstruments(array($fi));
-        $amountDetails = new Details();
-        $amountDetails->setSubtotal('15.99');
-        $amountDetails->setTax('0.03');
-        $amountDetails->setShipping('0.03');
-        $amount = new Amount();
-        $amount->setCurrency('USD');
-        $amount->setTotal('7.47');
+
+        $amountDetails = new \PayPal\Api\Details();
+        $amountDetails->setSubtotal($paramData['amountdetails']['subtotal']);
+        $amountDetails->setTax(($paramData['amountdetails']['subtotal'] * \Yii::$app->params['paymentDetails']['taxRate']));
+        $amountDetails->setShipping(\Yii::$app->params['paymentDetails']['shippingRate']);
+
+        $amount = new \PayPal\Api\Amount();
+        $amount->setCurrency(\Yii::$app->params['paymentDetails']['currency']);
+        $amount->setTotal(
+            $paramData['amountdetails']['subtotal']
+            + \Yii::$app->params['paymentDetails']['shippingRate']
+            + ($paramData['amountdetails']['subtotal'] * \Yii::$app->params['paymentDetails']['taxRate'])
+        );
         $amount->setDetails($amountDetails);
-        $transaction = new Transaction();
+
+        $transaction = new \PayPal\Api\Transaction();
         $transaction->setAmount($amount);
-        $transaction->setDescription('This is the payment transaction description.');
-        $payment = new Payment();
+        $transaction->setDescription(\Yii::$app->params['purchaseDescription']);
+
+        $payment = new \PayPal\Api\Payment();
         $payment->setIntent('sale');
         $payment->setPayer($payer);
         $payment->setTransactions(array($transaction));
-        return $payment->create($this->_apiContext);
+
+
+        $payPayComponent = new \marciocamello\PayPal;
+        $payPayComponent->init();
+
+        $response = $payment->create($payPayComponent->_apiContext);
+
+echo '<pre>';
+print_r( $response );
+echo '</pre>';
+exit;
     }
 }
