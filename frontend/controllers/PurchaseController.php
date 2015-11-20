@@ -269,15 +269,13 @@ class PurchaseController extends Controller
         $payment->setPayer($payer);
         $payment->setTransactions(array($transaction));
 
+        $apiContext = new Paypalpayment::ApiContext(
+            Paypalpayment::OAuthTokenCredential(
+                $this->_ClientId, // \Yii::$app->component->paypal->clientId
+                $this->_ClientSecret // \Yii::$app->component->paypal->clientId
+            ), 'Request' . time()
+        );
 
-        $payPayComponent = new \marciocamello\PayPal;
-        $payPayComponent->init();
-
-        $response = $payment->create($payPayComponent->_apiContext);
-
-echo '<pre>';
-print_r( $response );
-echo '</pre>';
-exit;
+        $response = $payment->create($apiContext->_apiContext);
     }
 }
