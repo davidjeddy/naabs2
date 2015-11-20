@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f4c3d4b24eea6f88fe0aaad6d9b1e006",
-    "content-hash": "d3bc81a3552cd1f12fc2e8414171a8eb",
+    "hash": "35b8917f3a91840bad076eedae881896",
+    "content-hash": "0f18f0c1e63ba2f958b5abb7848a3459",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -394,69 +394,17 @@
             "time": "2013-12-10 17:49:58"
         },
         {
-            "name": "davidjeddy/yii2-article-category",
-            "version": "0.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/davidjeddy/yii2-article-category.git",
-                "reference": "be62d6de48da7c587f0828501b68fe32a3c0cd22"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/davidjeddy/yii2-article-category/zipball/be62d6de48da7c587f0828501b68fe32a3c0cd22",
-                "reference": "be62d6de48da7c587f0828501b68fe32a3c0cd22",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~5.6",
-                "yiisoft/yii2": "~2",
-                "yiisoft/yii2-bootstrap": "~2"
-            },
-            "require-dev": {
-                "codeception/codeception": "~2",
-                "yiisoft/yii2-codeception": "~2",
-                "yiisoft/yii2-debug": "~2",
-                "yiisoft/yii2-faker": "~2",
-                "yiisoft/yii2-gii": "~2"
-            },
-            "type": "module",
-            "autoload": {
-                "psr-4": {
-                    "davidjeddy\\articlecategory\\": "/src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "David J Eddy",
-                    "email": "me@davidjeddy.com",
-                    "homepage": "https://github.com/davidjeddy/yii2-article-category",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Multi level article category module",
-            "keywords": [
-                "framework",
-                "module",
-                "yii2"
-            ],
-            "time": "2015-10-09 15:54:22"
-        },
-        {
             "name": "davidjeddy/yii2-freeradius-module",
-            "version": "dev-master",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidjeddy/yii2-freeradius-module.git",
-                "reference": "7ad386035e738cb5bbbfca699c66b9a481c0a1c9"
+                "reference": "74c8a97b2d5f9e64d29efeb96d8d4f9ca9696dbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidjeddy/yii2-freeradius-module/zipball/7ad386035e738cb5bbbfca699c66b9a481c0a1c9",
-                "reference": "7ad386035e738cb5bbbfca699c66b9a481c0a1c9",
+                "url": "https://api.github.com/repos/davidjeddy/yii2-freeradius-module/zipball/74c8a97b2d5f9e64d29efeb96d8d4f9ca9696dbb",
+                "reference": "74c8a97b2d5f9e64d29efeb96d8d4f9ca9696dbb",
                 "shasum": ""
             },
             "require": {
@@ -496,7 +444,7 @@
                 "module",
                 "yii2"
             ],
-            "time": "2015-11-15 01:44:40"
+            "time": "2015-11-20 06:05:48"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
@@ -598,16 +546,16 @@
         },
         {
             "name": "paypal/rest-api-sdk-php",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
-                "reference": "89bc07aa1eae833b6d1f38188fe1787b8141685b"
+                "reference": "7493e7aa5e384e897636d6073493ef0a865695ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/89bc07aa1eae833b6d1f38188fe1787b8141685b",
-                "reference": "89bc07aa1eae833b6d1f38188fe1787b8141685b",
+                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/7493e7aa5e384e897636d6073493ef0a865695ea",
+                "reference": "7493e7aa5e384e897636d6073493ef0a865695ea",
                 "shasum": ""
             },
             "require": {
@@ -642,7 +590,7 @@
                 "rest",
                 "sdk"
             ],
-            "time": "2015-10-29 18:18:16"
+            "time": "2015-11-16 19:40:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
