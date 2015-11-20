@@ -35,16 +35,16 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
-                $menuItems[] = ['label' => 'Users', 'url'       => ['/user-details']];
-                $menuItems[] = ['label' => 'Radius', 'url'      => ['/free-radius/default']];
-                $menuItems[] = ['label' => 'Devices', 'url'     => ['/device']];
-                $menuItems[] = ['label' => 'Device Count(s)', 'url' => ['/device-count']];
-                $menuItems[] = ['label' => 'Timeframe(s)', 'url'=> ['/time-amount']];
-                $menuItems[] = ['label' => 'Roles', 'url'       => ['/role']];
-                /* $menuItems[] = ['label' => 'Frontend',
-                    'url' => \Yii::$app->request-[$_SERVER['HTTP_HOST'].'/frontend/web/index.php/site/index'],
-                    'linkOptions' => ['target' => 'new']
-                ]; */
+                $menuItems[] = ['label' => 'Users',         'url' => ['/user-details']];
+                $menuItems[] = ['label' => 'Devices',       'url' => ['/device']];
+                $menuItems[] = ['label' => 'Radius Data',   'url' => ['/free-radius/default']];
+                $menuItems[] = ['label' => 'Admin',
+                    'items' => [
+                        ['label' => 'Device Count(s)',  'url' => ['/device-count']],
+                        ['label' => 'Timeframe(s)',     'url' => ['/time-amount']],
+                        ['label' => 'Roles',            'url' => ['/role']]
+                    ],
+                ];
                 $menuItems[] = [
                     'label'       => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url'         => ['/site/logout'],
