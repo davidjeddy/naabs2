@@ -2,23 +2,19 @@
 
 namespace frontend\controllers;
 
+use common\models\CCFormat;
+use common\models\Country;
+use common\models\Device;
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
+use davidjeddy\Paypal;
+use frontend\controllers\DeviceController;
+use frontend\models\Purchase;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-
-use frontend\models\Purchase;
-use common\models\Device;
-
-use frontend\controllers\DeviceController;
-
-use common\components\Paypal;
-use common\models\CCFormat;
-use common\models\Country;
-use common\models\DeviceCountOptions;
-use common\models\TimeAmountOptions;
-
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -92,10 +88,19 @@ class PurchaseController extends Controller
                 return false;
             }
 
+            // save purchase data
             // process PayPal payment
-            if ($this->processPayPal($this->prepPayPalData($purchase_mdl, $cc_format_mdl))) {
+            // 
+            if ( $purchase_mdl->save()
+                && ($this->pay($this->prepPayPalData($purchase_mdl, $cc_format_mdl))->state == 'approved')
+            ) {
+                $purchase_mdl->setAttributes([
+                    'last_4' => substr($cc_format_mdl, -4, 4)
+                    'price'  =>
+                ]);
+                $purchase_mdl->save();
 
-                $this->actionIndex();
+                return $this->actionIndex();
             }
         }
 
@@ -169,6 +174,8 @@ class PurchaseController extends Controller
     /**
      * [prepPayPalData description]
      *
+     * Maps data from the two forms into the way the paypal component expects it.
+     * 
      * @version 0.5.1
      * @since  0.5.1
      * @param  Purchase $param_data
@@ -179,103 +186,54 @@ class PurchaseController extends Controller
     {
         // todo This iteration is Paypal only. - DJE : 2015-04-11
         // Process the CC transaction
-        $return_data['address'] = [
-            'street_1' => $param_data->getAttribute('street_1'),
-            'street_2' => $param_data->getAttribute('street_2'),
-            'city'     => $param_data->getAttribute('city'),
-            'prov'     => $param_data->getAttribute('prov'),
-            'postal'   => $param_data->getAttribute('postal'),
-            'country'  => Country::find('value')->where(['id' => $param_data->getAttribute('country_id')])
-                ->one()->getAttribute('key'),
+        $return_data['Address'] = [
+            'City'        => $param_data->getAttribute('city'),
+            'CountryCode' => Country::find('value')->where(['id' => $param_data->getAttribute('country_id')])->one()->getAttribute('key'),
+            'Line1'       => $param_data->getAttribute('street_1'),
+            'Line2'       => $param_data->getAttribute('street_2'),
+            'PostalCode'  => $param_data->getAttribute('postal'),
+            'State'       => $param_data->getAttribute('prov'),
         ];
 
         // Process the CC transaction
-        $return_data['creditcard'] = [
-            'type'      => $cc_data['type'],
-            'cvv2'      => $cc_data['cvv2'],
-            'exp_month' => $cc_data['exp_month'],
-            'exp_year'  => $cc_data['exp_year'],
-            'number'    => $cc_data['number'],
-            'f_name'    => $param_data->getAttribute('f_name'),
-            'l_name'    => $param_data->getAttribute('l_name'),
+        $return_data['CreditCard'] = [
+            'Cvv2'      => $cc_data['cvv2'],
+            'FirstName' => $param_data->getAttribute('f_name'),
+            'LastName'  => $param_data->getAttribute('l_name'),
+            'Month'     => $cc_data['exp_month'],
+            'Number'    => $cc_data['number'],
+            'Type'      => $cc_data['type'],
+            'Year'      => $cc_data['exp_year'],
         ];
 
         $subtotal    = [];
-        $subtotal[0] = isset(Yii::$app->request->post()['Purchase']['time_amount_id']) 
-            ? TimeAmountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')  
+        $subtotal[0] = isset(\Yii::$app->request->post()['Purchase']['time_amount_id']) 
+            ? TimeAmountOptions::find('value')->where(['id' => \Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')  
             : 0;
-        $subtotal[1] = isset(Yii::$app->request->post()['Purchase']['device_count_id'])
-            ? DeviceCountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost')
+        $subtotal[1] = isset(\Yii::$app->request->post()['Purchase']['device_count_id'])
+            ? DeviceCountOptions::find('value')->where(['id' => \Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost')
             : 0;
-        $return_data['amountdetails']['subtotal'] = array_sum($subtotal);
+
+        $return_data['Details']['SubTotal'] = array_sum($subtotal);
 
         return $return_data;
     }
 
     /**
-     * [processPayPal description]
+     * [pay description]
+     * 
      * @param  array  $paramData [description]
-     * @return Payment           [description]
+     * @return [type]            [description]
      */
-    public function processPayPal($paramData = [])
-    {
-        if (empty($paramData)) { return false; }
+    private function pay(array $paramData) {
+        $paypalComponent = new Paypal();
 
-        $addr = new \PayPal\Api\Address();
-        $addr->setLine1($paramData['address']['street_1']);
-        $addr->setLine2($paramData['address']['street_1'] ?: NULL);
-        $addr->setCity($paramData['address']['city']);
-        $addr->setCountryCode($paramData['address']['country']);
-        $addr->setPostalCode($paramData['address']['postal']);
-        $addr->setState($paramData['address']['prov']);
+        try {
+            return $paypalComponent->execTransaction($paramData);
+        } catch (Exception $ex) {
+            echo PaypalError($e);
+        }
 
-        $card = new \PayPal\Api\CreditCard();
-        $card->setNumber($paramData['creditcard']['number']);
-        $card->setType($paramData['creditcard']['type']);
-        $card->setExpireMonth($paramData['creditcard']['exp_month']);
-        $card->setExpireYear($paramData['creditcard']['exp_year']);
-        $card->setCvv2($paramData['creditcard']['cvv2']);
-        $card->setFirstName($paramData['creditcard']['f_name']);
-        $card->setLastName($paramData['creditcard']['l_name']);
-        $card->setBillingAddress($addr);
-
-        $fi = new \PayPal\Api\FundingInstrument();
-        $fi->setCreditCard($card);
-
-        $payer = new \PayPal\Api\Payer();
-        $payer->setPaymentMethod('credit_card');
-        $payer->setFundingInstruments(array($fi));
-
-        $amountDetails = new \PayPal\Api\Details();
-        $amountDetails->setSubtotal($paramData['amountdetails']['subtotal']);
-        $amountDetails->setTax(($paramData['amountdetails']['subtotal'] * \Yii::$app->params['paymentDetails']['taxRate']));
-        $amountDetails->setShipping(\Yii::$app->params['paymentDetails']['shippingRate']);
-
-        $amount = new \PayPal\Api\Amount();
-        $amount->setCurrency(\Yii::$app->params['paymentDetails']['currency']);
-        $amount->setTotal(
-            $paramData['amountdetails']['subtotal']
-            + \Yii::$app->params['paymentDetails']['shippingRate']
-            + ($paramData['amountdetails']['subtotal'] * \Yii::$app->params['paymentDetails']['taxRate'])
-        );
-        $amount->setDetails($amountDetails);
-
-        $transaction = new \PayPal\Api\Transaction();
-        $transaction->setAmount($amount);
-        $transaction->setDescription(\Yii::$app->params['purchaseDescription']);
-
-        $payment = new \PayPal\Api\Payment();
-        $payment->setIntent('sale');
-        $payment->setPayer($payer);
-        $payment->setTransactions(array($transaction));
-
-        $apiContext = new Paypalpayment::ApiContext(
-            Paypalpayment::OAuthTokenCredential(
-                $this->_ClientId, // \Yii::$app->component->paypal->clientId
-                $this->_ClientSecret // \Yii::$app->component->paypal->clientId
-            ), 'Request' . time()
-        );
-
-        $response = $payment->create($apiContext->_apiContext);
+        return false;
     }
 }
