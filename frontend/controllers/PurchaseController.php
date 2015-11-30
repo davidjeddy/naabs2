@@ -90,13 +90,12 @@ class PurchaseController extends Controller
 
             // save purchase data
             // process PayPal payment
-            // 
-            if ( $purchase_mdl->save()
-                && ($this->pay($this->prepPayPalData($purchase_mdl, $cc_format_mdl))->state == 'approved')
-            ) {
+            $paypalResponse = $this->pay($this->prepPayPalData($purchase_mdl, $cc_format_mdl));
+
+            if ($paypalResponse->state == 'approved' && $purchase_mdl->save()) {
                 $purchase_mdl->setAttributes([
-                    'last_4' => substr($cc_format_mdl, -4, 4)
-                    'price'  =>
+                    'last_4' => substr($cc_format_mdl->number, -4, 4),
+                    'price'  => $paypalResponse->transactions[0]->amount->total,
                 ]);
                 $purchase_mdl->save();
 
