@@ -77,14 +77,14 @@ class PurchaseController extends Controller
             // the CCFormat does not actualy save anything to the DB.
             if (!$cc_format_mdl->load(Yii::$app->request->post()) || !$cc_format_mdl->validate()) {
 
-                Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
+                Yii::$app->getSession()->setFlash('error', 'Card data not valid.');
                 return false;
             }
 
             // save the purchase to the DB if the purchase data is valid
             if (!$purchase_mdl->load(Yii::$app->request->post()) || !$purchase_mdl->validate()) {
 
-                Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
+                Yii::$app->getSession()->setFlash('error', 'Billing data not valid.');
                 return false;
             }
 
@@ -97,10 +97,30 @@ class PurchaseController extends Controller
                     'last_4' => substr($cc_format_mdl->number, -4, 4),
                     'price'  => $paypalResponse->transactions[0]->amount->total,
                 ]);
-                $purchase_mdl->save();
+                ;
 
-                return $this->actionIndex();
+                if ($purchase_mdl->save()) {
+
+                    if ($this->module->requestedAction->id == 'adddevice'
+                        || $this->module->requestedAction->id == 'create'
+                    ) {
+                        // create devices if the calling methid was 'device'
+                        DeviceController::actionCreate($purchase_mdl);
+
+                    } elseif ($this->module->requestedAction->id == 'addtime') {
+                        // create time if the calling method was 'time'
+                        DeviceController::actionUpdate(null, $purchase_mdl);
+                    }
+
+                    \Yii::$app->getSession()->setFlash('success', 'Payment processed, account updated.');
+                    \Yii::$app->response->redirect('index');
+                }
+            } else {
+
+                Yii::$app->getSession()->setFlash('error', 'Payment processor returned an error.');
+                return false;
             }
+
         }
 
         // no post data, load form
@@ -126,8 +146,9 @@ class PurchaseController extends Controller
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
 
-        if (!empty(Yii::$app->request->post())) {
-            $this->actionCreate();
+        if (!empty(Yii::$app->request->post()) && $this->actionCreate()) {
+            \Yii::$app->getSession()->setFlash('success', 'Device added to account.');
+            return true;
         }
 
         return $this->render('adddevice', [
@@ -138,19 +159,16 @@ class PurchaseController extends Controller
     }
 
     public function actionAddtime()
-    {
-        $cc_format_mdl = new CCFormat();
-        $paypal_com    = new paypal();
-        $purchase_mdl  = new Purchase();
-        
-        if (!empty(Yii::$app->request->post())) {
-            $this->actionCreate();
+    {   
+        if (!empty(Yii::$app->request->post()) && $this->actionCreate()) {
+            \Yii::$app->getSession()->setFlash('success', 'Access time added to account.');
+            return true;
         }
 
         return $this->render('addtime', [
-            'cc_format_mdl'            => $cc_format_mdl,
+            'cc_format_mdl'           => new CCFormat(),
+            'purchase_mdl'            => new Purchase(),
             'time_amount_options_mdl' => timeAmountOptions::findAll(['deleted_at' => null]), 
-            'purchase_mdl'             => $purchase_mdl,
         ]);
     }
 

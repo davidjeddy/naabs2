@@ -50,7 +50,7 @@ class RadCheckController extends \yii\web\Controller
                 return true;
             } 
 
-            Yii::$app->getSession()->addFlash('error', 'Unable to create the system.');
+            Yii::$app->getSession()->setFlash('error', 'Unable to create the system.');
             return false;
         }
 
@@ -91,7 +91,7 @@ class RadCheckController extends \yii\web\Controller
                 return true;
             } 
 
-            Yii::$app->getSession()->addFlash('error', 'Unable to update the system.');
+            Yii::$app->getSession()->setFlash('error', 'Unable to update the system.');
             return false;
         }
 
