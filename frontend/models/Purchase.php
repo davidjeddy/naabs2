@@ -57,7 +57,9 @@ class Purchase extends \yii\db\ActiveRecord
         return [
             [['country_id', 'user_id', 'f_name', 'l_name', 'street_1', 'city', 'prov', 'postal'], 'required'],
             [['country_id', 'device_count_id', 'time_amount_id', 'user_id', 'last_4', 'return_code', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
-            [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45]
+            [['f_name', 'l_name', 'street_1', 'street_2', 'city', 'prov', 'postal', 'return_message'], 'string', 'max' => 45],
+
+            [['last_4', 'price'], 'safe']
         ];
     }
 

@@ -86,8 +86,6 @@ class DeviceController extends Controller
             $username = User::find()->where(['id' => $param_data->getAttribute('user_id')])->one()->getAttribute('username');
             $user_id  = $param_data->getAttribute('user_id');
 
-
-
             // loop for the # of devices purchased
             while ($current_device_count < $final_device_count) {
                 $device_mdl = new Device();
@@ -102,15 +100,13 @@ class DeviceController extends Controller
 
                     RadCheckController::actionCreate($device_mdl);
                 } else {
-                    Yii::$app->getSession()->addFlash('error', 'Error saving new devices to your account.');
+                    Yii::$app->getSession()->setFlash('error', 'Error saving new devices to your account.');
                     return false;
                 }
             }
 
-            Yii::$app->getSession()->addFlash(
-                'success',
-                $new_device_count .' device(s) successfully added to your account.'
-            );
+            Yii::$app->getSession()->setFlash('success', $new_device_count .' device(s) successfully added to your account.');
+
             return $device_mdl;
         }
 
@@ -141,14 +137,14 @@ class DeviceController extends Controller
             $time    = TimeAmountOptions::find()->where(['id' => $param_data['time_amount_id']])->one()->getAttribute('key');
 
             if (
-                Device::updateAll(['expiration' => $new_exp], ['user_id'    => $param_data['user_id']]) &&
-                RadCheckController::actionUpdate(null, $param_data, $new_exp)
+                Device::updateAll(['expiration' => $new_exp], ['user_id' => $param_data['user_id']])
+                && RadCheckController::actionUpdate(null, $param_data, $new_exp)
             ) {
-                Yii::$app->getSession()->addFlash('success', $time.' added to your account.');
+                Yii::$app->getSession()->setFlash('success', $time.' added to your account.');
                 return $new_exp;
             }
             
-            Yii::$app->getSession()->addFlash('error', 'Unable to add '.$time.' to your account.');
+            Yii::$app->getSession()->setFlash('error', 'Unable to add '.$time.' to your account.');
             return false;
         }
 

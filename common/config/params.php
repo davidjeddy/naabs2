@@ -1,20 +1,13 @@
 <?php
 return [
-	'adminEmail'                    => 'admin@windnetworks.net',
-	'supportEmail'                  => 'support@windnetworks.net',
+    'adminEmail'                    => 'admin@windnetworks.net',
+    'supportEmail'                  => 'support@windnetworks.net',
     'supportPhone'                  => '+1 (352) 577 5127',
-	'user.passwordResetTokenExpire' => 3600,
-    'paypal' => [
-        'currency'      => 'USD',
-        'intent'        => 'sale',
-        'setCancelUrl'  => isset($_SERVER["HTTP_HOST"]) ?: false,
-        'setReturnUrl'  => isset($_SERVER["HTTP_HOST"]) ?: false,
-        'shipping_rate' => 0.00,
-        'tax_rate'      => 0.07,
-        'transaction'   => ['desc' => 'Wireless network access.',],
-        'paypal_client' => [
-            'id'     => '',
-            'secret' => '',
-        ]
-    ]
+    'user.passwordResetTokenExpire' => 3600,
+    'purchaseDescription'           => 'Wireless internet access provided by windnetworks.net.',
+    'paymentDetails' => [
+        'currency'     => 'USD',
+        'shippingRate' => 0.00,
+        'taxRate'      => 0.07,
+    ],
 ];

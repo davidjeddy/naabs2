@@ -4,49 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35b8917f3a91840bad076eedae881896",
-    "content-hash": "0f18f0c1e63ba2f958b5abb7848a3459",
+    "hash": "eccb8b622bfda0cc981d9ef10662a2e5",
+    "content-hash": "431ea2ce6931d116f52e50cb017a9189",
     "packages": [
-        {
-            "name": "almasaeed2010/adminlte",
-            "version": "v2.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
-                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abdullah Almsaeed",
-                    "email": "support@almsaeedstudio.com"
-                }
-            ],
-            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "http://almsaeedstudio.com/",
-            "keywords": [
-                "JS",
-                "admin",
-                "back-end",
-                "css",
-                "less",
-                "responsive",
-                "template",
-                "theme",
-                "web"
-            ],
-            "time": "2015-10-23 14:50:49"
-        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.5",
@@ -95,43 +55,6 @@
                 "responsive",
                 "web"
             ]
-        },
-        {
-            "name": "bower-asset/fontawesome",
-            "version": "v4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/e554555d73a44e0a7d11b0361ad7a5325a5f551c",
-                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "less/font-awesome.less",
-                    "scss/font-awesome.scss"
-                ],
-                "bower-asset-ignore": [
-                    "*/.*",
-                    "*.json",
-                    "src",
-                    "*.yml",
-                    "Gemfile",
-                    "Gemfile.lock",
-                    "*.md"
-                ]
-            },
-            "license": [
-                "OFL-1.1",
-                "MIT",
-                "CC-BY-3.0"
-            ],
-            "description": "Font Awesome"
         },
         {
             "name": "bower-asset/jquery",
@@ -351,49 +274,6 @@
             "time": "2015-03-06 05:21:16"
         },
         {
-            "name": "cebe/yii2-gravatar",
-            "version": "1.1",
-            "target-dir": "cebe/gravatar",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cebe/yii2-gravatar.git",
-                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cebe/yii2-gravatar/zipball/c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
-                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-0": {
-                    "cebe\\gravatar\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc",
-                    "homepage": "http://cebe.cc/",
-                    "role": "Core framework development"
-                }
-            ],
-            "description": "Gravatar Widget for Yii 2",
-            "keywords": [
-                "gravatar",
-                "yii"
-            ],
-            "time": "2013-12-10 17:49:58"
-        },
-        {
             "name": "davidjeddy/yii2-freeradius-module",
             "version": "0.0.4",
             "source": {
@@ -447,35 +327,30 @@
             "time": "2015-11-20 06:05:48"
         },
         {
-            "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.2.4",
+            "name": "davidjeddy/yii2-paypal",
+            "version": "0.2.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148"
+                "url": "https://github.com/davidjeddy/yii2-paypal.git",
+                "reference": "4526ee92fa5c2b85b0bde369946afcf79d682b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/c842a15ceef4e903f70ac927ec3246e6d53e1148",
-                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148",
+                "url": "https://api.github.com/repos/davidjeddy/yii2-paypal/zipball/4526ee92fa5c2b85b0bde369946afcf79d682b93",
+                "reference": "4526ee92fa5c2b85b0bde369946afcf79d682b93",
                 "shasum": ""
             },
             "require": {
-                "almasaeed2010/adminlte": "~2.0",
-                "cebe/yii2-gravatar": "1.*",
-                "rmrevin/yii2-fontawesome": "~2.9",
-                "yiisoft/yii2": "2.*",
-                "yiisoft/yii2-bootstrap": "2.*"
+                "ext-curl": "*",
+                "ext-json": "*",
+                "paypal/rest-api-sdk-php": "~1.6",
+                "php": ">=5.5.0",
+                "yiisoft/yii2": "~2.0"
             },
             "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "dmstr\\": ""
+                    "davidjeddy\\": "/src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -484,21 +359,22 @@
             ],
             "authors": [
                 {
-                    "name": "Tobias Munk",
-                    "email": "tobias@diemeisterei.de"
+                    "name": "Marcio Camello",
+                    "email": "marciocamello@outlook.com"
                 },
                 {
-                    "name": "Evgeniy Tkachenko",
-                    "email": "et.coder@gmail.com"
+                    "name": "MarDavid J Eddy",
+                    "email": "me@davidjeddy.com"
                 }
             ],
-            "description": "Backend theme for Yii2 Framework",
+            "description": "The PayPal extension for the Yii2 framework, forked from ",
             "keywords": [
-                "AdminLTE",
-                "extension",
+                "component",
+                "interface",
+                "paypal",
                 "yii2"
             ],
-            "time": "2015-11-06 10:35:36"
+            "time": "2015-11-29 00:31:25"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -591,58 +467,6 @@
                 "sdk"
             ],
             "time": "2015-11-16 19:40:00"
-        },
-        {
-            "name": "rmrevin/yii2-fontawesome",
-            "version": "2.12.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "6bfb628f5d93170bfe896866faac494c24783c2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/6bfb628f5d93170bfe896866faac494c24783c2e",
-                "reference": "6bfb628f5d93170bfe896866faac494c24783c2e",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/fontawesome": "4.4.*",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "2.0.*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "rmrevin\\yii\\fontawesome\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Revin Roman",
-                    "email": "roman@rmrevin.com",
-                    "homepage": "https://rmrevin.com/"
-                }
-            ],
-            "description": "Asset Bundle for Yii2 with Font Awesome",
-            "keywords": [
-                "asset",
-                "awesome",
-                "bundle",
-                "font",
-                "yii"
-            ],
-            "time": "2015-11-09 15:03:05"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1142,16 +966,16 @@
         },
         {
             "name": "codeception/specify",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Specify.git",
-                "reference": "a4a9337d254868613cdba5b08df6bf14bbbf3228"
+                "reference": "8efcd017687ebdae9c4d95bcbc1dc22a28561874"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Specify/zipball/a4a9337d254868613cdba5b08df6bf14bbbf3228",
-                "reference": "a4a9337d254868613cdba5b08df6bf14bbbf3228",
+                "url": "https://api.github.com/repos/Codeception/Specify/zipball/8efcd017687ebdae9c4d95bcbc1dc22a28561874",
+                "reference": "8efcd017687ebdae9c4d95bcbc1dc22a28561874",
                 "shasum": ""
             },
             "require": {
@@ -1175,24 +999,24 @@
                 }
             ],
             "description": "BDD code blocks for PHPUnit and Codeception",
-            "time": "2015-09-26 09:08:08"
+            "time": "2015-11-26 23:35:52"
         },
         {
             "name": "codeception/verify",
-            "version": "0.2.7",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Verify.git",
-                "reference": "66e5074905f4d9590ddb805d123fe632f4baa488"
+                "reference": "d3721cfc668d96b41acbda3ecd01d3499381db64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Verify/zipball/66e5074905f4d9590ddb805d123fe632f4baa488",
-                "reference": "66e5074905f4d9590ddb805d123fe632f4baa488",
+                "url": "https://api.github.com/repos/Codeception/Verify/zipball/d3721cfc668d96b41acbda3ecd01d3499381db64",
+                "reference": "d3721cfc668d96b41acbda3ecd01d3499381db64",
                 "shasum": ""
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "autoload": {
@@ -1204,12 +1028,11 @@
             "authors": [
                 {
                     "name": "Michael Bodnarchuk",
-                    "email": "davert.php@mailican.com",
-                    "homepage": "http://codeception.com"
+                    "email": "davert.php@mailican.com"
                 }
             ],
             "description": "BDD assertion library for PHPUnit",
-            "time": "2014-01-22 14:40:33"
+            "time": "2015-11-26 23:23:25"
         },
         {
             "name": "doctrine/instantiator",
@@ -1362,16 +1185,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.1.0",
+            "version": "6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "66fd14b4d0b8f2389eaf37c5458608c7cb793a81"
+                "reference": "c6851d6e48f63b69357cbfa55bca116448140e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66fd14b4d0b8f2389eaf37c5458608c7cb793a81",
-                "reference": "66fd14b4d0b8f2389eaf37c5458608c7cb793a81",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/c6851d6e48f63b69357cbfa55bca116448140e0c",
+                "reference": "c6851d6e48f63b69357cbfa55bca116448140e0c",
                 "shasum": ""
             },
             "require": {
@@ -1420,7 +1243,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-09-08 17:36:26"
+            "time": "2015-11-23 00:47:50"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2682,16 +2505,16 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "07d664a052572ccc28eb2ab7dbbe82155b1ad367"
+                "reference": "bd28847ea2193916074c7b11d4fdd78570049694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/07d664a052572ccc28eb2ab7dbbe82155b1ad367",
-                "reference": "07d664a052572ccc28eb2ab7dbbe82155b1ad367",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/bd28847ea2193916074c7b11d4fdd78570049694",
+                "reference": "bd28847ea2193916074c7b11d4fdd78570049694",
                 "shasum": ""
             },
             "require": {
@@ -2714,7 +2537,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\BrowserKit\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2732,20 +2558,20 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-23 14:47:27"
+            "time": "2015-11-02 20:20:53"
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5efd632294c8320ea52492db22292ff853a43766"
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5efd632294c8320ea52492db22292ff853a43766",
-                "reference": "5efd632294c8320ea52492db22292ff853a43766",
+                "url": "https://api.github.com/repos/symfony/console/zipball/16bb1cb86df43c90931df65f529e7ebd79636750",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750",
                 "shasum": ""
             },
             "require": {
@@ -2770,7 +2596,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Console\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2788,20 +2617,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-20 14:38:46"
+            "time": "2015-11-18 09:54:26"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "e1b865b26be4a56d22a8dee398375044a80c865b"
+                "reference": "abb47717fb88aebd9437da2fc8bb01a50a36679f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/e1b865b26be4a56d22a8dee398375044a80c865b",
-                "reference": "e1b865b26be4a56d22a8dee398375044a80c865b",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/abb47717fb88aebd9437da2fc8bb01a50a36679f",
+                "reference": "abb47717fb88aebd9437da2fc8bb01a50a36679f",
                 "shasum": ""
             },
             "require": {
@@ -2816,7 +2645,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\CssSelector\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2838,20 +2670,20 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "5fef7d8b80d8f9992df99d8ee283f420484c9612"
+                "reference": "b33593cbfe1d81b50d48353f338aca76a08658d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/5fef7d8b80d8f9992df99d8ee283f420484c9612",
-                "reference": "5fef7d8b80d8f9992df99d8ee283f420484c9612",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/b33593cbfe1d81b50d48353f338aca76a08658d8",
+                "reference": "b33593cbfe1d81b50d48353f338aca76a08658d8",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2704,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\DomCrawler\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2890,20 +2725,20 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-11-02 20:20:53"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "87a5db5ea887763fa3a31a5471b512ff1596d9b8"
+                "reference": "7e2f9c31645680026c2372edf66f863fc7757af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/87a5db5ea887763fa3a31a5471b512ff1596d9b8",
-                "reference": "87a5db5ea887763fa3a31a5471b512ff1596d9b8",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/7e2f9c31645680026c2372edf66f863fc7757af5",
+                "reference": "7e2f9c31645680026c2372edf66f863fc7757af5",
                 "shasum": ""
             },
             "require": {
@@ -2929,7 +2764,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\EventDispatcher\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2947,20 +2785,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d"
+                "reference": "a06a0c0ff7db3736a50d530c908cca547bf13da9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/a06a0c0ff7db3736a50d530c908cca547bf13da9",
+                "reference": "a06a0c0ff7db3736a50d530c908cca547bf13da9",
                 "shasum": ""
             },
             "require": {
@@ -2975,7 +2813,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2993,20 +2834,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "eca9019c88fbe250164affd107bc8057771f3f4d"
+                "reference": "4cfcd7a9fceba662b3c036b7d9a91f6197af046c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/eca9019c88fbe250164affd107bc8057771f3f4d",
-                "reference": "eca9019c88fbe250164affd107bc8057771f3f4d",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/4cfcd7a9fceba662b3c036b7d9a91f6197af046c",
+                "reference": "4cfcd7a9fceba662b3c036b7d9a91f6197af046c",
                 "shasum": ""
             },
             "require": {
@@ -3021,7 +2862,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3039,7 +2883,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-11-18 13:41:01"
         },
         {
             "name": "yiisoft/yii2-apidoc",
@@ -3298,14 +3142,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "davidjeddy/yii2-freeradius-module": 20,
-        "dmstr/yii2-adminlte-asset": 10
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.6.0"
     },
     "platform-dev": []
 }

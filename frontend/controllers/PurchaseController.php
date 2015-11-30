@@ -2,23 +2,19 @@
 
 namespace frontend\controllers;
 
+use common\models\CCFormat;
+use common\models\Country;
+use common\models\Device;
+use common\models\DeviceCountOptions;
+use common\models\TimeAmountOptions;
+use davidjeddy\Paypal;
+use frontend\controllers\DeviceController;
+use frontend\models\Purchase;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-
-use frontend\models\Purchase;
-use common\models\Device;
-
-use frontend\controllers\DeviceController;
-
-use common\components\Paypal;
-use common\models\CCFormat;
-use common\models\Country;
-use common\models\DeviceCountOptions;
-use common\models\TimeAmountOptions;
-
 
 /**
  * PurchaseController implements the CRUD actions for Purchase model.
@@ -74,75 +70,60 @@ class PurchaseController extends Controller
     public function actionCreate()
     {
         $cc_format_mdl = new CCFormat();
-        $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
-        
-
 
         if (!empty(Yii::$app->request->post())) {
 
             // the CCFormat does not actualy save anything to the DB.
-            if ($cc_format_mdl->load(Yii::$app->request->post()) && $cc_format_mdl->validate()) {
+            if (!$cc_format_mdl->load(Yii::$app->request->post()) || !$cc_format_mdl->validate()) {
 
-                // for the sake of consistancty, empty success logic block
-            } else {
-
-                Yii::$app->getSession()->addFlash('error', 'Card data not valid.');
+                Yii::$app->getSession()->setFlash('error', 'Card data not valid.');
+                return false;
             }
 
+            // save the purchase to the DB if the purchase data is valid
+            if (!$purchase_mdl->load(Yii::$app->request->post()) || !$purchase_mdl->validate()) {
 
+                Yii::$app->getSession()->setFlash('error', 'Billing data not valid.');
+                return false;
+            }
 
-            if ($purchase_mdl->load(Yii::$app->request->post()) && $purchase_mdl->validate()) {
-                $pp_purchase_data = $this->prepPayPalData($purchase_mdl, $cc_format_mdl);
-                $response_message = 'not approved';
+            // save purchase data
+            // process PayPal payment
+            $paypalResponse = $this->pay($this->prepPayPalData($purchase_mdl, $cc_format_mdl));
 
-                $purchase_mdl->setAttribute('price',            $pp_purchase_data['amountdetails']['subtotal']);
-                $purchase_mdl->setAttribute('return_message',   $response_message);
-                $purchase_mdl->setAttribute('return_code',      http_response_code());
-                $purchase_mdl->setAttribute('last_4',           substr($cc_format_mdl->number, -4) );
+            if ($paypalResponse->state == 'approved' && $purchase_mdl->save()) {
+                $purchase_mdl->setAttributes([
+                    'last_4' => substr($cc_format_mdl->number, -4, 4),
+                    'price'  => $paypalResponse->transactions[0]->amount->total,
+                ]);
+                ;
 
+                if ($purchase_mdl->save()) {
 
-
-                /*
-                $_payment_result  = $paypal_com->setDate($pp_purchase_data)->processCreditCardPayment();
-                $response_message = (
-                    $_payment_result->getState() == 'approved' ? 'approved' : $_payment_result->getFailedTransactions()
-                );*/
-                $response_message = "approved";
-
-
-
-                // payment has cleared. Create the devices.
-                if ( $response_message == "approved" && $purchase_mdl->save()) {
-
-                    // create devices if the calling methid was 'device'
-                    if ($this->module->requestedAction->id == 'adddevice' || 
-                        $this->module->requestedAction->id == 'create'
+                    if ($this->module->requestedAction->id == 'adddevice'
+                        || $this->module->requestedAction->id == 'create'
                     ) {
+                        // create devices if the calling methid was 'device'
                         DeviceController::actionCreate($purchase_mdl);
-                    }
 
-                    // create time if the calling method was 'time'
-                    if ($this->module->requestedAction->id == 'addtime') {
+                    } elseif ($this->module->requestedAction->id == 'addtime') {
+                        // create time if the calling method was 'time'
                         DeviceController::actionUpdate(null, $purchase_mdl);
                     }
 
-                    $this->redirect('../purchase/index');
-                } else {
-
-                    Yii::$app->getSession()->addFlash('error', 'Payment processor returned an error.');
-                    return false;
+                    \Yii::$app->getSession()->setFlash('success', 'Payment processed, account updated.');
+                    \Yii::$app->response->redirect('index');
                 }
-
             } else {
 
-                Yii::$app->getSession()->addFlash('error', 'Billing data not valid.');
+                Yii::$app->getSession()->setFlash('error', 'Payment processor returned an error.');
                 return false;
             }
+
         }
 
-
-
+        // no post data, load form
         return $this->render('create', [
             'cc_format_mdl'            => $cc_format_mdl,
             'country_mdl'              => Country::findAll(['deleted_at' => null]),
@@ -165,8 +146,9 @@ class PurchaseController extends Controller
         $paypal_com    = new paypal();
         $purchase_mdl  = new Purchase();
 
-        if (!empty(Yii::$app->request->post())) {
-            $this->actionCreate();
+        if (!empty(Yii::$app->request->post()) && $this->actionCreate()) {
+            \Yii::$app->getSession()->setFlash('success', 'Device added to account.');
+            return true;
         }
 
         return $this->render('adddevice', [
@@ -177,19 +159,16 @@ class PurchaseController extends Controller
     }
 
     public function actionAddtime()
-    {
-        $cc_format_mdl = new CCFormat();
-        $paypal_com    = new paypal();
-        $purchase_mdl  = new Purchase();
-        
-        if (!empty(Yii::$app->request->post())) {
-            $this->actionCreate();
+    {   
+        if (!empty(Yii::$app->request->post()) && $this->actionCreate()) {
+            \Yii::$app->getSession()->setFlash('success', 'Access time added to account.');
+            return true;
         }
 
         return $this->render('addtime', [
-            'cc_format_mdl'            => $cc_format_mdl,
+            'cc_format_mdl'           => new CCFormat(),
+            'purchase_mdl'            => new Purchase(),
             'time_amount_options_mdl' => timeAmountOptions::findAll(['deleted_at' => null]), 
-            'purchase_mdl'             => $purchase_mdl,
         ]);
     }
 
@@ -212,6 +191,8 @@ class PurchaseController extends Controller
     /**
      * [prepPayPalData description]
      *
+     * Maps data from the two forms into the way the paypal component expects it.
+     * 
      * @version 0.5.1
      * @since  0.5.1
      * @param  Purchase $param_data
@@ -222,33 +203,54 @@ class PurchaseController extends Controller
     {
         // todo This iteration is Paypal only. - DJE : 2015-04-11
         // Process the CC transaction
-        $return_data['address'] = [
-            'street_1' => $param_data->getAttribute('street_1'),
-            'street_2' => $param_data->getAttribute('street_2'),
-            'city'     => $param_data->getAttribute('city'),
-            'prov'     => $param_data->getAttribute('prov'),
-            'postal'   => $param_data->getAttribute('postal'),
-            'country'  => Country::find('value')->where(['id' => $param_data->getAttribute('country_id')])
-                ->one()->getAttribute('key'),
+        $return_data['Address'] = [
+            'City'        => $param_data->getAttribute('city'),
+            'CountryCode' => Country::find('value')->where(['id' => $param_data->getAttribute('country_id')])->one()->getAttribute('key'),
+            'Line1'       => $param_data->getAttribute('street_1'),
+            'Line2'       => $param_data->getAttribute('street_2'),
+            'PostalCode'  => $param_data->getAttribute('postal'),
+            'State'       => $param_data->getAttribute('prov'),
         ];
 
         // Process the CC transaction
-        $return_data['creditcard'] = [
-            'type'      => $cc_data['type'],
-            'cvv2'      => $cc_data['cvv2'],
-            'exp_month' => $cc_data['exp_month'],
-            'exp_year'  => $cc_data['exp_year'],
-            'number'    => $cc_data['number'],
-            'f_name'    => $param_data->getAttribute('f_name'),
-            'l_name'    => $param_data->getAttribute('l_name'),
+        $return_data['CreditCard'] = [
+            'Cvv2'      => $cc_data['cvv2'],
+            'FirstName' => $param_data->getAttribute('f_name'),
+            'LastName'  => $param_data->getAttribute('l_name'),
+            'Month'     => $cc_data['exp_month'],
+            'Number'    => $cc_data['number'],
+            'Type'      => $cc_data['type'],
+            'Year'      => $cc_data['exp_year'],
         ];
 
-        $subtotal       = [];
-        $subtotal[0]    = isset(Yii::$app->request->post()['Purchase']['time_amount_id'])  ? TimeAmountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')   : 0;
-        $subtotal[1]    = isset(Yii::$app->request->post()['Purchase']['device_count_id']) ? DeviceCountOptions::find('value')->where(['id' => Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost') : 0;
-        $return_data['amountdetails']['subtotal'] = array_sum($subtotal);
+        $subtotal    = [];
+        $subtotal[0] = isset(\Yii::$app->request->post()['Purchase']['time_amount_id']) 
+            ? TimeAmountOptions::find('value')->where(['id' => \Yii::$app->request->post()['Purchase']['time_amount_id']])->one()->getAttribute('cost')  
+            : 0;
+        $subtotal[1] = isset(\Yii::$app->request->post()['Purchase']['device_count_id'])
+            ? DeviceCountOptions::find('value')->where(['id' => \Yii::$app->request->post()['Purchase']['device_count_id']])->one()->getAttribute('cost')
+            : 0;
 
+        $return_data['Details']['SubTotal'] = array_sum($subtotal);
 
         return $return_data;
+    }
+
+    /**
+     * [pay description]
+     * 
+     * @param  array  $paramData [description]
+     * @return [type]            [description]
+     */
+    private function pay(array $paramData) {
+        $paypalComponent = new Paypal();
+
+        try {
+            return $paypalComponent->execTransaction($paramData);
+        } catch (Exception $ex) {
+            echo PaypalError($e);
+        }
+
+        return false;
     }
 }
