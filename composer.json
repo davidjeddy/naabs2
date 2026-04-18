@@ -1,0 +1,39 @@
+{
+    "name": "davidjeddy/naabs2",
+    "description": "Network Access And Billing System 2",
+    "keywords": ["naabs2", "framework", "advanced", "web application"],
+    "homepage": "http://www.davidjeddy.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {},
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "davidjeddy/yii2-freeradius-module": "*",
+        "davidjeddy/yii2-paypal"           : "*",
+        "paypal/rest-api-sdk-php"          : "~1.6",
+        "php"                              : ">=5.6.0",
+        "yiisoft/yii2"                     : "~2",
+        "yiisoft/yii2-bootstrap"           : "~2",
+        "yiisoft/yii2-swiftmailer"         : "~2"
+    },
+    "require-dev": {
+        "codeception/codeception" : "~2.0",
+        "codeception/specify"     : "~0",
+        "codeception/verify"      : "~0",
+        "yiisoft/yii2-apidoc"     : "~2",
+        "yiisoft/yii2-codeception": "~2",
+        "yiisoft/yii2-debug"      : "~2",
+        "yiisoft/yii2-faker"      : "~2",
+        "yiisoft/yii2-gii"        : "~2"
+    },
+    "config": {
+        "process-timeout": 1800
+    }, 
+     "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
